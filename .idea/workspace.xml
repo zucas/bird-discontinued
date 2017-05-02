@@ -1,0 +1,1115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="687cbc3d-de49-48b2-abe0-974deb1756e7" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/assets/quasar-logo.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/statics/favicon.ico" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.babelrc" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.editorconfig" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.eslintignore" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.eslintrc.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.gitignore" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/Bird.iml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/codeStyleSettings.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/dictionaries/davi_.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/watcherTasks.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.stylintrc" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/README.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/build/css-utils.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/build/env-utils.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/build/hot-reload.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/build/script.build.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/build/script.clean.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/build/script.dev.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/build/webpack.base.conf.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/build/webpack.dev.conf.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/build/webpack.prod.conf.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/config/dev.env.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/config/index.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/config/prod.env.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docker-compose.yml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dockerfile" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/functions/config.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/functions/index.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/functions/package.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/package.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/App.vue" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/components/Error404.vue" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/components/Index.vue" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/components/Staff.vue" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/components/staff/awards/components/AwardHome.vue" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/components/staff/awards/components/AwardNew.vue" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/components/staff/awards/components/AwardStats.vue" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/components/staff/awards/components/AwardTable.vue" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/components/staff/awards/components/ExamHome.vue" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/components/staff/awards/components/ExamNew.vue" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/components/staff/awards/components/ExamStats.vue" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/components/staff/awards/components/ExamTable.vue" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/components/staff/awards/components/QuestionHome.vue" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/components/staff/awards/components/QuestionNew.vue" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/components/staff/awards/components/QuestionStats.vue" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/components/staff/awards/components/QuestionTable.vue" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/components/staff/awards/components/SubjectHome.vue" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/components/staff/awards/components/SubjectList.vue" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/components/staff/awards/components/SubjectNew.vue" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/components/staff/awards/components/SubjectStats.vue" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/components/staff/awards/view/Awads.vue" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/components/staff/awards/view/Exams.vue" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/components/staff/awards/view/Questions.vue" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/components/staff/awards/view/School.vue" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/components/staff/awards/view/Themes.vue" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/components/staff/fleet/component/AircrafsTable.vue" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/components/staff/fleet/component/AircraftEditForm.vue" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/components/staff/fleet/component/AircraftFAB.vue" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/components/staff/fleet/component/AircraftGeneral.vue" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/components/staff/fleet/component/AircraftMaintenace.vue" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/components/staff/fleet/component/AircraftNewForm.vue" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/components/staff/fleet/component/EquipamentosTable.vue" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/components/staff/fleet/component/FleetCategoriesTable.vue" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/components/staff/fleet/component/FleetHome.vue" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/components/staff/fleet/component/Maintence.vue" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/components/staff/fleet/component/NewEquipment.vue" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/components/staff/fleet/views/Aircrafts.vue" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/components/staff/fleet/views/Categories.vue" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/components/staff/fleet/views/Equipments.vue" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/components/staff/fleet/views/Maintence.vue" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/components/staff/fleet/views/StaffFleet.vue" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/modules/firebase.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/modules/firebaseStorage.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/modules/fleet.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/modules/generalSelected.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/modules/lenguage.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/modules/piloto.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/modules/store.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/modules/token.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/router.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/themes/app.ios.styl" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/themes/app.mat.styl" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/themes/app.variables.styl" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/component.vue" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/layout.vue" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/view.vue" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CreatePatchCommitExecutor">
+    <option name="PATCH_PATH" value="" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="Questions.vue" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/components/staff/awards/view/Questions.vue">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-221">
+              <caret line="17" column="59" lean-forward="false" selection-start-line="17" selection-start-column="59" selection-end-line="17" selection-end-column="59" />
+              <folding>
+                <element signature="e#896#951#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="QuestionDetails.vue" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/components/staff/awards/components/QuestionDetails.vue">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="178">
+              <caret line="97" column="22" lean-forward="false" selection-start-line="97" selection-start-column="22" selection-end-line="97" selection-end-column="22" />
+              <folding>
+                <element signature="n#style#0;n#div#0;n#div#2;n#div#0;n#template#0;n#!!top" expanded="true" />
+                <element signature="e#1618#1649#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="firebase.json" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/firebase.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="136">
+              <caret line="8" column="0" lean-forward="true" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="docker-compose.yml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/docker-compose.yml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="database.rules.json" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/database.rules.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="51">
+              <caret line="3" column="19" lean-forward="false" selection-start-line="3" selection-start-column="19" selection-end-line="3" selection-end-column="19" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name=".firebaserc" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/.firebaserc">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="package.json" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/functions/package.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="119">
+              <caret line="7" column="17" lean-forward="true" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="config.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/functions/config.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="firebase.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/modules/firebase.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="136">
+              <caret line="8" column="17" lean-forward="false" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>db.ref('school/subjec')</find>
+      <find>db.ref('school/subje')</find>
+      <find>db.ref('school/subj')</find>
+      <find>db.ref('school/sub')</find>
+      <find>db.ref('school/su')</find>
+      <find>db.ref('school/s')</find>
+      <find>db.ref('school/')</find>
+      <find>db.ref('school/t')</find>
+      <find>db.ref('school/the')</find>
+      <find>db.ref('school/theme')</find>
+      <find>db.ref('school/theme'</find>
+      <find>t</find>
+      <find>updateSubjectUsed</find>
+      <find>update</find>
+      <find>parse</find>
+      <find>=</find>
+      <find>=$</find>
+      <find>=$e</find>
+      <find>=$em</find>
+      <find>=$emi</find>
+      <find>=$emit</find>
+      <find>$emit</find>
+      <find>&quot;$emit&quot;</find>
+      <find>&quot;$emit</find>
+      <find>theme</find>
+      <find>Theme</find>
+      <find>option</find>
+      <find>alternativeOptions</find>
+      <find>add</find>
+      <find>quesntionObj</find>
+    </findStrings>
+    <dirStrings>
+      <dir>C:\Users\davi_\OneDrive\Bird\src\components\staff\awards</dir>
+    </dirStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/src/components/staff/fleet/component/AircraftEditForm.vue" />
+        <option value="$PROJECT_DIR$/src/components/staff/fleet/component/AircrafsTable.vue" />
+        <option value="$PROJECT_DIR$/src/components/staff/awards/view/AwardsAndExams.vue" />
+        <option value="$PROJECT_DIR$/src/components/staff/awards/components/AwardTable.vue" />
+        <option value="$PROJECT_DIR$/src/components/staff/awards/components/ThemeList.vue" />
+        <option value="$PROJECT_DIR$/src/components/staff/awards/components/ThemeNew.vue" />
+        <option value="$PROJECT_DIR$/src/components/staff/awards/components/ExamNew.vue" />
+        <option value="$PROJECT_DIR$/src/components/staff/awards/components/ExamTable.vue" />
+        <option value="$PROJECT_DIR$/src/components/staff/awards/components/ExamStats.vue" />
+        <option value="$PROJECT_DIR$/src/modules/store.js" />
+        <option value="$PROJECT_DIR$/src/modules/generalSelected.js" />
+        <option value="$PROJECT_DIR$/src/components/staff/fleet/views/Aircrafts.vue" />
+        <option value="$PROJECT_DIR$/database.rules.json" />
+        <option value="$PROJECT_DIR$/functions/index.js" />
+        <option value="$PROJECT_DIR$/package.json" />
+        <option value="$PROJECT_DIR$/src/index.html" />
+        <option value="$PROJECT_DIR$/src/main.js" />
+        <option value="$PROJECT_DIR$/src/components/staff/awards/components/ThemeStats.vue" />
+        <option value="$PROJECT_DIR$/src/App.vue" />
+        <option value="$PROJECT_DIR$/src/components/staff/awards/view/Exams.vue" />
+        <option value="$PROJECT_DIR$/src/components/staff/awards/view/Themes.vue" />
+        <option value="$PROJECT_DIR$/src/components/staff/awards/components/ThemeHome.vue" />
+        <option value="$PROJECT_DIR$/src/components/staff/awards/components/ExamHome.vue" />
+        <option value="$PROJECT_DIR$/src/components/staff/awards/components/AwardNew.vue" />
+        <option value="$PROJECT_DIR$/src/components/staff/awards/components/SubjectHome.vue" />
+        <option value="$PROJECT_DIR$/src/components/staff/awards/view/School.vue" />
+        <option value="$PROJECT_DIR$/src/router.js" />
+        <option value="$PROJECT_DIR$/src/components/staff/awards/components/SubjectList.vue" />
+        <option value="$PROJECT_DIR$/src/components/staff/awards/components/SubjectNew.vue" />
+        <option value="$PROJECT_DIR$/src/components/staff/awards/components/SubjectStats.vue" />
+        <option value="$PROJECT_DIR$/src/components/Staff.vue" />
+        <option value="$PROJECT_DIR$/src/components/staff/awards/components/QuestionStats.vue" />
+        <option value="$PROJECT_DIR$/src/components/staff/awards/components/QuestionHome.vue" />
+        <option value="$PROJECT_DIR$/src/components/staff/awards/components/AwardHome.vue" />
+        <option value="$PROJECT_DIR$/src/components/staff/awards/view/Awads.vue" />
+        <option value="$PROJECT_DIR$/src/modules/firebaseStorage.js" />
+        <option value="$PROJECT_DIR$/src/modules/firebase.js" />
+        <option value="$PROJECT_DIR$/node_modules/quasar-framework/src/vue-components/uploader/Uploader.vue" />
+        <option value="$PROJECT_DIR$/src/components/staff/awards/components/QuestionNew.vue" />
+        <option value="$PROJECT_DIR$/src/components/staff/awards/components/QuestionTable.vue" />
+        <option value="$PROJECT_DIR$/src/components/staff/awards/view/Questions.vue" />
+        <option value="$PROJECT_DIR$/src/components/staff/awards/components/QuestionDetails.vue" />
+        <option value="$PROJECT_DIR$/firebase-debug.log" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER">
+    <package-json value="$PROJECT_DIR$/package.json" />
+  </component>
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="NodeModulesDirectoryManager">
+    <handled-path value="$PROJECT_DIR$/functions/node_modules" />
+    <handled-path value="$PROJECT_DIR$/node_modules" />
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1382" />
+    <option name="height" value="744" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+      <manualOrder />
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Bird" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="External Libraries" />
+              <option name="myItemType" value="com.jetbrains.php.config.library.PhpExternalLibrariesNodePatcher$PatchedExternalLibrariesNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Bird" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Bird" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Bird" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Bird" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Bird" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Bird" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="modules" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Bird" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Bird" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="components" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Bird" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Bird" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="components" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="staff" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Bird" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Bird" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="components" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="staff" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="awards" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="view" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Bird" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Bird" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="components" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="staff" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="awards" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="components" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Bird" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Bird" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="functions" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+      <pane id="Scratches" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/components/staff/awards" />
+    <property name="nodejs_interpreter_path" value="C:/Program Files/Node/node" />
+    <property name="js.eslint.eslintPackage" value="" />
+    <property name="SearchEverywhereHistoryKey" value="deta&#9;FILE&#9;file://C:/Users/davi_/OneDrive/Bird/src/components/staff/awards/components/QuestionDetails.vue&#10;upl&#9;FILE&#9;file://C:/Users/davi_/OneDrive/Bird/node_modules/quasar-framework/src/vue-components/uploader/Uploader.vue&#10;uploader&#9;FILE&#9;file://C:/Users/davi_/OneDrive/Bird/node_modules/quasar-framework/src/vue-components/uploader/Uploader.vue&#10;fire&#9;FILE&#9;file://C:/Users/davi_/OneDrive/Bird/src/modules/firebase.js&#10;questio&#9;FILE&#9;file://C:/Users/davi_/OneDrive/Bird/src/components/staff/awards/components/QuestionNew.vue&#10;fireb&#9;FILE&#9;file://C:/Users/davi_/OneDrive/Bird/src/modules/firebase.js&#10;stat&#9;FILE&#9;file://C:/Users/davi_/OneDrive/Bird/src/components/staff/awards/components/QuestionStats.vue&#10;Staff&#9;FILE&#9;file://C:/Users/davi_/OneDrive/Bird/src/components/Staff.vue&#10;ques&#9;FILE&#9;file://C:/Users/davi_/OneDrive/Bird/src/components/staff/awards/components/QuestionNew.vue&#10;Ques&#9;FILE&#9;file://C:/Users/davi_/OneDrive/Bird/src/components/staff/awards/components/QuestionStats.vue&#10;subj&#9;FILE&#9;file://C:/Users/davi_/OneDrive/Bird/src/components/staff/awards/components/SubjectList.vue&#10;sub&#9;FILE&#9;file://C:/Users/davi_/OneDrive/Bird/src/components/staff/awards/components/SubjectNew.vue&#10;route&#9;FILE&#9;file://C:/Users/davi_/OneDrive/Bird/src/router.js&#10;Questio&#9;FILE&#9;file://C:/Users/davi_/OneDrive/Bird/src/components/staff/awards/components/QuestionNew.vue&#10;Award&#9;FILE&#9;file://C:/Users/davi_/OneDrive/Bird/src/components/staff/awards/components/AwardNew.vue&#10;ter&#9;ACTION&#9;ActivateTerminalToolWindow&#10;Quest&#9;FILE&#9;file://C:/Users/davi_/OneDrive/Bird/src/components/staff/awards/components/QuestionNew.vue&#10;Exa&#9;FILE&#9;file://C:/Users/davi_/OneDrive/Bird/src/components/staff/awards/components/ExamHome.vue&#10;the&#9;FILE&#9;file://C:/Users/davi_/OneDrive/Bird/src/components/staff/awards/components/ThemeHome.vue&#10;App&#9;FILE&#9;file://C:/Users/davi_/OneDrive/Bird/src/App.vue&#10;them&#9;FILE&#9;file://C:/Users/davi_/OneDrive/Bird/src/components/staff/awards/components/ThemeList.vue&#10;Deta&#9;FILE&#9;file://C:/Users/davi_/OneDrive/Bird/src/components/staff/awards/components/QuestionDetails.vue&#10;theme&#9;FILE&#9;file://C:/Users/davi_/OneDrive/Bird/src/components/staff/awards/components/ThemeHome.vue&#10;fireba&#9;FILE&#9;file://C:/Users/davi_/OneDrive/Bird/src/modules/firebase.js&#10;new q&#9;null&#9;null&#10;th&#9;FILE&#9;file://C:/Users/davi_/OneDrive/Bird/src/components/staff/awards/components/ThemeNew.vue&#10;qu&#9;FILE&#9;file://C:/Users/davi_/OneDrive/Bird/src/components/staff/awards/components/QuestionTable.vue&#10;t&#9;FILE&#9;file://C:/Users/davi_/OneDrive/Bird/src/components/staff/awards/components/ThemeNew.vue&#10;new&#9;FILE&#9;file://C:/Users/davi_/OneDrive/Bird/src/components/staff/awards/components/ThemeNew.vue&#10;air&#9;FILE&#9;file://C:/Users/davi_/OneDrive/Bird/src/components/staff/fleet/views/Aircrafts.vue&#10;edi&#9;FILE&#9;file://C:/Users/davi_/OneDrive/Bird/src/components/staff/fleet/component/AircraftEditForm.vue&#10;aircra&#9;FILE&#9;file://C:/Users/davi_/OneDrive/Bird/src/components/staff/fleet/component/AircraftGeneral.vue&#10;Aircr&#9;FILE&#9;file://C:/Users/davi_/OneDrive/Bird/src/components/staff/fleet/views/Aircrafts.vue&#10;edit&#9;FILE&#9;file://C:/Users/davi_/OneDrive/Bird/src/components/staff/fleet/component/AircraftEditForm.vue&#10;gener&#9;FILE&#9;file://C:/Users/davi_/OneDrive/Bird/src/modules/generalSelected.js&#10;table&#9;FILE&#9;file://C:/Users/davi_/OneDrive/Bird/src/components/staff/fleet/component/AircrafsTable.vue&#10;Airc&#9;FILE&#9;file://C:/Users/davi_/OneDrive/Bird/src/components/staff/fleet/component/AircraftNewForm.vue&#10;ro&#9;FILE&#9;file://C:/Users/davi_/OneDrive/Bird/src/router.js&#10;termin&#9;ACTION&#9;ActivateTerminalToolWindow&#10;rou&#9;FILE&#9;file://C:/Users/davi_/OneDrive/Bird/src/router.js&#10;termina&#9;ACTION&#9;ActivateTerminalToolWindow" />
+    <property name="js-jscs-nodeInterpreter" value="C:\Program Files\Node\node.exe" />
+    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.JavaScript" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\davi_\OneDrive\Bird\src\components\staff" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="CodeceptionConfigurationType" factoryName="Codeception">
+      <PhpTestRunnerSettings />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavaScriptTestRunnerJest" factoryName="Jest">
+      <node-interpreter value="project" />
+      <working-dir value="" />
+      <envs />
+      <scope-kind value="ALL" />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavaScriptTestRunnerProtractor" factoryName="Protractor">
+      <config-file value="" />
+      <node-interpreter value="project" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
+      <method />
+    </configuration>
+    <configuration default="true" type="NodeJSConfigurationType" factoryName="Node.js" path-to-node="project" working-dir="">
+      <method />
+    </configuration>
+    <configuration default="true" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
+      <TestRunner />
+      <method />
+    </configuration>
+    <configuration default="true" type="PhpBehatConfigurationType" factoryName="Behat">
+      <BehatRunner />
+      <method />
+    </configuration>
+    <configuration default="true" type="PhpLocalRunConfigurationType" factoryName="PHP Console">
+      <method />
+    </configuration>
+    <configuration default="true" type="PhpSpecConfigurationType" factoryName="PHPSpec">
+      <PhpTestRunnerSettings />
+      <method />
+    </configuration>
+    <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <gulpfile />
+      <tasks />
+      <arguments />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="js.build_tools.npm" factoryName="npm">
+      <command value="run" />
+      <scripts />
+      <node-interpreter value="project" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="mocha-javascript-test-runner" factoryName="Mocha">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <working-directory />
+      <pass-parent-env>true</pass-parent-env>
+      <envs />
+      <ui />
+      <extra-mocha-options />
+      <test-kind>DIRECTORY</test-kind>
+      <test-directory />
+      <recursive>false</recursive>
+      <method />
+    </configuration>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false">
+    <option name="remove_strategy" value="false" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="687cbc3d-de49-48b2-abe0-974deb1756e7" name="Default" comment="" />
+      <created>1492660230864</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1492660230864</updated>
+      <workItem from="1492660235830" duration="120000" />
+      <workItem from="1492660426748" duration="1656000" />
+      <workItem from="1492662402908" duration="666000" />
+      <workItem from="1492663144653" duration="1016000" />
+      <workItem from="1492664304180" duration="34000" />
+      <workItem from="1492664368486" duration="5000" />
+      <workItem from="1492664621667" duration="75000" />
+      <workItem from="1492664829075" duration="464000" />
+      <workItem from="1492665325183" duration="358000" />
+      <workItem from="1492741069518" duration="15537000" />
+      <workItem from="1492883730366" duration="9215000" />
+      <workItem from="1492900722844" duration="5391000" />
+      <workItem from="1492909361858" duration="4423000" />
+      <workItem from="1492967628833" duration="15105000" />
+      <workItem from="1493010952364" duration="36000" />
+      <workItem from="1493042005306" duration="1611000" />
+      <workItem from="1493065226286" duration="615000" />
+      <workItem from="1493242212671" duration="843000" />
+      <workItem from="1493317370061" duration="2933000" />
+      <workItem from="1493334927426" duration="1874000" />
+      <workItem from="1493390319120" duration="4102000" />
+      <workItem from="1493410245475" duration="122000" />
+      <workItem from="1493415814856" duration="5890000" />
+      <workItem from="1493439530089" duration="8663000" />
+      <workItem from="1493489913572" duration="1699000" />
+      <workItem from="1493494960550" duration="31590000" />
+      <workItem from="1493536077816" duration="5376000" />
+      <workItem from="1493575029831" duration="751000" />
+      <workItem from="1493582486693" duration="7287000" />
+      <workItem from="1493594877949" duration="25068000" />
+      <workItem from="1493661864882" duration="13250000" />
+      <workItem from="1493677772110" duration="26273000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="192265000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <layout>
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21010248" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24132492" sideWeight="0.5058565" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23659305" sideWeight="0.4941435" order="8" side_tool="false" content_ui="tabs" x="0" y="23" width="1366" height="705" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Command Line Tools Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329653" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="TypeScript" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24963397" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329653" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="processedProjectFiles" value="true" />
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager />
+    <watches-manager />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/components/staff/fleet/views/StaffFleet.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-519">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/modules/piloto.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/modules/token.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="32" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/modules/store.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" column="0" lean-forward="true" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/modules/fleet.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="124" column="0" lean-forward="true" selection-start-line="124" selection-start-column="0" selection-end-line="124" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/modules/generalSelected.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="9" column="2" lean-forward="false" selection-start-line="9" selection-start-column="2" selection-end-line="9" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dist/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="49" lean-forward="false" selection-start-line="0" selection-start-column="49" selection-end-line="0" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/staff/fleet/component/AircraftGeneral.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="16" lean-forward="false" selection-start-line="3" selection-start-column="16" selection-end-line="10" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="4" lean-forward="false" selection-start-line="8" selection-start-column="4" selection-end-line="8" selection-end-column="68" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/staff/fleet/views/Aircrafts.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1836">
+          <caret line="112" column="8" lean-forward="false" selection-start-line="112" selection-start-column="8" selection-end-line="112" selection-end-column="85" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/staff/fleet/component/AircraftEditForm.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2244">
+          <caret line="132" column="8" lean-forward="false" selection-start-line="132" selection-start-column="8" selection-end-line="132" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/functions/node_modules/firebase-admin/lib/index.d.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2761">
+          <caret line="331" column="15" lean-forward="false" selection-start-line="331" selection-start-column="15" selection-end-line="331" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/functions/node_modules/firebase-functions/lib/cloud-functions.d.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="561">
+          <caret line="33" column="20" lean-forward="false" selection-start-line="33" selection-start-column="20" selection-end-line="33" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/functions/node_modules/firebase-functions/lib/providers/database.d.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="27" lean-forward="true" selection-start-line="0" selection-start-column="27" selection-end-line="0" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/functions/node_modules/firebase-functions/lib/index.d.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="42" lean-forward="false" selection-start-line="2" selection-start-column="42" selection-end-line="2" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/functions/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="27" column="0" lean-forward="false" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="20" column="20" lean-forward="false" selection-start-line="20" selection-start-column="20" selection-end-line="20" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="71" lean-forward="false" selection-start-line="9" selection-start-column="71" selection-end-line="9" selection-end-column="71" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="26" column="16" lean-forward="false" selection-start-line="26" selection-start-column="16" selection-end-line="26" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/App.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="19" column="5" lean-forward="false" selection-start-line="19" selection-start-column="5" selection-end-line="19" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/staff/awards/view/Exams.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="24" column="41" lean-forward="false" selection-start-line="24" selection-start-column="41" selection-end-line="24" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/staff/awards/view/Themes.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="24" column="41" lean-forward="false" selection-start-line="24" selection-start-column="41" selection-end-line="24" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/staff/awards/components/ExamHome.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="46" lean-forward="false" selection-start-line="3" selection-start-column="46" selection-end-line="3" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="uml://JavaScript-modules-diagram/C:/Users/davi_/OneDrive/Bird/src/components/staff/awards/components/ThemeList.vue">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>JavaScript-modules-diagram</ID>
+          <OriginalElement>$PROJECT_DIR$/src/components/staff/awards/components/ThemeList.vue</OriginalElement>
+          <nodes>
+            <node x="" y="">$PROJECT_DIR$/src/components/staff/awards/components/ThemeList.vue#db#971;</node>
+            <node x="" y="">$PROJECT_DIR$/src/modules/firebase.js</node>
+          </nodes>
+          <notes />
+          <edges />
+          <settings layout="Hierarchic Group" zoom="1.0" x="131.0" y="44.0" />
+          <SelectedNodes />
+          <Categories>
+            <Category>All</Category>
+          </Categories>
+          <SCOPE>All</SCOPE>
+          <VISIBILITY>Details</VISIBILITY>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/staff/awards/view/School.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="19" lean-forward="false" selection-start-line="15" selection-start-column="19" selection-end-line="15" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/router.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="125" column="44" lean-forward="true" selection-start-line="125" selection-start-column="44" selection-end-line="125" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/staff/awards/components/SubjectHome.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-9">
+          <caret line="19" column="17" lean-forward="false" selection-start-line="19" selection-start-column="17" selection-end-line="19" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/staff/awards/components/AwardNew.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="77" column="33" lean-forward="false" selection-start-line="77" selection-start-column="33" selection-end-line="77" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/staff/awards/components/SubjectList.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-638">
+          <caret line="49" column="25" lean-forward="false" selection-start-line="49" selection-start-column="25" selection-end-line="49" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/staff/awards/components/SubjectNew.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="55" column="10" lean-forward="false" selection-start-line="55" selection-start-column="10" selection-end-line="55" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/staff/awards/components/SubjectStats.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-136">
+          <caret line="19" column="0" lean-forward="true" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Staff.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-187">
+          <caret line="13" column="38" lean-forward="false" selection-start-line="13" selection-start-column="38" selection-end-line="13" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/staff/awards/components/QuestionStats.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="98" column="11" lean-forward="true" selection-start-line="98" selection-start-column="11" selection-end-line="98" selection-end-column="11" />
+          <folding>
+            <element signature="n#style#0;n#donut-chart#0;n#div#1;n#div#0;n#div#0;n#div#0;n#template#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#donut-chart#0;n#div#1;n#div#1;n#div#0;n#template#0;n#!!top" expanded="false" />
+            <element signature="e#2607#2654#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/staff/awards/components/QuestionHome.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="51" lean-forward="false" selection-start-line="3" selection-start-column="51" selection-end-line="3" selection-end-column="51" />
+          <folding>
+            <element signature="e#519#566#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/staff/awards/components/AwardHome.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="45" lean-forward="false" selection-start-line="8" selection-start-column="45" selection-end-line="8" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/staff/awards/view/Awads.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/modules/firebaseStorage.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="22" lean-forward="false" selection-start-line="9" selection-start-column="22" selection-end-line="9" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/quasar-framework/src/vue-components/uploader/Uploader.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="160">
+          <caret line="136" column="25" lean-forward="false" selection-start-line="136" selection-start-column="25" selection-end-line="136" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dist/js/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="0" column="59240" lean-forward="false" selection-start-line="0" selection-start-column="59240" selection-end-line="0" selection-end-column="59240" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/staff/awards/components/QuestionNew.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="212">
+          <caret line="91" column="2" lean-forward="false" selection-start-line="91" selection-start-column="2" selection-end-line="92" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/staff/awards/components/QuestionTable.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="177">
+          <caret line="26" column="0" lean-forward="false" selection-start-line="26" selection-start-column="0" selection-end-line="28" selection-end-column="56" />
+          <folding>
+            <element signature="e#1976#2110#0" expanded="false" />
+            <element signature="e#2273#2329#0" expanded="false" />
+            <element signature="e#2341#2487#0" expanded="false" />
+            <element signature="e#2489#2629#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/staff/awards/view/Questions.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-221">
+          <caret line="17" column="59" lean-forward="false" selection-start-line="17" selection-start-column="59" selection-end-line="17" selection-end-column="59" />
+          <folding>
+            <element signature="e#896#951#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/staff/awards/components/QuestionDetails.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="178">
+          <caret line="97" column="22" lean-forward="false" selection-start-line="97" selection-start-column="22" selection-end-line="97" selection-end-column="22" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#2;n#div#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="e#1618#1649#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/firebase-debug.log">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-34">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database.rules.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="19" lean-forward="false" selection-start-line="3" selection-start-column="19" selection-end-line="3" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/firebase.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="0" lean-forward="true" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/docker-compose.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.firebaserc">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/functions/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="17" lean-forward="true" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/functions/config.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/modules/firebase.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="17" lean-forward="false" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>
