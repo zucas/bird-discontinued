@@ -1,5 +1,8 @@
 <template>
     <div>
+    
+        <div>
+        </div>
         <div class="row mobile-hide " v-if="questionsArray.length > 0">
             <div class="card">
                 <div class="toolbar">
@@ -11,19 +14,15 @@
                     </button>
                 </div>
                 <div class="card-content" >
-                    <donut-chart
+                <donut-chart
                             id="usedSubjects"
                             :data="parsedSubjects"
                             style="color: white"
                             colors='[ "#ff1744",
                                       "#3d5afe",
-                                      "#1de9b6", 
-                                      "#76ff03", 
-                                      "#37474f", 
-                                      "#ff3d00", 
-                                      "#00e5ff" ]'
+                                      "#1de9b6", "#76ff03", "#37474f", "#ff3d00", "#00e5ff" ]'
                             resize="true">
-                    </donut-chart>
+                    </donut-chart>                    
                 </div>
             </div>
             <div class="space"></div>
@@ -37,49 +36,39 @@
                     </button>
                 </div>
                 <div class="card-content">
-                <donut-chart
+                    <donut-chart
                             id="alternativeCorrect"
                             :data="numberOfCorrect"
                             xkey="label"
                             colors='[ "#ff1744", "#3d5afe", "#1de9b6", "#76ff03", "#37474f" ]'
                             resize="true">
-                    </donut-chart>                    
+                    </donut-chart>
                 </div>
             </div>
         </div>
 
-            <div class="card mobile-only">
-                <div class="card-title">
-                    Alternative Correct
-                </div>
-                <div class="card-content">
-                    <donut-chart
-                            id="totalQuestionsSM"
-                            :data="parsedTotalQuestions"
-                            style="color: white"
-                            resize="true">
-                    </donut-chart>
-                </div>
+        <div class="card mobile-only">
+            <div class="card-title">
+                Alternative Correct
             </div>
-            <div class="card mobile-only">
-                <div class="card-title">
-                    Used Subjects
-                </div>
-                <div class="card-content">
-                    <donut-chart
-                            id="usedSubjectsSM"
-                            :data="numberOfCorrect"
-                            xkey="label"
-                            colors='[ 
-                                "#ff1744", 
-                                "#3d5afe", 
-                                "#1de9b6", 
-                                "#76ff03", 
-                                "#37474f" ]'
-                            resize="true">
-                    </donut-chart>
-                </div>
+            <div class="card-content">
+                
             </div>
+        </div>
+        <div class="card mobile-only">
+            <div class="card-title">
+                Used Subjects
+            </div>
+            <div class="card-content">
+                <donut-chart
+                        id="usedSubjectsSM"
+                        :data="numberOfCorrect"
+                        xkey="label"
+                        colors='[ "#ff1744", "#3d5afe", "#1de9b6", "#76ff03", "#37474f" ]'
+                        resize="true">
+                </donut-chart>
+            </div>
+        </div>
     </div>
 </template>
 
@@ -88,7 +77,8 @@
   const rootRef = db.ref()
   const subjectRef = rootRef.child('school/subjects')
   const questionsRef = rootRef.child('school/questions')
-  import {DonutChart} from 'vue-morris'
+  import {BarChart, DonutChart} from 'vue-morris'
+  import {Utils} from 'quasar'
   export default {
     firebase () {
       return {
@@ -98,6 +88,8 @@
     },
     data () {
       return {}
+    },
+    mounted () {
     },
     computed: {
       parsedSubjects: function () {
@@ -111,7 +103,9 @@
       numberOfCorrect: function () {
         let list = []
         let finalList = []
-        list.push(...this.questionsArray.map(q => q.ta))
+        for (let i = 0; i < 5; i++) {
+          list.push(Utils.filter(i.toString(), {field: 'ta', list: this.questionsArray}))
+        }
         for (let i = 0; i < 5; i++) {
           finalList.push(list[i].length)
         }
@@ -124,7 +118,7 @@
       }
     },
     components: {
-      DonutChart
+      BarChart, DonutChart
     }
   }
 </script>
