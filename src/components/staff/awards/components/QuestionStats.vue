@@ -99,8 +99,6 @@
     data () {
       return {}
     },
-    mounted () {
-    },
     computed: {
       parsedSubjects: function () {
         return this.subjectArray.map(subject => {
