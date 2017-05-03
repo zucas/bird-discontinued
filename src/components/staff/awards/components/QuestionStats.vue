@@ -12,10 +12,16 @@
                 </div>
                 <div class="card-content" >
                     <donut-chart
-                            id="alternativeCorrect"
-                            :data="numberOfCorrect"
-                            xkey="label"
-                            colors='[ "#ff1744", "#3d5afe", "#1de9b6", "#76ff03", "#37474f" ]'
+                            id="usedSubjects"
+                            :data="parsedSubjects"
+                            style="color: white"
+                            colors='[ "#ff1744",
+                                      "#3d5afe",
+                                      "#1de9b6", 
+                                      "#76ff03", 
+                                      "#37474f", 
+                                      "#ff3d00", 
+                                      "#00e5ff" ]'
                             resize="true">
                     </donut-chart>
                 </div>
@@ -31,15 +37,13 @@
                     </button>
                 </div>
                 <div class="card-content">
-                    <donut-chart
-                            id="usedSubjects"
-                            :data="parsedSubjects"
-                            style="color: white"
-                            colors='[ "#ff1744",
-                                      "#3d5afe",
-                                      "#1de9b6", "#76ff03", "#37474f", "#ff3d00", "#00e5ff" ]'
+                <donut-chart
+                            id="alternativeCorrect"
+                            :data="numberOfCorrect"
+                            xkey="label"
+                            colors='[ "#ff1744", "#3d5afe", "#1de9b6", "#76ff03", "#37474f" ]'
                             resize="true">
-                    </donut-chart>
+                    </donut-chart>                    
                 </div>
             </div>
         </div>
@@ -66,7 +70,12 @@
                             id="usedSubjectsSM"
                             :data="numberOfCorrect"
                             xkey="label"
-                            colors='[ "#ff1744", "#3d5afe", "#1de9b6", "#76ff03", "#37474f" ]'
+                            colors='[ 
+                                "#ff1744", 
+                                "#3d5afe", 
+                                "#1de9b6", 
+                                "#76ff03", 
+                                "#37474f" ]'
                             resize="true">
                     </donut-chart>
                 </div>
@@ -79,8 +88,7 @@
   const rootRef = db.ref()
   const subjectRef = rootRef.child('school/subjects')
   const questionsRef = rootRef.child('school/questions')
-  import {BarChart, DonutChart} from 'vue-morris'
-  import {Utils} from 'quasar'
+  import {DonutChart} from 'vue-morris'
   export default {
     firebase () {
       return {
@@ -89,16 +97,7 @@
       }
     },
     data () {
-      return {
-        count: 1,
-        donutData: [
-          {label: 'RVSM', value: 1},
-          {label: 'TEST', value: 0},
-          {label: 'Capitais', value: 2}
-        ]
-      }
-    },
-    mounted () {
+      return {}
     },
     computed: {
       parsedSubjects: function () {
@@ -112,9 +111,7 @@
       numberOfCorrect: function () {
         let list = []
         let finalList = []
-        for (let i = 0; i < 5; i++) {
-          list.push(Utils.filter(i.toString(), {field: 'ta', list: this.questionsArray}))
-        }
+        list.push(...this.questionsArray.map(q => q.ta))
         for (let i = 0; i < 5; i++) {
           finalList.push(list[i].length)
         }
@@ -127,7 +124,7 @@
       }
     },
     components: {
-      BarChart, DonutChart
+      DonutChart
     }
   }
 </script>

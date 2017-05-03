@@ -12,3 +12,4 @@ thumbs.db
 !.gitkeep
 !/src/modules/firebase.js
 firebase-debug.log
+.idea/workspace.xml
