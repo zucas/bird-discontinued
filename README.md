@@ -1,6 +1,7 @@
-# Quasar App
+# BIRD Framework
 
-> A Quasar project
+> Uma opção nova e moderna para construção de VA's. 
+> Baseado em JS, VUE & Firebird. 
 
 ## Build Setup
 
