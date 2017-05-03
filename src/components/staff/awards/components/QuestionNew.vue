@@ -4,7 +4,20 @@
             New Question
         </h3>
         <div class="list">
-
+            <div class="item multiple-lines">
+                <div class="item-content">
+                    <div class="floating-label">
+            <span class="label inline bg-warning text-white">
+                Subject
+            </span>
+                        <q-autocomplete v-model="question.subject" @search="search">
+                            <input v-model="question.subject" class="full-width text-center"
+                                   placeholder="Type the name of Subject."/>
+                        </q-autocomplete>
+                    </div>
+                </div>
+            </div>
+            <hr>
             <div class="item multiple-lines">
                 <div class="item-content">
                     <div class="floating-label">
@@ -15,20 +28,6 @@
                                 class="full-width text-center"
                                 v-model="question.statement"
                         >
-                    </div>
-                </div>
-            </div>
-            <hr>
-            <div class="item multiple-lines">
-                <div class="item-content">
-                    <div class="floating-label">
-            <span class="label inline bg-primary text-white">
-
-Subject        </span>
-                        <q-autocomplete v-model="question.subject" @search="search">
-                            <input v-model="question.subject" class="full-width text-center"
-                                   placeholder="Type the name of Subject."/>
-                        </q-autocomplete>
                     </div>
                 </div>
             </div>

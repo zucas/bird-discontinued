@@ -10,3 +10,5 @@ cordova/platforms
 cordova/plugins
 thumbs.db
 !.gitkeep
+!/src/modules/firebase.js
+firebase-debug.log

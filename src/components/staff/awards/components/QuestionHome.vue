@@ -1,6 +1,7 @@
 <template>
     <div>
-        <div class="row">
+        <div class="row" v-if="questionsArray.length > 0">
+
             <div class="card text-center bg-primary text-white">
                 <div class="card-title">
                     <h4>{{ questionsSize }}</h4>
@@ -9,6 +10,13 @@
                     Total Questions
                 </div>
             </div>
+        </div>
+        <div class="row" v-else>
+            <div class="notice warning">
+                You don't created any questions. Click <button class="positive" @click="addQuestion"> HERE </button> tou create your fist one!
+            </div>
+
+
         </div>
 
         <question-table @showDetails="$emit('showDetails')"></question-table>
@@ -35,17 +43,8 @@
       return {}
     },
     methods: {
-      totalClick: function () {
-        this.$emit('showTable')
-      },
-      numberOfCorrect: function (i) {
-        let count = 0
-        this.questionsArray.forEach(question => {
-          if (parseInt(question.ta) === i) {
-            count++
-          }
-        })
-        return count
+      addQuestion: function () {
+        this.$emit('newQuestion')
       }
     },
     computed: {

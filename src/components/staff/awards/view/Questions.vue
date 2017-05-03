@@ -3,7 +3,7 @@
   <div>
     <!-- your content -->
     <div class="layout-padding">
-      <router-view @showTable="showTable" @showDetails="$refs.editQuestion.open()"></router-view>
+      <router-view @newQuestion="$refs.newQuestion.open()" @showDetails="$refs.editQuestion.open()"></router-view>
     </div>
     <button
             class="negative circular absolute-bottom-right"

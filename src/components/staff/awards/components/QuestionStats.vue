@@ -1,21 +1,21 @@
 <template>
     <div>
-        <div class="row mobile-hide">
+        <div class="row mobile-hide " v-if="questionsArray.length > 0">
             <div class="card">
                 <div class="toolbar">
                     <q-toolbar-title :padding="1">
                         Used Subjects
                     </q-toolbar-title>
                     <button>
-                        <i>more_vert</i>
+                        <i>close</i>
                     </button>
                 </div>
                 <div class="card-content" >
                     <donut-chart
-                            id="usedSubjects"
-                            :data="parsedSubjects"
-                            style="color: white"
-                            colors='[ "#ff1744", "#3d5afe", "#1de9b6", "#76ff03", "#37474f", "#ff3d00", "#00e5ff" ]'
+                            id="alternativeCorrect"
+                            :data="numberOfCorrect"
+                            xkey="label"
+                            colors='[ "#ff1744", "#3d5afe", "#1de9b6", "#76ff03", "#37474f" ]'
                             resize="true">
                     </donut-chart>
                 </div>
@@ -27,15 +27,17 @@
                         Alternative Correct
                     </q-toolbar-title>
                     <button>
-                        <i>more_vert</i>
+                        <i>close</i>
                     </button>
                 </div>
                 <div class="card-content">
                     <donut-chart
-                            id="alternativeCorrect"
-                            :data="numberOfCorrect"
-                            xkey="label"
-                            colors='[ "#ff1744", "#3d5afe", "#1de9b6", "#76ff03", "#37474f" ]'
+                            id="usedSubjects"
+                            :data="parsedSubjects"
+                            style="color: white"
+                            colors='[ "#ff1744",
+                                      "#3d5afe",
+                                      "#1de9b6", "#76ff03", "#37474f", "#ff3d00", "#00e5ff" ]'
                             resize="true">
                     </donut-chart>
                 </div>
@@ -44,7 +46,7 @@
 
             <div class="card mobile-only">
                 <div class="card-title">
-                    Used Subjects
+                    Alternative Correct
                 </div>
                 <div class="card-content">
                     <donut-chart
@@ -57,7 +59,7 @@
             </div>
             <div class="card mobile-only">
                 <div class="card-title">
-                    Alternative Correct
+                    Used Subjects
                 </div>
                 <div class="card-content">
                     <donut-chart
@@ -97,7 +99,6 @@
       }
     },
     mounted () {
-      this.numberOfCorrect
     },
     computed: {
       parsedSubjects: function () {
@@ -105,14 +106,6 @@
           return {
             label: subject.name,
             value: subject.totalQuestions
-          }
-        })
-      },
-      parsedTotalUsages: function () {
-        return this.subjectArray.map(subject => {
-          return {
-            label: subject.name,
-            value: subject.usagesNumber
           }
         })
       },

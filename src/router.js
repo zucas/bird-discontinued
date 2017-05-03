@@ -1,6 +1,8 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Staff from './components/Staff.vue'
+// HOME
+import Home from '../src/components/staff/home/index.vue'
 // CATEGORY FLEET
 import FleetStaff from './components/staff/fleet/views/StaffFleet.vue'
 import FleetHome from './components/staff/fleet/component/FleetHome.vue'
@@ -59,7 +61,9 @@ export default new VueRouter({
     {
       path: '/staff',
       component: Staff,
+
       children: [
+        { path: '/', component: Home },
         {
           path: 'fleet',
           component: FleetStaff,
