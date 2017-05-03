@@ -1,19 +1,20 @@
 <template>
     <div>
-        <h5> {{ questionSelected.statement }} </h5>
+        <h5> {{ question.statement }} </h5>
         <div class="list item-delimiter">
-            <div class="item" :class="isCorrect(i)" v-for=" (alternative,i) in questionSelected.alternatives">
+            <div class="item" :class="isCorrect(i)" v-for=" (alternative,i) in question.alternatives">
                 <div class="item-content">
                     {{ alternative }}
                 </div>
             </div>
         </div>
-        <p class="caption">Image Uploaded</p>
-        <div class="row">
-            <img :src="link" class="responsive">
-        </div>
-
-        <p class="caption">Subject: {{ questionSelected.subject }}  </p>
+        <template v-if="question.hasImage">
+            <p class="caption">Image Uploaded</p>
+            <div class="row">
+                <img :src="link" class="responsive">
+            </div>
+        </template>
+        <p class="caption">Subject: {{ question.subject }}  </p>
         <div class="row">
             <div class="card text-center bg-primary text-white" style="padding-bottom: 20px;">
                 <div class="card-title no-padding">
@@ -52,12 +53,8 @@
   export default {
     firebase () {
       return {
-        questionSelected3: {
+        questionObjRef: {
           source: db.ref('school/questions/' + this.getGeneralSelected()['.key']),
-          asObject: true
-        },
-        questionSelected2: {
-          source: db.ref('school/questions/' + this.key),
           asObject: true
         }
       }
@@ -65,38 +62,28 @@
     data () {
       return {
         link: '',
-        key: ''
+        question: {}
       }
     },
     methods: {
       ...mapGetters(['getGeneralSelected']),
-      detroyMe: function () {
-        console.log('fui chamado')
+      start: function () {
+        this.question = this.getGeneralSelected()
+        if (this.question.hasImage) {
+          this.urlImg()
+        }
       },
       urlImg: function () {
-        console.log(this.getGeneralSelected()['.key'])
         Loading.show()
-        this.link = ''
-        this.key = this.getGeneralSelected()['.key']
-        storageRef.child('school/questions/images/' + this.getGeneralSelected().imgLink).getDownloadURL().then(url => {
+        storageRef.child(this.getGeneralSelected().imgLink).getDownloadURL().then(url => {
           this.link = url
           Loading.hide()
-          return url
-        }).then(error => {
+        }).then(() => {
           Loading.hide()
-          return error
         })
       },
       isCorrect: function (i) {
-        return i === parseInt(this.questionSelected.ta) ? 'bg-positive text-white' : ''
-      }
-    },
-    destroyed () {
-      console.log('destruido')
-    },
-    computed: {
-      questionSelected: function () {
-        return this.getGeneralSelected()
+        return i === parseInt(this.question.ta) ? 'bg-positive text-white' : ''
       }
     }
   }

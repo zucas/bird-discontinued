@@ -15,8 +15,8 @@
     <q-modal ref="newQuestion" :content-css="{padding: '50px', minWidth: '50vw'}">
       <new-question @closeModal="$refs.newQuestion.close()"></new-question>
     </q-modal>
-    <q-modal ref="editQuestion" @open="$refs.details.urlImg()" :content-css="{padding: '50px', minWidth: '50vw', maxWidth:'80%'}">
-      <question-details :key="key" ref="details" @closeModal="$refs.editQuestion.close()"></question-details>
+    <q-modal ref="editQuestion" @open="$refs.details.start()" :content-css="{padding: '50px', minWidth: '50vw', maxWidth:'80%'}">
+      <question-details ref="details" @closeModal="$refs.editQuestion.close()"></question-details>
     </q-modal>
   </div>
 </template>

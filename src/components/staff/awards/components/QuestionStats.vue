@@ -2,28 +2,37 @@
     <div>
         <div class="row mobile-hide">
             <div class="card">
-                <div class="card-title">
-                    Used Subjects
+                <div class="toolbar">
+                    <q-toolbar-title :padding="1">
+                        Used Subjects
+                    </q-toolbar-title>
+                    <button>
+                        <i>more_vert</i>
+                    </button>
                 </div>
-                <div class="card-content">
+                <div class="card-content" >
                     <donut-chart
-                            id="totalQuestions"
-                            :data="parsedTotalQuestions"
+                            id="usedSubjects"
+                            :data="parsedSubjects"
                             style="color: white"
                             colors='[ "#ff1744", "#3d5afe", "#1de9b6", "#76ff03", "#37474f", "#ff3d00", "#00e5ff" ]'
                             resize="true">
                     </donut-chart>
                 </div>
             </div>
-            <div class="spcace"></div>
-            <div class="spcace"></div>
+            <div class="space"></div>
             <div class="card">
-                <div class="card-title">
-                    Alternative Correct
+                <div class="toolbar">
+                    <q-toolbar-title :padding="1">
+                        Alternative Correct
+                    </q-toolbar-title>
+                    <button>
+                        <i>more_vert</i>
+                    </button>
                 </div>
                 <div class="card-content">
                     <donut-chart
-                            id="usedSubjects"
+                            id="alternativeCorrect"
                             :data="numberOfCorrect"
                             xkey="label"
                             colors='[ "#ff1744", "#3d5afe", "#1de9b6", "#76ff03", "#37474f" ]'
@@ -91,7 +100,7 @@
       this.numberOfCorrect
     },
     computed: {
-      parsedTotalQuestions: function () {
+      parsedSubjects: function () {
         return this.subjectArray.map(subject => {
           return {
             label: subject.name,

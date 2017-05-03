@@ -42,7 +42,6 @@ import ThemeList from './components/staff/awards/components/SubjectList.vue'
 Vue.use(VueRouter)
 
 export default new VueRouter({
-  mode: 'history',
   /*
    * NOTE! VueRouter "history" mode DOESN'T works for Cordova builds,
    * it is only to be used only for websites.
@@ -58,7 +57,7 @@ export default new VueRouter({
   routes: [
     {path: '/', component: Staff}, // Default
     {
-      path: '/Staff',
+      path: '/staff',
       component: Staff,
       children: [
         {

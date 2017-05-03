@@ -106,6 +106,7 @@ Subject        </span>
         url: '',
         equipament: {},
         question: {
+          hasImage: false,
           statement: '',
           subject: '',
           alternatives: ['', '', '', '', ''],
@@ -133,12 +134,14 @@ Subject        </span>
     methods: {
       addFile: function (files) {
         this.file = files[0]
-        console.log(this.file)
+        this.question.hasImage = true
       },
       createQuestion: function () {
-        let uid = Utils.uid()
-        uploadRef.child('school/questions/images/' + uid).put(this.file)
-        this.question.imgLink = uid
+        if (this.question.hasImage) {
+          let uid = Utils.uid()
+          uploadRef.child('school/questions/images/' + uid).put(this.file)
+          this.question.imgLink = 'school/questions/images/' + uid
+        }
         questionsRef.push(this.question)
         Toast.create.positive({
           html: 'Question has been created!'
