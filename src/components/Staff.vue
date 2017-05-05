@@ -6,7 +6,7 @@
         <i>menu</i>
       </button>
         <q-toolbar-title>
-            LATAM Virtual - Staff Center
+            LATAM Virtual - Staff Center - {{ $q.version }}
          </q-toolbar-title>
     </div>
 

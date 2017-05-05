@@ -61,6 +61,7 @@
 
 <script>
   import NewSubject from '../components/SubjectNew.vue'
+  import SubjectList from '../components/SubjectList.vue'
   export default {
     data () {
       return {}
@@ -77,7 +78,7 @@
       }
     },
     components: {
-      NewSubject
+      NewSubject, SubjectList
     }
   }
 </script>

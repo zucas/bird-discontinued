@@ -3,11 +3,11 @@
         <div class="row" v-if="questionsArray.length > 0">
 
             <div class="card text-center bg-primary text-white">
-                <div class="card-title">
-                    <h4>{{ questionsSize }}</h4>
+                <div class="card-title no-padding">
+                    <h3>{{ questionsSize }}</h3>
                 </div>
-                <div class="card-content">
-                    Total Questions
+                <div class="card-content no-padding">
+                    <h5>Total Questions</h5>
                 </div>
             </div>
         </div>

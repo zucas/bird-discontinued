@@ -3,7 +3,13 @@
   <component name="ChangeListManager">
     <list default="true" id="687cbc3d-de49-48b2-abe0-974deb1756e7" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/Staff.vue" afterPath="$PROJECT_DIR$/src/components/Staff.vue" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/staff/awards/components/QuestionHome.vue" afterPath="$PROJECT_DIR$/src/components/staff/awards/components/QuestionHome.vue" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/staff/awards/components/QuestionStats.vue" afterPath="$PROJECT_DIR$/src/components/staff/awards/components/QuestionStats.vue" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/staff/awards/components/QuestionTable.vue" afterPath="$PROJECT_DIR$/src/components/staff/awards/components/QuestionTable.vue" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/staff/awards/view/Questions.vue" afterPath="$PROJECT_DIR$/src/components/staff/awards/view/Questions.vue" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/staff/awards/view/School.vue" afterPath="$PROJECT_DIR$/src/components/staff/awards/view/School.vue" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -21,11 +27,9 @@
       <file leaf-file-name="QuestionStats.vue" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/components/staff/awards/components/QuestionStats.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="57">
-              <caret line="125" column="7" lean-forward="false" selection-start-line="125" selection-start-column="7" selection-end-line="125" selection-end-column="7" />
-              <folding>
-                <element signature="n#style#0;n#donut-chart#0;n#div#1;n#div#2;n#div#0;n#div#0;n#template#0;n#!!top" expanded="true" />
-              </folding>
+            <state relative-caret-position="142">
+              <caret line="148" column="7" lean-forward="false" selection-start-line="148" selection-start-column="7" selection-end-line="148" selection-end-column="7" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -231,6 +235,7 @@
     </navigator>
     <panes>
       <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -353,12 +358,11 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/components/staff/awards" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../AC" />
     <property name="nodejs_interpreter_path" value="C:/Program Files/Node/node" />
     <property name="js.eslint.eslintPackage" value="" />
     <property name="SearchEverywhereHistoryKey" value="ter&#9;ACTION&#9;ActivateTerminalToolWindow&#10;Ques&#9;FILE&#9;file://C:/Users/davi_/OneDrive/Bird/src/components/staff/awards/components/QuestionStats.vue&#10;Staf&#9;FILE&#9;file://C:/Users/davi_/OneDrive/Bird/src/components/Staff.vue&#10;rout&#9;FILE&#9;file://C:/Users/davi_/OneDrive/Bird/src/router.js&#10;Questio&#9;FILE&#9;file://C:/Users/davi_/OneDrive/Bird/src/components/staff/awards/components/QuestionNew.vue&#10;term&#9;ACTION&#9;ActivateTerminalToolWindow&#10;Awa&#9;FILE&#9;file://C:/Users/davi_/OneDrive/Bird/src/components/staff/awards/components/AwardHome.vue&#10;Tabl&#9;FILE&#9;file://C:/Users/davi_/OneDrive/Bird/src/components/staff/awards/components/QuestionTable.vue&#10;Questi&#9;FILE&#9;file://C:/Users/davi_/OneDrive/Bird/src/components/staff/awards/view/Questions.vue&#10;qu&#9;FILE&#9;file://C:/Users/davi_/OneDrive/Bird/src/components/staff/awards/components/QuestionStats.vue&#10;Question&#9;FILE&#9;file://C:/Users/davi_/OneDrive/Bird/src/components/staff/awards/view/Questions.vue&#10;detail&#9;FILE&#9;file://C:/Users/davi_/OneDrive/Bird/src/components/staff/awards/components/QuestionDetails.vue&#10;mai&#9;FILE&#9;file://C:/Users/davi_/OneDrive/Bird/src/main.js&#10;app&#9;FILE&#9;file://C:/Users/davi_/OneDrive/Bird/dist/js/app.js&#10;deta&#9;FILE&#9;file://C:/Users/davi_/OneDrive/Bird/src/components/staff/awards/components/QuestionDetails.vue&#10;upl&#9;FILE&#9;file://C:/Users/davi_/OneDrive/Bird/node_modules/quasar-framework/src/vue-components/uploader/Uploader.vue&#10;uploader&#9;FILE&#9;file://C:/Users/davi_/OneDrive/Bird/node_modules/quasar-framework/src/vue-components/uploader/Uploader.vue&#10;fire&#9;FILE&#9;file://C:/Users/davi_/OneDrive/Bird/src/modules/firebase.js&#10;questio&#9;FILE&#9;file://C:/Users/davi_/OneDrive/Bird/src/components/staff/awards/components/QuestionNew.vue&#10;fireb&#9;FILE&#9;file://C:/Users/davi_/OneDrive/Bird/src/modules/firebase.js&#10;stat&#9;FILE&#9;file://C:/Users/davi_/OneDrive/Bird/src/components/staff/awards/components/QuestionStats.vue&#10;Staff&#9;FILE&#9;file://C:/Users/davi_/OneDrive/Bird/src/components/Staff.vue&#10;ques&#9;FILE&#9;file://C:/Users/davi_/OneDrive/Bird/src/components/staff/awards/components/QuestionNew.vue&#10;subj&#9;FILE&#9;file://C:/Users/davi_/OneDrive/Bird/src/components/staff/awards/components/SubjectList.vue&#10;sub&#9;FILE&#9;file://C:/Users/davi_/OneDrive/Bird/src/components/staff/awards/components/SubjectNew.vue&#10;route&#9;FILE&#9;file://C:/Users/davi_/OneDrive/Bird/src/router.js&#10;Award&#9;FILE&#9;file://C:/Users/davi_/OneDrive/Bird/src/components/staff/awards/components/AwardNew.vue&#10;Quest&#9;FILE&#9;file://C:/Users/davi_/OneDrive/Bird/src/components/staff/awards/components/QuestionNew.vue&#10;Exa&#9;FILE&#9;file://C:/Users/davi_/OneDrive/Bird/src/components/staff/awards/components/ExamHome.vue&#10;the&#9;FILE&#9;file://C:/Users/davi_/OneDrive/Bird/src/components/staff/awards/components/ThemeHome.vue&#10;App&#9;FILE&#9;file://C:/Users/davi_/OneDrive/Bird/src/App.vue&#10;them&#9;FILE&#9;file://C:/Users/davi_/OneDrive/Bird/src/components/staff/awards/components/ThemeList.vue&#10;Deta&#9;FILE&#9;file://C:/Users/davi_/OneDrive/Bird/src/components/staff/awards/components/QuestionDetails.vue&#10;theme&#9;FILE&#9;file://C:/Users/davi_/OneDrive/Bird/src/components/staff/awards/components/ThemeHome.vue&#10;fireba&#9;FILE&#9;file://C:/Users/davi_/OneDrive/Bird/src/modules/firebase.js&#10;new q&#9;null&#9;null&#10;th&#9;FILE&#9;file://C:/Users/davi_/OneDrive/Bird/src/components/staff/awards/components/ThemeNew.vue&#10;t&#9;FILE&#9;file://C:/Users/davi_/OneDrive/Bird/src/components/staff/awards/components/ThemeNew.vue&#10;new&#9;FILE&#9;file://C:/Users/davi_/OneDrive/Bird/src/components/staff/awards/components/ThemeNew.vue&#10;air&#9;FILE&#9;file://C:/Users/davi_/OneDrive/Bird/src/components/staff/fleet/views/Aircrafts.vue&#10;edi&#9;FILE&#9;file://C:/Users/davi_/OneDrive/Bird/src/components/staff/fleet/component/AircraftEditForm.vue&#10;aircra&#9;FILE&#9;file://C:/Users/davi_/OneDrive/Bird/src/components/staff/fleet/component/AircraftGeneral.vue&#10;Aircr&#9;FILE&#9;file://C:/Users/davi_/OneDrive/Bird/src/components/staff/fleet/views/Aircrafts.vue&#10;edit&#9;FILE&#9;file://C:/Users/davi_/OneDrive/Bird/src/components/staff/fleet/component/AircraftEditForm.vue&#10;gener&#9;FILE&#9;file://C:/Users/davi_/OneDrive/Bird/src/modules/generalSelected.js&#10;table&#9;FILE&#9;file://C:/Users/davi_/OneDrive/Bird/src/components/staff/fleet/component/AircrafsTable.vue&#10;Airc&#9;FILE&#9;file://C:/Users/davi_/OneDrive/Bird/src/components/staff/fleet/component/AircraftNewForm.vue&#10;ro&#9;FILE&#9;file://C:/Users/davi_/OneDrive/Bird/src/router.js&#10;termin&#9;ACTION&#9;ActivateTerminalToolWindow&#10;rou&#9;FILE&#9;file://C:/Users/davi_/OneDrive/Bird/src/router.js" />
@@ -501,6 +505,8 @@
       <workItem from="1493766919783" duration="1063000" />
       <workItem from="1493773249640" duration="16885000" />
       <workItem from="1493797651009" duration="355000" />
+      <workItem from="1493930304854" duration="89000" />
+      <workItem from="1493944285743" duration="162000" />
     </task>
     <task id="LOCAL-00001" summary="Corrigido problemas na exibição dos detalhes das questões.">
       <created>1493779595314</created>
@@ -520,7 +526,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="213391000" />
+    <option name="totallyTimeSpent" value="213642000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -529,13 +535,13 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329653" sideWeight="0.50732064" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329653" sideWeight="0.49267936" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329653" sideWeight="0.49267936" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.4274448" sideWeight="0.49121523" order="9" side_tool="false" content_ui="tabs" x="0" y="23" width="1366" height="705" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.4274448" sideWeight="0.49121523" order="9" side_tool="false" content_ui="tabs" x="0" y="23" width="1366" height="705" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329653" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -943,11 +949,9 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/staff/awards/components/QuestionStats.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="57">
-          <caret line="125" column="7" lean-forward="false" selection-start-line="125" selection-start-column="7" selection-end-line="125" selection-end-column="7" />
-          <folding>
-            <element signature="n#style#0;n#donut-chart#0;n#div#1;n#div#2;n#div#0;n#div#0;n#template#0;n#!!top" expanded="true" />
-          </folding>
+        <state relative-caret-position="142">
+          <caret line="148" column="7" lean-forward="false" selection-start-line="148" selection-start-column="7" selection-end-line="148" selection-end-column="7" />
+          <folding />
         </state>
       </provider>
     </entry>

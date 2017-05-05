@@ -10,10 +10,16 @@
             <span class="label inline bg-warning text-white">
                 Subject
             </span>
-                        <q-autocomplete v-model="question.subject" @search="search">
-                            <input v-model="question.subject" class="full-width text-center"
-                                   placeholder="Type the name of Subject."/>
+                        <q-autocomplete
+                        v-model="question.subject" 
+                        @search="search">
+                            <input v-model="question.subject" 
+                            @input="$v.question.subject.$touch()"
+                            class="full-width text-center"
+                                   placeholder="Type the name of Subject."
+                                    :class="{'has-error': $v.question.subject.$error}"/>                            
                         </q-autocomplete>
+                        <span v-if='$v.question.subject.$error'>Subject is required and must be two or more chars</span>
                     </div>
                 </div>
             </div>
@@ -27,7 +33,11 @@
                         <input
                                 class="full-width text-center"
                                 v-model="question.statement"
-                        >
+                                @input="$v.question.statement.$touch()"
+                                :class="{'has-error': $v.question.statement.$error}"/>                        
+                        <span v-if='$v.question.statement.$error'>
+                          Statement is required and must be two or more chars
+                        </span>
                     </div>
                 </div>
             </div>
@@ -42,7 +52,11 @@
                             <input
                                     class="full-width text-center"
                                     v-model="question.alternatives[i]"
-                            >
+                                    @input="$v.question.alternatives.$touch()"
+                                :class="{'has-error': $v.question.alternatives.$error}"/>
+                            <span v-if='$v.question.statement.$error'>
+                              All five alternatives are required
+                            </span>
                         </div>
                     </div>
                 </div>
@@ -55,8 +69,13 @@
                             class="full-width text-center"
                             type="list"
                             v-model="question.ta"
-                            :options="alternativeOptions">
+                            :options="alternativeOptions"
+                            @input="$v.question.ta.$touch()"
+                            :class="{'has-error': $v.question.ta.$error}"/>                        
                     </q-select>
+                            <span v-if='$v.question.statement.$error'>
+                              Correct Alternativ must be selected
+                            </span>
                 </div>
             </div>
         </div>
@@ -90,6 +109,7 @@
   import {Utils, Toast, LocalStorage} from 'quasar'
   import firebase from 'firebase'
   const uploadRef = firebase.storage().ref()
+  import { required, minLength } from 'vuelidate/lib/validators'
   export default {
     firebase () {
       return {
@@ -114,6 +134,19 @@
           hitRate: 0,
           imgLink: ''
         }
+      }
+    },
+    validations: {
+      question: {
+        statement: { required, minLength: minLength(2) },
+        subject: { required, minLength: minLength(2) },
+        alternatives: {
+          required,
+          $each: {
+            required
+          }
+        },
+        ta: { required }
       }
     },
     mounted () {
@@ -141,12 +174,19 @@
           uploadRef.child('school/questions/images/' + uid).put(this.file)
           this.question.imgLink = 'school/questions/images/' + uid
         }
-        questionsRef.push(this.question)
-        Toast.create.positive({
-          html: 'Question has been created!'
-        })
-        this.updateSubjectUsed()
-        this.$emit('closeModal')
+        this.$v.question.$touch()
+        if (this.$v.question.$error) {
+          Toast.create.negative('Please review fields again.')
+          return
+        }
+        else {
+          questionsRef.push(this.question)
+          Toast.create.positive({
+            html: 'Question has been created!'
+          })
+          this.updateSubjectUsed()
+          this.$emit('closeModal')
+        }
       },
       search (terms, done) {
         setTimeout(() => {

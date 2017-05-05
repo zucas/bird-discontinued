@@ -15,16 +15,16 @@ import router from './router'
 import moment from 'moment'
 import VueResource from 'vue-resource'
 import { store } from './modules/store'
-import Vuelidate from 'vuelidate'
 import Vuefire from 'vuefire'
+import Vuelidate from 'vuelidate'
 
 moment.locale('pt-br')
 
 Vue.use(Quasar) // Install Quasar Framework
 Vue.use(VueResource)
-Vue.use(Vuelidate)
 Vue.http.options.root = 'https://bird-ff640.firebaseio.com'
 Vue.use(Vuefire)
+Vue.use(Vuelidate)
 
 Quasar.start(() => {
   /* eslint-disable no-new */

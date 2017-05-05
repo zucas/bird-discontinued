@@ -1,17 +1,27 @@
 <template>
     <div>
-    
-        <div>
-        </div>
         <div class="row mobile-hide " v-if="questionsArray.length > 0">
-            <div class="card">
+            <div class="card" v-if='cardUsedSubjectsVisible' >
                 <div class="toolbar">
                     <q-toolbar-title :padding="1">
                         Used Subjects
                     </q-toolbar-title>
-                    <button>
-                        <i>close</i>
-                    </button>
+                     <i slot="target">
+                      more_vert
+                      <q-popover ref="popover">
+                        <div class="list">
+                          <div class="item item-link" @click="$refs.popover.close()">
+                            <div class="item-content">Foo</div>
+                          </div>
+                          <div class="item item-link" @click="$refs.popover.close()">
+                            <div class="item-content">Bar</div>
+                          </div>
+                          <div class="item item-link" @click="$refs.popover.close()">
+                            <div class="item-content">Foobar</div>
+                          </div>
+                        </div>
+                      </q-popover>
+                    </i>
                 </div>
                 <div class="card-content" >
                 <donut-chart
@@ -31,9 +41,22 @@
                     <q-toolbar-title :padding="1">
                         Alternative Correct
                     </q-toolbar-title>
-                    <button>
-                        <i>close</i>
-                    </button>
+                    <i slot="target">
+                      more_vert
+                      <q-popover ref="popover">
+                        <div class="list">
+                          <div class="item item-link" @click="$refs.popover.close()">
+                            <div class="item-content">Foo</div>
+                          </div>
+                          <div class="item item-link" @click="$refs.popover.close()">
+                            <div class="item-content">Bar</div>
+                          </div>
+                          <div class="item item-link" @click="$refs.popover.close()">
+                            <div class="item-content">Foobar</div>
+                          </div>
+                        </div>
+                      </q-popover>
+                    </i>
                 </div>
                 <div class="card-content">
                     <donut-chart
@@ -87,7 +110,9 @@
       }
     },
     data () {
-      return {}
+      return {
+        cardUsedSubjectsVisible: true
+      }
     },
     mounted () {
     },

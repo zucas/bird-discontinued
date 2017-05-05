@@ -11,7 +11,7 @@
                 <button @click="showDetails(selection)" class="dark clear">
                     <i>remove_red_eye</i>
                 </button>
-                <button @click="showDetails" class="yellow clear">
+                <button @click="editRow(selection)" class="yellow clear">
                     <i>edit</i>
                 </button>
                 <button class="negative clear" @click="deleteRow(selection)">
@@ -19,14 +19,21 @@
                 </button>
             </template>
         </q-data-table>
+        <sweet-modal ref="modal" icon="error">
+        	      <h4>Are you sure? </h4>
+                <p>This Operation cannot be undone</p>
+	<sweet-button slot="button"> <button class="negative clear" @click="executeDelete()">Yes, I'am </button> </sweet-button>
+</sweet-modal>
     </div>
 </template>
 
 <script>
-  import {mapActions} from 'vuex'
+  import {mapActions, mapGetters} from 'vuex'
   import db from '../../../../modules/firebase'
   const rootRef = db.ref()
   const questionsRef = rootRef.child('school/questions')
+  import {Toast} from 'quasar'
+  import { SweetModal } from 'sweet-modal-vue'
   export default {
     firebase () {
       return {
@@ -102,10 +109,30 @@
     },
     methods: {
       ...mapActions(['setGeneralSelected']),
+      ...mapGetters(['getGeneralSelected']),
       showDetails: function (selection) {
         this.setGeneralSelected(selection.rows[0].data)
         this.$emit('showDetails')
+      },
+
+      deleteRow: function (selection) {
+        this.$refs.modal.open()
+        this.setGeneralSelected(selection.rows[0].data)
+      },
+      editRow: function (selection) {
+        console.log(selection.rows[0].data)
+      },
+      executeDelete: function () {
+        const item = this.getGeneralSelected()
+        questionsRef.child(item['.key']).remove()
+        this.$refs.modal.close()
+        Toast.create.negative({
+          html: `The Question has been <strong>DELETED<strong>`
+        })
       }
+    },
+    components: {
+      SweetModal
     }
   }
 </script>
