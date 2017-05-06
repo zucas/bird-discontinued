@@ -32,12 +32,14 @@
   import db from '../../../../modules/firebase'
   const rootRef = db.ref()
   const questionsRef = rootRef.child('school/questions')
+  const subjectsRef = rootRef.child('school/subjects')
   import {Toast} from 'quasar'
   import { SweetModal } from 'sweet-modal-vue'
   export default {
     firebase () {
       return {
-        questions: questionsRef
+        questions: questionsRef,
+        subjectArray: subjectsRef
       }
     },
     data () {
@@ -77,8 +79,8 @@
           sort: true,
           filter: true
         }, {
-          label: 'Theme',
-          field: 'theme',
+          label: 'Subject',
+          field: 'subject',
           widht: '280px',
           sort: true,
           filter: true
@@ -129,6 +131,16 @@
         Toast.create.negative({
           html: `The Question has been <strong>DELETED<strong>`
         })
+        this.updateSubjectUsed(item)
+      },
+      updateSubjectUsed (question) {
+        let subjectSelected = {}
+        this.subjectArray.map(subject => {
+          if (subject.name === question.subject) {
+            subjectSelected = subject
+          }
+        })
+        subjectsRef.child(subjectSelected['.key']).update({'totalQuestions': --(subjectSelected.totalQuestions)})
       }
     },
     components: {

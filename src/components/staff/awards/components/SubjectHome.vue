@@ -1,7 +1,7 @@
 <template>
     <div>
         <div class="row">
-            <div class="card text-center bg-negative text-white" style="padding-bottom: 20px;" @click="$emit('showTable')">
+            <div class="card text-center bg-primary text-white" style="padding-bottom: 20px;">
                 <div class="card-title no-padding">
                     <h3>{{ subjectsSize }}</h3>
                 </div>
@@ -10,6 +10,10 @@
                 </div>
             </div>
         </div>
+        <div class="row">
+          <subject-list></subject-list>
+        </div>
+          <subject-stats></subject-stats>
     </div>
 </template>
 
@@ -17,6 +21,8 @@
   import db from '../../../../modules/firebase'
   const dbRoot = db.ref()
   const subjectsRef = dbRoot.child('school/subjects')
+  import SubjectList from '../components/SubjectList.vue'
+  import SubjectStats from '../components/SubjectStats.vue'
   export default {
     firebase () {
       return {
@@ -30,6 +36,9 @@
       subjectsSize: function () {
         return this.subjectsArray.length
       }
+    },
+    components: {
+      SubjectList, SubjectStats
     }
   }
 </script>

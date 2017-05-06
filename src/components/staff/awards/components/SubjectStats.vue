@@ -1,28 +1,73 @@
 <template>
-    <div>
-            <h4>Total Questions</h4>
-            <donut-chart
-                    id="totalQuestions"
-                    :data="parsedTotalQuestions"
-                    resize="true">
-            </donut-chart>
-
-        <h4>Used Subjects</h4>
-            <bar-chart
-                    id="usedSubjects"
-                    :data="parsedTotalUsages"
-                    xkey="label"
-                    resize="true">
-            </bar-chart>
-
+  <div class>
+    <br>
+    <div class="flex">
+      <div class="card">
+        <div class="toolbar">
+          <q-toolbar-title :padding="1">
+            Total Questions
+          </q-toolbar-title>
+          <i slot="target">
+                        more_vert
+                        <q-popover ref="popover">
+                          <div class="list">
+                            <div class="item item-link" @click="$refs.popover.close()">
+                              <div class="item-content">Foo</div>
+                            </div>
+                            <div class="item item-link" @click="$refs.popover.close()">
+                              <div class="item-content">Bar</div>
+                            </div>
+                            <div class="item item-link" @click="$refs.popover.close()">
+                              <div class="item-content">Foobar</div>
+                            </div>
+                          </div>
+                        </q-popover>
+                      </i>
+        </div>
+        <div class="card-content">
+          <donut-chart id="totalQuestions" :data="parsedTotalQuestions" colors='[ "#ff1744",
+                                        "#3d5afe",
+                                        "#1de9b6", "#76ff03", "#37474f", "#ff3d00", "#00e5ff" ]' resize="true">
+          </donut-chart>
+        </div>
+      </div>
+      <div class="space"></div>
+      <div class="card">
+        <div class="toolbar">
+          <q-toolbar-title :padding="1">
+            Used Subjects
+          </q-toolbar-title>
+          <i slot="target">
+                        more_vert
+                        <q-popover ref="popover">
+                          <div class="list">
+                            <div class="item item-link" @click="$refs.popover.close()">
+                              <div class="item-content">Foo</div>
+                            </div>
+                            <div class="item item-link" @click="$refs.popover.close()">
+                              <div class="item-content">Bar</div>
+                            </div>
+                            <div class="item item-link" @click="$refs.popover.close()">
+                              <div class="item-content">Foobar</div>
+                            </div>
+                          </div>
+                        </q-popover>
+                      </i>
+        </div>
+        <div class="card-content">
+          <bar-chart id="usedSubjects" :data="parsedTotalUsages" xkey="label" resize="true">
+          </bar-chart>
+        </div>
+      </div>
     </div>
+  </div>
 </template>
 
 <script>
   import db from '../../../../modules/firebase'
   const rootRef = db.ref()
   const subjectRef = rootRef.child('school/subjects')
-  import {BarChart, DonutChart} from 'vue-morris'
+  import { BarChart, DonutChart } from 'vue-morris'
   export default {
     firebase () {
       return {
@@ -30,13 +75,7 @@
       }
     },
     data () {
-      return {
-        donutData: [
-          {label: 'RVSM', value: 1},
-          {label: 'TEST', value: 0},
-          {label: 'Capitais', value: 2}
-        ]
-      }
+      return {}
     },
     computed: {
       parsedTotalQuestions: function () {
@@ -57,10 +96,12 @@
       }
     },
     components: {
-      BarChart, DonutChart
+      BarChart,
+      DonutChart
     }
   }
 </script>
 
 <style>
+
 </style>
