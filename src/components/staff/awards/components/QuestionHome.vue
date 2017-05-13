@@ -2,7 +2,7 @@
     <div>
         <div class="row" v-if="questionsArray.length > 0">
 
-            <div class="card text-center bg-primary text-white">
+            <div class="card text-center bg-primary text-white shadow-3">
                 <div class="card-title no-padding">
                     <h3>{{ questionsSize }}</h3>
                 </div>
@@ -19,7 +19,7 @@
 
         </div>
 
-        <question-table @showDetails="$emit('showDetails')"></question-table>
+        <question-table class="shadow-3" @showDetails="$emit('showDetails')"></question-table>
 
         <question-stats></question-stats>
     </div>

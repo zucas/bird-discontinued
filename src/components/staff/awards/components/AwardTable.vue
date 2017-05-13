@@ -1,28 +1,16 @@
 <template>
     <div>
+      <div class="toolbar">
+                    <q-toolbar-title :padding="1">
+                        Awards Table
+                    </q-toolbar-title>
+                </div>
         <q-data-table
                 :data="awards"
                 :columns="columns"
                 :config="config"
                 :padding="15"
         >
-            <template slot="selection" scope="selection">
-                <button @click="editAircraft(selection)" class="warning clear">
-                    <i>edit</i>
-                </button>
-                <button class="dark clear" @click="maintenanceAircraft(selection)">
-                    <i>build</i>
-                </button>
-                <button class="positive clear">
-                    <i>flight_takeoff</i>
-                </button>
-                <button class="light clear">
-                    <i>history</i>
-                </button>
-                <button class="negative clear" @click="deleteRow(selection)">
-                    <i>delete</i>
-                </button>
-            </template>
         </q-data-table>
     </div>
 </template>
@@ -44,9 +32,8 @@ export default {
         },
         selection: 'one',
         rowHeight: '45px',
-        title: 'Awards',
         pagination: {
-          rowsPerPage: 15,
+          rowsPerPage: 5,
           options: [5, 10, 15, 30, 50, 500]
         },
         messages: {

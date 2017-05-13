@@ -1,5 +1,10 @@
 <template>
     <div>
+      <div class="toolbar">
+                    <q-toolbar-title :padding="1">
+                        Questions Table
+                    </q-toolbar-title>
+                </div>
         <q-data-table
                 :data="questions"
                 :columns="columns"
@@ -10,9 +15,6 @@
             <template slot="selection" scope="selection">
                 <button @click="showDetails(selection)" class="dark clear">
                     <i>remove_red_eye</i>
-                </button>
-                <button @click="editRow(selection)" class="yellow clear">
-                    <i>edit</i>
                 </button>
                 <button class="negative clear" @click="deleteRow(selection)">
                     <i>delete</i>
@@ -50,9 +52,8 @@
           },
           selection: 'single',
           rowHeight: '45px',
-          title: 'Questions',
           pagination: {
-            rowsPerPage: 15,
+            rowsPerPage: 5,
             options: [5, 10, 15, 30, 50, 500]
           },
           messages: {

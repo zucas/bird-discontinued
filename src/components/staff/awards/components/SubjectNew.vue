@@ -1,9 +1,13 @@
 <template>
   <div>
-    <h3>
-      New Subject
-    </h3>
-    <div class="list">
+    <div class="card shadow-4 round-borders" style="min-width: 98%">
+      <div class="toolbar">
+                    <q-toolbar-title :padding="1">
+                        New Subject
+                    </q-toolbar-title>
+        </div>  
+        <div class="card-content">
+          <div class="list">
       <div class="item multiple-lines">
         <div class="item-content">
           <div class="floating-label">
@@ -20,18 +24,14 @@
           </div>
         </div>
       </div>
-      <hr>
     </div>
-    <br>
-    <br>
-    <button class="outline negative pull-left" @click="$emit('closeModal')">
-      <i class="on-left">close</i> Close
-    </button>
-    <button class="secondary pull-right" @click="createSubject">
-      <i class="on-left">done</i> Save
-    </button>
-    <br>
-    <br>
+        </div>
+        <div class="card-actions card-no-top-padding">
+              <button class="negative clear small" @click="$emit('closeModal')"><i class="on-left">close</i>Close</button>
+              <div class="auto"></div>
+              <button class="positive clear small"@click="createSubject"><i class="on-left">done</i>Save</button>
+    </div>
+    </div>
   </div>
 </template>
 

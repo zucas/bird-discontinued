@@ -1,9 +1,13 @@
 <template>
     <div>
-        <h3>
-            New Question
-        </h3>
-        <div class="list">
+      <div class="card shadow-4" style="min-width: 98%">
+        <div class="toolbar">
+                    <q-toolbar-title :padding="1">
+                        New Question
+                    </q-toolbar-title>
+        </div>  
+        <div class="card-content">
+          <div class="list">
             <div class="item multiple-lines">
                 <div class="item-content">
                     <div class="floating-label">
@@ -19,7 +23,7 @@
                                    placeholder="Type the name of Subject."
                                     :class="{'has-error': $v.question.subject.$error}"/>                            
                         </q-autocomplete>
-                        <span v-if='$v.question.subject.$error'>Subject is required and must be two or more chars</span>
+                        <span v-if='$v.question.subject.$error' class="text-red">Subject is required and must be two or more chars</span>
                     </div>
                 </div>
             </div>
@@ -35,7 +39,7 @@
                                 v-model="question.statement"
                                 @input="$v.question.statement.$touch()"
                                 :class="{'has-error': $v.question.statement.$error}"/>                        
-                        <span v-if='$v.question.statement.$error'>
+                        <span v-if='$v.question.statement.$error'class="text-red">
                           Statement is required and must be two or more chars
                         </span>
                     </div>
@@ -54,7 +58,7 @@
                                     v-model="question.alternatives[i]"
                                     @input="$v.question.alternatives.$touch()"
                                 :class="{'has-error': $v.question.alternatives.$error}"/>
-                            <span v-if='$v.question.statement.$error'>
+                            <span v-if='$v.question.statement.$error' class="text-red">
                               All five alternatives are required
                             </span>
                         </div>
@@ -79,7 +83,7 @@
                 </div>
             </div>
         </div>
-        <br>
+                <br>
         <q-uploader
                 @add="addFile"
                 :url="url"
@@ -88,16 +92,16 @@
                 hide-upload-button
         >
         </q-uploader>
-        <br>
-        <br>
-        <button class="outline negative pull-left" @click="$emit('closeModal')">
-            <i class="on-left">close</i> Close
-        </button>
-        <button class="secondary pull-right" @click="createQuestion">
-            <i class="on-left">done</i> Save
-        </button>
-        <br>
-        <br>
+        </div>
+              <div class="card-actions card-no-top-padding">
+         <button class="negative clear small" @click="$emit('closeModal')"><i class="on-left">close</i>Close</button>
+              <div class="auto"></div>
+              <button class="positive clear small" @click="createQuestion"><i class="on-left">done</i>Save</button>
+      </div>
+      </div>
+      
+        
+
     </div>
 </template>
 
@@ -106,7 +110,7 @@
   const rootRef = db.ref()
   const questionsRef = rootRef.child('school/questions')
   const subjectRef = rootRef.child('school/subjects')
-  import {Utils, Toast, LocalStorage} from 'quasar'
+  import {Utils, Toast} from 'quasar'
   import firebase from 'firebase'
   const uploadRef = firebase.storage().ref()
   import { required, minLength } from 'vuelidate/lib/validators'
@@ -148,9 +152,6 @@
         },
         ta: { required }
       }
-    },
-    mounted () {
-      LocalStorage.set('teste', 'teste')
     },
     computed: {
       alternativeOptions: function () {

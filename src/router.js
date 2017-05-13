@@ -23,23 +23,17 @@ import AwardsView from './components/staff/awards/view/School.vue'
 // Awards
 import Awards from './components/staff/awards/view/Awads.vue'
 import AwardHome from './components/staff/awards/components/AwardHome.vue'
-import AwardStats from './components/staff/awards/components/AwardStats.vue'
-import AwardTable from './components/staff/awards/components/AwardTable.vue'
 // Exams
 import Exams from './components/staff/awards/view/Exams.vue'
 import ExamHome from './components/staff/awards/components/ExamHome.vue'
-import ExamStats from './components/staff/awards/components/ExamStats.vue'
-import ExamTable from './components/staff/awards/components/ExamTable.vue'
 // Questions
 import Questions from './components/staff/awards/view/Questions.vue'
 import QuestionHome from './components/staff/awards/components/QuestionHome.vue'
-import QuestionTable from './components/staff/awards/components/QuestionTable.vue'
-import QuestionStats from './components/staff/awards/components/QuestionStats.vue'
 // Themes
 import Themes from './components/staff/awards/view/Themes.vue'
-import ThemeStats from './components/staff/awards/components/SubjectStats.vue'
 import ThemeHome from './components/staff/awards/components/SubjectHome.vue'
-import ThemeList from './components/staff/awards/components/SubjectList.vue'
+// General Options
+import GeneralOptions from './components/staff/general/Options.vue'
 
 Vue.use(VueRouter)
 
@@ -96,39 +90,32 @@ export default new VueRouter({
             }
           ]
         },
+        { path: 'options', component: GeneralOptions, name: 'general-options' },
         {path: 'exams-and-awards',
           component: AwardsView,
           children: [
             { path: 'awards',
               component: Awards,
               children: [
-                { path: '/', component: AwardHome, name: 'awards-home' },
-                { path: 'table', component: AwardTable, name: 'awards-table' },
-                { path: 'stats', component: AwardStats, name: 'awards-stats' }
+                { path: '/', component: AwardHome, name: 'awards-home' }
               ]
             },
             { path: 'exams',
               component: Exams,
               children: [
-                { path: '/', component: ExamHome, name: 'exams-home' },
-                { path: 'table', component: ExamTable, name: 'exams-table' },
-                { path: 'stats', component: ExamStats, name: 'exams-stats' }
+                { path: '/', component: ExamHome, name: 'exams-home' }
               ]
             },
             { path: 'questions',
               component: Questions,
               children: [
-                { path: '/', component: QuestionHome, name: 'questions-home' },
-                { path: 'table', component: QuestionTable, name: 'questions-table' },
-                { path: 'stats', component: QuestionStats, name: 'questions-stats' }
+                { path: '/', component: QuestionHome, name: 'questions-home' }
               ]
             },
             { path: 'themes',
               component: Themes,
               children: [
-                { path: '/', component: ThemeHome, name: 'subject-home' },
-                { path: 'table', component: ThemeList, name: 'subject-table' },
-                { path: 'stats', component: ThemeStats, name: 'subject-stats' }
+                { path: '/', component: ThemeHome, name: 'subject-home' }
               ]
             }
           ]

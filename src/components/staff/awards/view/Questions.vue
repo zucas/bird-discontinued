@@ -6,18 +6,13 @@
       <router-view @newQuestion="$refs.newQuestion.open()" @showDetails="$refs.editQuestion.open()"></router-view>
     </div>
     <button
-            class="circular absolute-bottom-right bg-negative"
+            class="circular absolute-bottom-right bg-pink"
             @click="$refs.newQuestion.open()"
             style="right: 25px; bottom: 18px; color: white;"
     >
       <i>add</i>
     </button>
-
-
-
-
-
-    <q-modal ref="newQuestion" :content-css="{padding: '50px', minWidth: '50vw'}">
+    <q-modal ref="newQuestion" :content-css="{padding: '1%', minWidth: '70%'}">
       <new-question @closeModal="$refs.newQuestion.close()"></new-question>
     </q-modal>
     <q-modal ref="editQuestion" @open="$refs.details.start()" :content-css="{padding: '50px', minWidth: '50vw', maxWidth:'80%'}">

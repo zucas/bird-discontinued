@@ -1,17 +1,17 @@
 <template>
     <div>
         <div class="row">
-            <div class="card text-center bg-primary text-white" style="padding-bottom: 20px;">
+            <div class="card text-center bg-primary text-white shadow-3" style="padding-bottom: 20px;">
                 <div class="card-title no-padding">
                     <h3>{{ subjectsSize }}</h3>
                 </div>
                 <div class="card-content no-padding">
-                    Total Subjects
+                    <h5>Total Subjects</h5>
                 </div>
             </div>
         </div>
         <div class="row">
-          <subject-list></subject-list>
+          <subject-list class="shadow-3"></subject-list>
         </div>
           <subject-stats></subject-stats>
     </div>

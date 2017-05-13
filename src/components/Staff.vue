@@ -6,7 +6,7 @@
         <i>menu</i>
       </button>
         <q-toolbar-title>
-            LATAM Virtual - Staff Center - {{ $q.version }}
+            LATAM Virtual - Staff Center - v0.1a
          </q-toolbar-title>
     </div>
 
@@ -22,7 +22,7 @@
           <q-drawer-link icon="flight_takeoff" to="/staff/foo">
           Flight's
         </q-drawer-link>
-          <q-drawer-link icon="extension" to="/staff/foo">
+          <q-drawer-link icon="extension" to="/staff/options">
               General Operations
           </q-drawer-link>
           <q-drawer-link icon="school" to="/staff/exams-and-awards">

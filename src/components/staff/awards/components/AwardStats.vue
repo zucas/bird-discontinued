@@ -1,6 +1,7 @@
 <template>
   <div>
-    <h1>Stats</h1>
+    <br>
+    <p class="caption">No charts to show.</p>
   </div>
 </template>
 
