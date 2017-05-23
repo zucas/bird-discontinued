@@ -231,7 +231,8 @@
           minPilotPoints: 0,
           approvalRate: 0,
           subjects: [],
-          coposition: ['']
+          coposition: [''],
+          start: false
         },
         selectOptions: [
           {

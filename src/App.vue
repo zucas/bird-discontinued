@@ -15,7 +15,5 @@
 </script>
 
 <style>
-    .space {
-        width: 15px;
-    }
+
 </style>

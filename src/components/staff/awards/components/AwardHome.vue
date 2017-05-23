@@ -1,44 +1,23 @@
 <template>
   <div>
-    <div class="row">
-      <div class="card text-center bg-primary text-white shadow-3" style="padding-bottom: 20px;">
-        <div class="card-title no-padding">
-          <h3>{{ awardsSize }}</h3>
-        </div>
-        <div class="card-content no-padding">
-          <h5>Total Awards</h5>
-        </div>
-      </div>
-    </div>
-    <div class="row">
+      <AwardCardTotal></AwardCardTotal>
+
       <award-table class="shadow-3"></award-table>
-    </div>
+>
     <award-stats> </award-stats>  
   </div>
 </template>
 
 <script>
-  import db from '../../../../modules/firebase'
-  const dbRoot = db.ref()
-  const awardsRef = dbRoot.child('school/awards')
   import AwardTable from './AwardTable.vue'
   import AwardStats from './AwardStats.vue'
+  import AwardCardTotal from './AwardCardTotal.vue'
   export default {
-    firebase () {
-      return {
-        awardsArray: awardsRef
-      }
-    },
     data () {
       return {}
     },
-    computed: {
-      awardsSize: function () {
-        return this.awardsArray.length
-      }
-    },
     components: {
-      AwardTable, AwardStats
+      AwardTable, AwardStats, AwardCardTotal
     }
   }
 </script>

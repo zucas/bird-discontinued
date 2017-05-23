@@ -9,7 +9,7 @@
                         Aircraft's
                     </div>
                 </div>
-
+                <div class="space"></div>
                 <div class="card text-center bg-teal-5 text-white">
                     <div class="card-title no-padding">
                         <h3> {{ aircraftsOnMaintence }}</h3>
@@ -18,7 +18,7 @@
                         On maintenance
                     </div>
                 </div>
-
+                <div class="space"></div>
                 <div class="card text-center bg-teal-6 text-white">
                     <div class="card-title no-padding">
                         <h3> {{ aircraftsReserved }} </h3>

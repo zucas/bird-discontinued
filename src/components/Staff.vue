@@ -13,25 +13,31 @@
      <!--Drawer-->
     <q-drawer ref="leftDrawer" class="dark" swipe-only>
       <div class="list platform-delimiter secondary">
-          <q-drawer-link icon="supervisor_account" to="/staff">
+          <q-drawer-link icon="home" to="/">
+              Home
+          </q-drawer-link>
+          <q-drawer-link icon="supervisor_account" to="/staff/pilots">
               Pilots
           </q-drawer-link>
           <q-drawer-link icon="flight" to="/staff/fleet" append>
               Fleet
             </q-drawer-link>
-          <q-drawer-link icon="flight_takeoff" to="/staff/foo">
-          Flight's
+          <q-drawer-link icon="flight_takeoff" to="/staff/flights">
+          Flights
+        </q-drawer-link>
+          <q-drawer-link icon="today" to="/staff/events">
+          Events
         </q-drawer-link>
           <q-drawer-link icon="extension" to="/staff/options">
               General Operations
           </q-drawer-link>
           <q-drawer-link icon="school" to="/staff/exams-and-awards">
-              Exam's & Award's
+              Exams & Awards
             </q-drawer-link>
           <q-drawer-link icon="cloud_upload" to="/staff/foo">
-              Manual's
+              Manual Files
             </q-drawer-link>
-          <q-drawer-link icon="help" :to="{path: '/DO/foo', exact: true}">
+          <q-drawer-link icon="help" :to="{path: '/staff/help', exact: true}">
               Help
            </q-drawer-link>
       </div>

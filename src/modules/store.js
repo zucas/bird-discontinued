@@ -2,6 +2,7 @@ import Vue from 'vue'
 import Vuex from 'vuex'
 import fleet from './fleet'
 import generalSelected from './generalSelected'
+import pilot from './pilot'
 
 Vue.use(Vuex)
 
@@ -12,6 +13,7 @@ export const store = new Vuex.Store({
   actions: {},
   modules: {
     fleet,
-    generalSelected
+    generalSelected,
+    pilot
   }
 })
