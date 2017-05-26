@@ -2,7 +2,7 @@
     <!-- Don't drop "q-app" class -->
     <div id="q-app">
         <router-view></router-view>
-        <q-ajax-bar></q-ajax-bar>
+        <q-ajax-bar class="bg-secondary"></q-ajax-bar>
     </div>
 </template>
 

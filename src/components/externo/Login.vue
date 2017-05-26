@@ -123,7 +123,6 @@
                 firebase.auth.signInWithEmailAndPassword(email, password).then(user => {
                   return user.link(pendingCred)
                 }).then(() => {
-                  console.log('deu tudo certo')
                 })
                 return
               }

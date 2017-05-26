@@ -42,7 +42,7 @@
            </q-drawer-link>
       </div>
     </q-drawer>
-
+    <img class="fullscreen" src="http://lightersideofrealestate.com/wp-content/uploads/2014/09/clouds-background-light.jpg">
     <router-view class="layout-view"></router-view>
 
      <!--Footer-->

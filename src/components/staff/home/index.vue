@@ -1,14 +1,8 @@
 <template>
+<div>
+  
   <div class="layout-view">
     <div class="layout-padding">
-    <h3 class="light-paragraph">Welcome {{ user.displayName }}, to the LSC - LATAM-VA Staff Center</h3>
-    <h5 class="light-paragraph">You make LATAM-VA</h5>
-    <blockquote class="shadow-2">
-      <p class="light-paragraph">
-        What the mind can conceive and believe, it can achieve. 
-      </p>
-      <small>Napoleon Hill</small>
-    </blockquote>
     <PrePilotsCards></PrePilotsCards>
     <PilotsCards></PilotsCards>
     <FlighCards></FlighCards>
@@ -17,6 +11,7 @@
       <SubjectCard></SubjectCard>
   </div>
   </div>
+</div>
 </template>
 
 <script>

@@ -126,12 +126,10 @@
       },
 
       deleteRow: function (selection) {
-        console.log(selection.rows[0].data)
         this.$refs.modal.open()
         this.setGeneralSelected(selection.rows[0].data)
       },
       editRow: function (selection) {
-        console.log(selection.rows[0].data)
       },
       executeDelete: function () {
         const item = this.getGeneralSelected()

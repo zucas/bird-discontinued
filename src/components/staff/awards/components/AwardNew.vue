@@ -107,7 +107,6 @@
       createAward: function () {
         if (this.award.hasExpiration === false) {
           this.award.expirationTime = 0
-          console.log(this.award)
         }
         this.$v.awardName.$touch()
         if (this.$v.awardName.$error) {
