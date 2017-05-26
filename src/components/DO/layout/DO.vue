@@ -124,7 +124,16 @@
 <script>
 import firebase from 'firebase'
 import {mapMutations, mapActions} from 'vuex'
+import db from '../../../modules/firebase'
 // let haveVacancies = db.ref('general_settings').child('openVacancies')
+let numPilotos
+db.ref('pilots').once('value', dataSnap => {
+  numPilotos = dataSnap.numChildren()
+})
+let totalVacancies
+db.ref('general_settings/total_vacancies').once('value', snapData => {
+  totalVacancies = snapData.val()
+})
 export default {
   data () {
     return {
@@ -137,7 +146,12 @@ export default {
     this.$http.get('https://bird-ff640.firebaseio.com/pilots/' + this.user.uid + '.json').then(response => {
       if (response.body === null) {
         this.pilot.isMember = false
-        this.redirectFormRegister()
+        if (totalVacancies > numPilotos) {
+          this.redirectFormRegister()
+        }
+        else {
+          this.redirectNoVacancy()
+        }
       }
       else {
         this.pilot = response.body
@@ -168,6 +182,9 @@ export default {
     redirectFormRegister () {
       this.$router.push({name: 'incomplete-form'})
     }
+  },
+  redirectNoVacancy () {
+    // TODO - Redirect StandBy List
   },
   destroyed () {
     this.$router.push({name: 'login'})

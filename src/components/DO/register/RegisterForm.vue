@@ -37,7 +37,12 @@
         <div class="item">                
                 <div class="item-content text-center">
                   <span class="item-label">HUB: </span>
-                  <input v-model="pilot.va_info.hub" type="text" style="min-width: 40%">
+                  <q-select
+                    type="list"
+                    v-model="pilot.va_info.hub"
+                    :options="hubs"
+                    style="min-width: 40%"
+                  ></q-select>
                 </div>
         </div>
         <div class="item">                
@@ -101,16 +106,20 @@ export default {
       settingsObj: {
         source: db.ref('general_settings'),
         asObject: true
-      }
+      },
+      hubsFire: db.ref('operations/hubs')
     }
   },
   data () {
     return {
+      hubs: [],
       pilot: {
         personal_info: {
           birthday: moment().format()
         },
-        va_info: {},
+        va_info: {
+          hub: {}
+        },
         pireps: {}
       },
       user: {}
@@ -120,6 +129,7 @@ export default {
     this.user = firebase.auth().currentUser
     this.pilot.personal_info.full_name = this.user.displayName
     this.pilot.personal_info.email = this.user.email
+    this.hubsParsed()
   },
   methods: {
     newPilot () {
@@ -139,6 +149,14 @@ export default {
       this.pilot.va_info.xp = 0
       this.pilot.va_info.rating = 0
       this.pilot.va_info.local = this.pilot.va_info.hub
+    },
+    hubsParsed () {
+      this.hubsFire.map(hub => {
+        this.hubs.push({
+          label: hub['.key'],
+          value: hub['.key']
+        })
+      })
     }
   }
 }

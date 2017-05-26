@@ -180,7 +180,7 @@ export default {
     },
     reproved () {
       this.result = 'Reproved'
-      this.message = `Oh No! You faild on ${this.examSelected.name}, 
+      this.message = `Oh No! You failed on ${this.examSelected.name}, 
       wait ${this.examSelected.daysToNewChance} to try again!`
       // TODO O que ele faz em caso de reprovação
     }
