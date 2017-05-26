@@ -46,11 +46,6 @@ exports.countTotalQuestions = functions.database.ref('school/questions/').onWrit
   return event.data.ref.parent.child('total_questions').set(count2)
 })
 
-exports.addExamsAtributes = functions.database.ref('school/exams/{pushId}').onWrite(event => {
-  const exam = event.data.val()
-  return event.data.ref.child('minXp_minHours').set(`${exam.minPilotPoints}_${exam.minFlightHours}`)
-})
-
 exports.sendWelcomeEmail = functions.auth.user().onCreate(event => {
   // ...
 });

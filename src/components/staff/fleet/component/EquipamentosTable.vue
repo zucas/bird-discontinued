@@ -94,9 +94,6 @@
         }],
         data: []
       }
-    },
-    created () {
-      console.log(this.equipments)
     }
   }
 </script>

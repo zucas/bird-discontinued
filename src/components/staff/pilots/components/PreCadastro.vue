@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="flex">
-      <div class="card text-center bg-negative text-white shadow-3" style="padding-bottom: 20px;">
+      <div class="card text-center bg-secondary text-white shadow-3" style="padding-bottom: 20px;">
         <div class="card-title no-padding">
           <h3>{{ pilots.length }}</h3>
         </div>

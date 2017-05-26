@@ -107,9 +107,6 @@ export default {
     startExam () {
       this.setGeneralSelected(this.examSelected)
       this.$router.push({name: 'pilot-exam'})
-    },
-    print () {
-      console.log(this.testExams)
     }
   },
   components: {
