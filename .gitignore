@@ -12,4 +12,10 @@ thumbs.db
 !.gitkeep
 !/src/modules/firebase.js
 firebase-debug.log
-.idea/workspace.xml
+.idea/
+.vscode/
+functions/config.js
+build/
+node_modules/
+templates/
+src/modules/firebase
