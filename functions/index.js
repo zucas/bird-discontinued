@@ -7,10 +7,6 @@ const translate = require('@google-cloud/translate')();
 // // Create and Deploy Your First Cloud Functions
 // // https://firebase.google.com/docs/functions/write-firebase-functions
 
-exports.helloWorld = functions.https.onRequest((request, response) => {
-  response.send('Hello from Firebase! Teste')
-})
-
 exports.examGenetator = functions.https.onRequest((req, res) => {
   // receber a linguagem 
   let lenguage = req.query.len
@@ -34,6 +30,17 @@ exports.countTotalQuestionsPerSubject = functions.database.ref('school/questions
   //Aqui estou contando o numero de temas
   const count = event.data.numChildren()
   return event.data.ref.parent.child('total_subjects').set(count)
+})
+
+exports.setPilotId = functions.database.ref('pilots/{pushId}').onWrite(event => {
+  const pilot = event.data.val()
+  const nextId = 0
+  let nxtCallRef = admin.database().ref('general_settings/nextCallsing')
+  nxtCallRef.once('value', snapData => {
+    nextId = snapData.val()
+  })
+  event.data.ref.child('va_info/number').set(nextId)
+  return nxtCallRef.set(nextId++)
 })
 
 exports.countTotalQuestions = functions.database.ref('school/questions/').onWrite(event => {

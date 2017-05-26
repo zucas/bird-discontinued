@@ -144,7 +144,7 @@ export default {
     },
     completePilot () {
       this.pilot.va_info.total_flights = 0
-      this.pilot.va_info.number = this.settingsObj.nextCallsing
+      // this.pilot.va_info.number = this.settingsObj.nextCallsing
       this.pilot.va_info.flight_hours = 0
       this.pilot.va_info.xp = 0
       this.pilot.va_info.rating = 0

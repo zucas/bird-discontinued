@@ -22,7 +22,6 @@
 <script>
 import db from '../../../modules/firebase'
 import {mapGetters} from 'vuex'
-// https://bird-ff640.firebaseio.com/flights.json?orderBy="dep"&equalTo="SBSP"
 let flightsRef = db.ref('flights').orderByChild('dep').equalTo('SBGR')
 export default {
   firebase () {
