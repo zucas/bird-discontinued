@@ -55,7 +55,6 @@ export default {
   },
   methods: {
     changeVacancies () {
-      console.log(this.settings.total_vacancies)
       settingsRef.child('total_vacancies').set(this.settings.total_vacancies)
       Toast.create.positive({
         html: 'The number of <strong>vacancies</strong> has been uploaded!'

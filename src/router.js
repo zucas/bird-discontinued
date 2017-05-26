@@ -104,7 +104,6 @@ export default new VueRouter({
           if (user) {
             db.ref('pilots').child(user.uid).once('value', pilotSnap => {
               SessionStorage.set('uid', user.uid)
-              console.log(pilotSnap.val())
             })
             next()
           }
