@@ -15,14 +15,31 @@
                 Name
               </span>
             <input 
-            @input="$v.award.name.$touch()"
+            @input="$v.awardName.$touch()"
             class="full-width text-center" 
-            v-model="award.name"
-            :class="{'has-error': $v.award.name.$error}"
+            v-model="awardName"
+            :class="{'has-error': $v.awardName.$error}"
             />
-             <span v-if='$v.award.name.$error' class="text-red">
+             <span v-if='$v.awardName.$error' class="text-red">
                Name is required and need be 4 or more chars
               </span>
+          </div>
+        </div>
+      </div>
+      <div class="item multiple-lines">
+        <div class="item-content">
+          <div class="floating-label">
+            <span class="label inline bg-primary text-white">
+                Group
+              </span>
+            <q-autocomplete
+                        v-model="gruop" 
+                        @search="search">
+                            <input v-model="gruop"                            
+                            class="full-width text-center"
+                                   placeholder="Type the name of Gruop."
+                                    />                            
+                        </q-autocomplete>
           </div>
         </div>
       </div>
@@ -63,13 +80,20 @@
   let awardsRef = db.ref('school/awards')
   import { required, minLength } from 'vuelidate/lib/validators'
   import {
-    Toast
+    Toast,
+    Utils
   } from 'quasar'
   export default {
+    firebase () {
+      return {
+        awardsArray: awardsRef
+      }
+    },
     data () {
       return {
+        gruop: '',
+        awardName: '',
         award: {
-          name: '',
           hasExpiration: false,
           expirationTime: 12,
           concessionsNumber: 0
@@ -77,9 +101,7 @@
       }
     },
     validations: {
-      award: {
-        name: { required, minLength: minLength(4) }
-      }
+      awardName: { required, minLength: minLength(2) }
     },
     methods: {
       createAward: function () {
@@ -87,13 +109,13 @@
           this.award.expirationTime = 0
           console.log(this.award)
         }
-        this.$v.award.$touch()
-        if (this.$v.award.$error) {
+        this.$v.awardName.$touch()
+        if (this.$v.awardName.$error) {
           Toast.create.negative('Please review fields again.')
           return
         }
         else {
-          awardsRef.push(this.award)
+          awardsRef.child(this.gruop).child(this.awardName).set(this.award)
           Toast.create.positive({
             html: 'Awards has been created!'
           })
@@ -106,6 +128,19 @@
         this.award.hasExpiration = false
         this.award.expirationTime = 12
         this.award.concessionsNumber = 0
+      },
+      parsedAwardsGroup () {
+        return this.awardsArray.map(obj => {
+          return {
+            label: obj['.key'],
+            value: obj['.key']
+          }
+        })
+      },
+      search (terms, done) {
+        setTimeout(() => {
+          done(Utils.filter(terms, {field: 'value', list: this.parsedAwardsGroup()}))
+        }, 0)
       }
     }
   }

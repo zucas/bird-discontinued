@@ -19,13 +19,11 @@
 <script>
   import db from '../../../../modules/firebase'
   const dbRoot = db.ref()
-  const subjectsRef = dbRoot.child('school/subjects')
   const questionsRef = dbRoot.child('school/questions')
-
   export default {
     firebase () {
       return {
-        subjects: subjectsRef
+        subjects: questionsRef
       }
     },
     data () {
@@ -59,13 +57,13 @@
         },
         columns: [{
           label: 'Name',
-          field: 'name',
+          field: '.key',
           widht: '180px',
           sort: true,
           filter: true
         }, {
           label: 'Total Questions',
-          field: 'totalQuestions',
+          field: '',
           widht: '180px',
           sort: true,
           filter: false
@@ -78,18 +76,7 @@
         }]
       }
     },
-    computed: {
-      totalQuestions: function (subject) {
-        let allQuestions = questionsRef
-        let count
-        allQuestions.forEach(question => {
-          if (question.subject === subject) {
-            count++
-          }
-        })
-        return count
-      }
-    }
+    computed: {}
   }
 </script>
 

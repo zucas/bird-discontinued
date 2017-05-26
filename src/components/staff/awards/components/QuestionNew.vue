@@ -15,15 +15,15 @@
                 Subject
             </span>
                         <q-autocomplete
-                        v-model="question.subject" 
+                        v-model="subject" 
                         @search="search">
-                            <input v-model="question.subject" 
-                            @input="$v.question.subject.$touch()"
+                            <input v-model="subject" 
+                            @input="$v.subject.$touch()"
                             class="full-width text-center"
                                    placeholder="Type the name of Subject."
-                                    :class="{'has-error': $v.question.subject.$error}"/>                            
+                                    :class="{'has-error': $v.subject.$error}"/>                            
                         </q-autocomplete>
-                        <span v-if='$v.question.subject.$error' class="text-red">Subject is required and must be two or more chars</span>
+                        <span v-if='$v.subject.$error' class="text-red">Subject is required and must be two or more chars</span>
                     </div>
                 </div>
             </div>
@@ -109,7 +109,6 @@
   import db from '../../../../modules/firebase'
   const rootRef = db.ref()
   const questionsRef = rootRef.child('school/questions')
-  const subjectRef = rootRef.child('school/subjects')
   import {Utils, Toast} from 'quasar'
   import firebase from 'firebase'
   const uploadRef = firebase.storage().ref()
@@ -117,7 +116,7 @@
   export default {
     firebase () {
       return {
-        subjectArray: subjectRef
+        subjectArray: questionsRef
       }
     },
     data () {
@@ -128,10 +127,11 @@
         file: {},
         url: '',
         equipament: {},
+        subject: '',
         question: {
+          ck: Math.random(),
           hasImage: false,
           statement: '',
-          subject: '',
           alternatives: ['', '', '', '', ''],
           ta: '',
           totalCalls: 0,
@@ -141,9 +141,9 @@
       }
     },
     validations: {
+      subject: { required, minLength: minLength(2) },
       question: {
         statement: { required, minLength: minLength(2) },
-        subject: { required, minLength: minLength(2) },
         alternatives: {
           required,
           $each: {
@@ -170,6 +170,7 @@
         this.question.hasImage = true
       },
       createQuestion: function () {
+        // Verify Have Image to Uploads
         if (this.question.hasImage) {
           let uid = Utils.uid()
           uploadRef.child('school/questions/images/' + uid).put(this.file)
@@ -180,12 +181,12 @@
           Toast.create.negative('Please review fields again.')
           return
         }
+        // Whitout Erros, Send Question to DB.
         else {
-          questionsRef.push(this.question)
+          questionsRef.child(this.subject).push(this.question)
           Toast.create.positive({
             html: 'Question has been created!'
           })
-          this.updateSubjectUsed()
           this.$emit('closeModal')
         }
       },
@@ -197,21 +198,11 @@
       alternativeNumber (i) {
         return ++i
       },
-      updateSubjectUsed () {
-        let subjectSelected = {}
-        this.subjectArray.map(subject => {
-          if (subject.name === this.question.subject) {
-            subjectSelected = subject
-          }
-        })
-        subjectRef.child(subjectSelected['.key']).update({'totalQuestions': ++(subjectSelected.totalQuestions)})
-      },
       parsedSubject () {
         return this.subjectArray.map(o => {
           return {
-            label: o.name,
-            value: o['name'],
-            key: o['.key']
+            label: o['.key'],
+            value: o['.key']
           }
         })
       }

@@ -53,7 +53,8 @@ import Flights from './components/staff/flights/view/Flights.vue'
 // HELP
 import Help from './components/staff/help/Manual.vue'
 import firebase from 'firebase'
-
+import db from './modules/firebase'
+import { SessionStorage } from 'quasar'
 Vue.use(VueRouter)
 
 export default new VueRouter({
@@ -101,6 +102,10 @@ export default new VueRouter({
       beforeEnter (to, from, next) {
         firebase.auth().onAuthStateChanged(function (user) {
           if (user) {
+            db.ref('pilots').child(user.uid).once('value', pilotSnap => {
+              SessionStorage.set('uid', user.uid)
+              console.log(pilotSnap.val())
+            })
             next()
           }
           else {

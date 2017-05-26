@@ -148,17 +148,19 @@
                 <div class="item-content">
                     <div class="floating-label">
             <span class="label inline bg-primary text-white">
-                Subject {{ ++i }}
+                Subject {{ i }}
             </span>
-            <input />
+            <q-autocomplete v-model="subjects[i]" @search="searchSubjects">
+                  <input v-model="subjects[i]" class="full-width text-center" placeholder="Type the name of Award.." />
+            </q-autocomplete>
                     </div>
                 </div>
             </div>
             <hr>
-            <q-numeric
-          
+            <q-numeric          
           :min="1"
-          :max="17"
+          :max="exam.questions"
+          v-model="numOfQuestions[i]"
         ></q-numeric>
                </div>             
             </div> 
@@ -202,7 +204,7 @@
   import db from '../../../../modules/firebase'
   let awardsRef = db.ref('school/awards')
   let examsRef = db.ref('school/exams')
-  let subjectsRef = db.ref('school/subjects')
+  let subjectsRef = db.ref('school/questions')
   import {
     required,
     minLength
@@ -219,6 +221,8 @@
         composerSubjectsSize: 1,
         checked: false,
         terms: '',
+        subjects: [],
+        numOfQuestions: [],
         exam: {
           name: '',
           award: '',
@@ -231,7 +235,7 @@
           minPilotPoints: 0,
           approvalRate: 0,
           subjects: [],
-          coposition: [''],
+          composition: {},
           start: false
         },
         selectOptions: [
@@ -259,7 +263,6 @@
     },
     methods: {
       beforeNext (next) {
-        console.log(this.composerSubjectsSize)
         next()
       },
       search (terms, done) {
@@ -270,6 +273,14 @@
           }))
         }, 0)
       },
+      searchSubjects (terms, done) {
+        setTimeout(() => {
+          done(Utils.filter(terms, {
+            field: 'value',
+            list: this.parseSubjects()
+          }))
+        }, 0)
+      },
       createExam () {
         this.$v.exam.$touch()
         if (this.$v.exam.$error) {
@@ -277,6 +288,9 @@
           return
         }
         else {
+          this.numOfQuestions.forEach((element, i) => {
+            this.exam.composition[this.subjects[i]] = element
+          })
           examsRef.push(this.exam)
           Toast.create.positive({
             html: 'Award has been created!'
@@ -289,6 +303,14 @@
           return {
             label: award.name,
             value: award.name
+          }
+        })
+      },
+      parseSubjects () {
+        return this.subjectsArray.map(subject => {
+          return {
+            label: subject['.key'],
+            value: subject['.key']
           }
         })
       }

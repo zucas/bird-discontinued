@@ -6,7 +6,7 @@
                     </q-toolbar-title>
                 </div>
         <q-data-table
-                :data="questions"
+                :data='questions'
                 :columns="columns"
                 :config="config"
                 :padding="15"
@@ -21,10 +21,10 @@
                 </button>
             </template>
         </q-data-table>
-        <sweet-modal ref="modal" icon="error">
+        <sweet-modal ref="modal" overlay-theme="dark"  icon="error">
         	      <h4>Are you sure? </h4>
                 <p>This Operation cannot be undone</p>
-	<sweet-button slot="button"> <button class="negative clear" @click="executeDelete()">Yes, I'am </button> </sweet-button>
+<button slot="button" class="negative clear" @click="executeDelete()">Yes, I'am </button>
 </sweet-modal>
     </div>
 </template>
@@ -32,16 +32,14 @@
 <script>
   import {mapActions, mapGetters} from 'vuex'
   import db from '../../../../modules/firebase'
-  const rootRef = db.ref()
-  const questionsRef = rootRef.child('school/questions')
-  const subjectsRef = rootRef.child('school/subjects')
   import {Toast} from 'quasar'
   import { SweetModal } from 'sweet-modal-vue'
   export default {
     firebase () {
       return {
-        questions: questionsRef,
-        subjectArray: subjectsRef
+        questionsFire: {
+          source: db.ref('school/questions')
+        }
       }
     },
     data () {
@@ -80,11 +78,20 @@
           sort: true,
           filter: true
         }, {
-          label: 'Subject',
-          field: 'subject',
+          label: 'Language',
+          field: 'language',
           widht: '280px',
           sort: true,
-          filter: true
+          filter: true,
+          format (value, row) {
+            let upper = value.toUpperCase()
+            if (upper === 'PT') {
+              return 'PT-BR'
+            }
+            else {
+              return upper
+            }
+          }
         }, {
           label: 'True Awenser',
           field: 'ta',
@@ -119,6 +126,7 @@
       },
 
       deleteRow: function (selection) {
+        console.log(selection.rows[0].data)
         this.$refs.modal.open()
         this.setGeneralSelected(selection.rows[0].data)
       },
@@ -127,21 +135,25 @@
       },
       executeDelete: function () {
         const item = this.getGeneralSelected()
-        questionsRef.child(item['.key']).remove()
+        this.$firebaseRef.questionsFire.delete(item)
+        // questionsRef.child(item['.key']).remove()
         this.$refs.modal.close()
         Toast.create.negative({
           html: `The Question has been <strong>DELETED<strong>`
         })
-        this.updateSubjectUsed(item)
-      },
-      updateSubjectUsed (question) {
-        let subjectSelected = {}
-        this.subjectArray.map(subject => {
-          if (subject.name === question.subject) {
-            subjectSelected = subject
-          }
+      }
+    },
+    computed: {
+      questions () {
+        let array = []
+        this.questionsFire.forEach((element) => {
+          Object.keys(element).forEach(o => {
+            if (typeof (element[o]) === 'object') {
+              array.push(element[o])
+            }
+          })
         })
-        subjectsRef.child(subjectSelected['.key']).update({'totalQuestions': --(subjectSelected.totalQuestions)})
+        return array
       }
     },
     components: {

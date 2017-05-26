@@ -5,6 +5,7 @@
                         Awards Table
                     </q-toolbar-title>
                 </div>
+                
         <q-data-table
                 :data="awards"
                 :columns="columns"

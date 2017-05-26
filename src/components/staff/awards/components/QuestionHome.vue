@@ -3,7 +3,7 @@
       <QuestionCardTotal></QuestionCardTotal>
         <question-table class="shadow-3" @showDetails="$emit('showDetails')"></question-table>
 
-        <question-stats></question-stats>
+       
     </div>
 </template>
 

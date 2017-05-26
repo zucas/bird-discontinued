@@ -3,7 +3,6 @@
       <AwardCardTotal></AwardCardTotal>
 
       <award-table class="shadow-3"></award-table>
->
     <award-stats> </award-stats>  
   </div>
 </template>

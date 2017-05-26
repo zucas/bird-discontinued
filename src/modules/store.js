@@ -1,6 +1,5 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
-import fleet from './fleet'
 import generalSelected from './generalSelected'
 import pilot from './pilot'
 
@@ -12,7 +11,6 @@ export const store = new Vuex.Store({
   mutations: {},
   actions: {},
   modules: {
-    fleet,
     generalSelected,
     pilot
   }

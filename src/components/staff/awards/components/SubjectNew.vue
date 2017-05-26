@@ -37,7 +37,7 @@
 
 <script>
   import db from '../../../../modules/firebase'
-  let subjectRef = db.ref('school/subjects')
+  let subjectRef = db.ref('school/questions')
   import {Toast} from 'quasar'
   import { required, minLength } from 'vuelidate/lib/validators'
   export default {

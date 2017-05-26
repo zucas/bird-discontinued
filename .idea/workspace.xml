@@ -1,27 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="687cbc3d-de49-48b2-abe0-974deb1756e7" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/404.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/index.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/components/Index.vue" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/modules/piloto.js" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.eslintignore" afterPath="$PROJECT_DIR$/.eslintignore" />
+    <list default="true" id="687cbc3d-de49-48b2-abe0-974deb1756e7" name="Default" comment="Creating D.O">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database.rules.json" afterPath="$PROJECT_DIR$/database.rules.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/firebase.json" afterPath="$PROJECT_DIR$/firebase.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/functions/index.js" afterPath="$PROJECT_DIR$/functions/index.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/functions/package.json" afterPath="$PROJECT_DIR$/functions/package.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/App.vue" afterPath="$PROJECT_DIR$/src/App.vue" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/Staff.vue" afterPath="$PROJECT_DIR$/src/components/Staff.vue" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/staff/awards/components/AwardHome.vue" afterPath="$PROJECT_DIR$/src/components/staff/awards/components/AwardHome.vue" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/staff/awards/components/ExamHome.vue" afterPath="$PROJECT_DIR$/src/components/staff/awards/components/ExamHome.vue" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/staff/awards/components/ExamNew.vue" afterPath="$PROJECT_DIR$/src/components/staff/awards/components/ExamNew.vue" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/staff/awards/components/QuestionHome.vue" afterPath="$PROJECT_DIR$/src/components/staff/awards/components/QuestionHome.vue" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/staff/awards/components/SubjectHome.vue" afterPath="$PROJECT_DIR$/src/components/staff/awards/components/SubjectHome.vue" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/staff/fleet/component/AircraftGeneral.vue" afterPath="$PROJECT_DIR$/src/components/staff/fleet/component/AircraftGeneral.vue" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/staff/home/index.vue" afterPath="$PROJECT_DIR$/src/components/staff/home/index.vue" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/staff/awards/components/QuestionNew.vue" afterPath="$PROJECT_DIR$/src/components/staff/awards/components/QuestionNew.vue" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/staff/awards/components/QuestionTable.vue" afterPath="$PROJECT_DIR$/src/components/staff/awards/components/QuestionTable.vue" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/staff/awards/components/SubjectList.vue" afterPath="$PROJECT_DIR$/src/components/staff/awards/components/SubjectList.vue" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/staff/awards/components/SubjectNew.vue" afterPath="$PROJECT_DIR$/src/components/staff/awards/components/SubjectNew.vue" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/index.html" afterPath="$PROJECT_DIR$/src/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main.js" afterPath="$PROJECT_DIR$/src/main.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/modules/store.js" afterPath="$PROJECT_DIR$/src/modules/store.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/router.js" afterPath="$PROJECT_DIR$/src/router.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/themes/app.variables.styl" afterPath="$PROJECT_DIR$/src/themes/app.variables.styl" />
@@ -39,11 +32,21 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="QuestionStats.vue" pinned="false" current-in-tab="true">
+      <file leaf-file-name="QuestionStats.vue" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/staff/awards/components/QuestionStats.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="142">
-              <caret line="148" column="9" lean-forward="false" selection-start-line="148" selection-start-column="9" selection-end-line="148" selection-end-column="9" />
+            <state relative-caret-position="210">
+              <caret line="152" column="0" lean-forward="false" selection-start-line="152" selection-start-column="0" selection-end-line="152" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/functions/index.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="253">
+              <caret line="43" column="14" lean-forward="false" selection-start-line="43" selection-start-column="14" selection-end-line="43" selection-end-column="14" />
               <folding />
             </state>
           </provider>
@@ -54,7 +57,15 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="765">
               <caret line="45" column="18" lean-forward="false" selection-start-line="45" selection-start-column="18" selection-end-line="45" selection-end-column="18" />
-              <folding />
+              <folding>
+                <marker date="1495626914750" expanded="true" signature="7270:7293" ph="{&quot;label&quot;: o.name...}" />
+                <marker date="1495626914750" expanded="true" signature="7270:7303" ph="{...}" />
+                <marker date="1495626914750" expanded="true" signature="7270:7312" ph="{...}" />
+                <marker date="1495626914750" expanded="true" signature="7270:7318" ph="{...}" />
+                <marker date="1495626914750" expanded="true" signature="7270:7322" ph="{...}" />
+                <marker date="1495626914750" expanded="true" signature="7270:7331" ph="..." />
+                <marker date="1495626914750" expanded="true" signature="7340:7349" ph="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -72,9 +83,44 @@
       <file leaf-file-name="router.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/router.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2397">
-              <caret line="143" column="9" lean-forward="false" selection-start-line="143" selection-start-column="9" selection-end-line="143" selection-end-column="9" />
-              <folding />
+            <state relative-caret-position="2125">
+              <caret line="148" column="9" lean-forward="false" selection-start-line="148" selection-start-column="9" selection-end-line="148" selection-end-column="9" />
+              <folding>
+                <marker date="1495577773011" expanded="true" signature="4155:4186" ph="{...}" />
+                <marker date="1495577773011" expanded="true" signature="4155:4260" ph="{...}" />
+                <marker date="1495577773011" expanded="true" signature="4155:4269" ph="{...}" />
+                <marker date="1495577773011" expanded="true" signature="4155:4735" ph="{&quot;name&quot;: 'do'...}" />
+                <marker date="1495577773011" expanded="true" signature="4202:4250" ph="{...}" />
+                <marker date="1495577773011" expanded="true" signature="4287:4729" ph="[...]" />
+                <marker date="1495577773011" expanded="true" signature="4297:4377" ph="{&quot;name&quot;: 'do-home'...}" />
+                <marker date="1495577773011" expanded="true" signature="4387:4502" ph="{&quot;name&quot;: 'incomplete-form'...}" />
+                <marker date="1495577773011" expanded="true" signature="4512:4617" ph="{&quot;name&quot;: 'pilots-exam-center'...}" />
+                <marker date="1495577773011" expanded="true" signature="4627:4721" ph="{&quot;name&quot;: 'pilot-exam'...}" />
+                <marker date="1495577773011" expanded="true" signature="4824:5022" ph="{...}" />
+                <marker date="1495577773011" expanded="true" signature="4885:5013" ph="{...}" />
+                <marker date="1495577773011" expanded="true" signature="4907:4939" ph="{...}" />
+                <marker date="1495577773011" expanded="true" signature="4955:5003" ph="{...}" />
+                <marker date="1495577773011" expanded="true" signature="5050:5143" ph="{&quot;name&quot;: 'staff-home'...}" />
+                <marker date="1495577773011" expanded="true" signature="5153:6181" ph="{&quot;path&quot;: 'fleet'...}" />
+                <marker date="1495577773011" expanded="true" signature="5233:6171" ph="[...]" />
+                <marker date="1495577773011" expanded="true" signature="5293:5475" ph="{&quot;path&quot;: 'equipments'...}" />
+                <marker date="1495577773011" expanded="true" signature="5380:5461" ph="[...]" />
+                <marker date="1495577773011" expanded="true" signature="5489:5776" ph="{&quot;path&quot;: 'aircrafts'...}" />
+                <marker date="1495577773011" expanded="true" signature="5573:5762" ph="[...]" />
+                <marker date="1495577773011" expanded="true" signature="5790:5974" ph="{&quot;path&quot;: 'categories'...}" />
+                <marker date="1495577773011" expanded="true" signature="5876:5960" ph="[...]" />
+                <marker date="1495577773011" expanded="true" signature="5988:6159" ph="{&quot;path&quot;: 'maintence'...}" />
+                <marker date="1495577773011" expanded="true" signature="6072:6145" ph="[...]" />
+                <marker date="1495577773011" expanded="true" signature="6552:6614" ph="{&quot;path&quot;: '/'...}" />
+                <marker date="1495577773011" expanded="true" signature="6628:6807" ph="{&quot;path&quot;: 'awards'...}" />
+                <marker date="1495577773011" expanded="true" signature="6703:6793" ph="[...]" />
+                <marker date="1495577773011" expanded="true" signature="6821:6996" ph="{&quot;path&quot;: 'exams'...}" />
+                <marker date="1495577773011" expanded="true" signature="6894:6982" ph="[...]" />
+                <marker date="1495577773011" expanded="true" signature="7010:7201" ph="{&quot;path&quot;: 'questions'...}" />
+                <marker date="1495577773011" expanded="true" signature="7091:7187" ph="[...]" />
+                <marker date="1495577773011" expanded="true" signature="7215:7395" ph="{&quot;path&quot;: 'themes'...}" />
+                <marker date="1495577773011" expanded="true" signature="7290:7381" ph="[...]" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -84,9 +130,7 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="34">
               <caret line="2" column="31" lean-forward="false" selection-start-line="2" selection-start-column="31" selection-end-line="2" selection-end-column="31" />
-              <folding>
-                <marker date="1495433824662" expanded="true" signature="1395:1410" ph="..." />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -94,13 +138,9 @@
       <file leaf-file-name="Staff.vue" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/Staff.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="663">
+            <state relative-caret-position="765">
               <caret line="45" column="51" lean-forward="false" selection-start-line="45" selection-start-column="51" selection-end-line="45" selection-end-column="51" />
-              <folding>
-                <marker date="1495433764080" expanded="true" signature="1410:1457" ph="..." />
-                <marker date="1495433764080" expanded="true" signature="1604:1711" ph="..." />
-                <marker date="1495433764080" expanded="true" signature="1747:1897" ph="..." />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -182,7 +222,6 @@
         <option value="$PROJECT_DIR$/src/modules/generalSelected.js" />
         <option value="$PROJECT_DIR$/src/components/staff/fleet/views/Aircrafts.vue" />
         <option value="$PROJECT_DIR$/database.rules.json" />
-        <option value="$PROJECT_DIR$/functions/index.js" />
         <option value="$PROJECT_DIR$/src/index.html" />
         <option value="$PROJECT_DIR$/src/main.js" />
         <option value="$PROJECT_DIR$/src/components/staff/awards/components/ThemeStats.vue" />
@@ -216,6 +255,7 @@
         <option value="$PROJECT_DIR$/src/router.js" />
         <option value="$PROJECT_DIR$/src/components/staff/home/index.vue" />
         <option value="$PROJECT_DIR$/src/components/staff/awards/components/QuestionStats.vue" />
+        <option value="$PROJECT_DIR$/functions/index.js" />
       </list>
     </option>
   </component>
@@ -255,7 +295,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -288,96 +327,13 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Bird" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Bird" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="modules" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Bird" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Bird" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="components" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Bird" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Bird" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="components" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="staff" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Bird" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Bird" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="components" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="staff" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="home" />
+              <option name="myItemId" value="functions" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
       <pane id="Scratches" />
     </panes>
   </component>
@@ -529,7 +485,8 @@
       <workItem from="1493930304854" duration="89000" />
       <workItem from="1493944285743" duration="162000" />
       <workItem from="1494694338367" duration="208000" />
-      <workItem from="1495530886375" duration="27000" />
+      <workItem from="1495530886375" duration="307000" />
+      <workItem from="1495637400405" duration="3327000" />
     </task>
     <task id="LOCAL-00001" summary="Corrigido problemas na exibição dos detalhes das questões.">
       <created>1493779595314</created>
@@ -552,15 +509,21 @@
       <option name="project" value="LOCAL" />
       <updated>1494694556056</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Creating D.O">
+      <created>1495531149503</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1495531149503</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="213877000" />
+    <option name="totallyTimeSpent" value="217484000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21010248" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -570,7 +533,7 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.4274448" sideWeight="0.49121523" order="9" side_tool="false" content_ui="tabs" x="0" y="23" width="1366" height="705" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.4274448" sideWeight="0.49121523" order="9" side_tool="false" content_ui="tabs" x="0" y="23" width="1366" height="705" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -607,7 +570,8 @@
     <MESSAGE value="Corrigido problemas na exibição dos detalhes das questões." />
     <MESSAGE value="Questions Uploaded and Show details complete" />
     <MESSAGE value="Create all staff views" />
-    <option name="LAST_COMMIT_MESSAGE" value="Create all staff views" />
+    <MESSAGE value="Creating D.O" />
+    <option name="LAST_COMMIT_MESSAGE" value="Creating D.O" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -635,13 +599,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="4" lean-forward="false" selection-start-line="8" selection-start-column="4" selection-end-line="8" selection-end-column="68" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/public/index.html" />
     <entry file="file://$PROJECT_DIR$/src/components/staff/fleet/views/Aircrafts.vue">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1836">
@@ -843,13 +801,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/modules/firebaseStorage.js" />
-    <entry file="file://$PROJECT_DIR$/functions/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="27" column="0" lean-forward="false" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/dist/js/app.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
@@ -875,6 +826,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
           <caret line="12" column="30" lean-forward="true" selection-start-line="12" selection-start-column="30" selection-end-line="12" selection-end-column="30" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -896,6 +848,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
           <caret line="9" column="0" lean-forward="true" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -938,7 +891,15 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="765">
           <caret line="45" column="18" lean-forward="false" selection-start-line="45" selection-start-column="18" selection-end-line="45" selection-end-column="18" />
-          <folding />
+          <folding>
+            <marker date="1495626914750" expanded="true" signature="7270:7293" ph="{&quot;label&quot;: o.name...}" />
+            <marker date="1495626914750" expanded="true" signature="7270:7303" ph="{...}" />
+            <marker date="1495626914750" expanded="true" signature="7270:7312" ph="{...}" />
+            <marker date="1495626914750" expanded="true" signature="7270:7318" ph="{...}" />
+            <marker date="1495626914750" expanded="true" signature="7270:7322" ph="{...}" />
+            <marker date="1495626914750" expanded="true" signature="7270:7331" ph="..." />
+            <marker date="1495626914750" expanded="true" signature="7340:7349" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -952,21 +913,52 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/Staff.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="663">
+        <state relative-caret-position="765">
           <caret line="45" column="51" lean-forward="false" selection-start-line="45" selection-start-column="51" selection-end-line="45" selection-end-column="51" />
-          <folding>
-            <marker date="1495433764080" expanded="true" signature="1410:1457" ph="..." />
-            <marker date="1495433764080" expanded="true" signature="1604:1711" ph="..." />
-            <marker date="1495433764080" expanded="true" signature="1747:1897" ph="..." />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/router.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2397">
-          <caret line="143" column="9" lean-forward="false" selection-start-line="143" selection-start-column="9" selection-end-line="143" selection-end-column="9" />
-          <folding />
+        <state relative-caret-position="2125">
+          <caret line="148" column="9" lean-forward="false" selection-start-line="148" selection-start-column="9" selection-end-line="148" selection-end-column="9" />
+          <folding>
+            <marker date="1495577773011" expanded="true" signature="4155:4186" ph="{...}" />
+            <marker date="1495577773011" expanded="true" signature="4155:4260" ph="{...}" />
+            <marker date="1495577773011" expanded="true" signature="4155:4269" ph="{...}" />
+            <marker date="1495577773011" expanded="true" signature="4155:4735" ph="{&quot;name&quot;: 'do'...}" />
+            <marker date="1495577773011" expanded="true" signature="4202:4250" ph="{...}" />
+            <marker date="1495577773011" expanded="true" signature="4287:4729" ph="[...]" />
+            <marker date="1495577773011" expanded="true" signature="4297:4377" ph="{&quot;name&quot;: 'do-home'...}" />
+            <marker date="1495577773011" expanded="true" signature="4387:4502" ph="{&quot;name&quot;: 'incomplete-form'...}" />
+            <marker date="1495577773011" expanded="true" signature="4512:4617" ph="{&quot;name&quot;: 'pilots-exam-center'...}" />
+            <marker date="1495577773011" expanded="true" signature="4627:4721" ph="{&quot;name&quot;: 'pilot-exam'...}" />
+            <marker date="1495577773011" expanded="true" signature="4824:5022" ph="{...}" />
+            <marker date="1495577773011" expanded="true" signature="4885:5013" ph="{...}" />
+            <marker date="1495577773011" expanded="true" signature="4907:4939" ph="{...}" />
+            <marker date="1495577773011" expanded="true" signature="4955:5003" ph="{...}" />
+            <marker date="1495577773011" expanded="true" signature="5050:5143" ph="{&quot;name&quot;: 'staff-home'...}" />
+            <marker date="1495577773011" expanded="true" signature="5153:6181" ph="{&quot;path&quot;: 'fleet'...}" />
+            <marker date="1495577773011" expanded="true" signature="5233:6171" ph="[...]" />
+            <marker date="1495577773011" expanded="true" signature="5293:5475" ph="{&quot;path&quot;: 'equipments'...}" />
+            <marker date="1495577773011" expanded="true" signature="5380:5461" ph="[...]" />
+            <marker date="1495577773011" expanded="true" signature="5489:5776" ph="{&quot;path&quot;: 'aircrafts'...}" />
+            <marker date="1495577773011" expanded="true" signature="5573:5762" ph="[...]" />
+            <marker date="1495577773011" expanded="true" signature="5790:5974" ph="{&quot;path&quot;: 'categories'...}" />
+            <marker date="1495577773011" expanded="true" signature="5876:5960" ph="[...]" />
+            <marker date="1495577773011" expanded="true" signature="5988:6159" ph="{&quot;path&quot;: 'maintence'...}" />
+            <marker date="1495577773011" expanded="true" signature="6072:6145" ph="[...]" />
+            <marker date="1495577773011" expanded="true" signature="6552:6614" ph="{&quot;path&quot;: '/'...}" />
+            <marker date="1495577773011" expanded="true" signature="6628:6807" ph="{&quot;path&quot;: 'awards'...}" />
+            <marker date="1495577773011" expanded="true" signature="6703:6793" ph="[...]" />
+            <marker date="1495577773011" expanded="true" signature="6821:6996" ph="{&quot;path&quot;: 'exams'...}" />
+            <marker date="1495577773011" expanded="true" signature="6894:6982" ph="[...]" />
+            <marker date="1495577773011" expanded="true" signature="7010:7201" ph="{&quot;path&quot;: 'questions'...}" />
+            <marker date="1495577773011" expanded="true" signature="7091:7187" ph="[...]" />
+            <marker date="1495577773011" expanded="true" signature="7215:7395" ph="{&quot;path&quot;: 'themes'...}" />
+            <marker date="1495577773011" expanded="true" signature="7290:7381" ph="[...]" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -974,16 +966,22 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
           <caret line="2" column="31" lean-forward="false" selection-start-line="2" selection-start-column="31" selection-end-line="2" selection-end-column="31" />
-          <folding>
-            <marker date="1495433824662" expanded="true" signature="1395:1410" ph="..." />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/staff/awards/components/QuestionStats.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="142">
-          <caret line="148" column="9" lean-forward="false" selection-start-line="148" selection-start-column="9" selection-end-line="148" selection-end-column="9" />
+        <state relative-caret-position="210">
+          <caret line="152" column="0" lean-forward="false" selection-start-line="152" selection-start-column="0" selection-end-line="152" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/functions/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="253">
+          <caret line="43" column="14" lean-forward="false" selection-start-line="43" selection-start-column="14" selection-end-line="43" selection-end-column="14" />
           <folding />
         </state>
       </provider>
