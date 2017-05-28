@@ -60,6 +60,13 @@ export default {
       actualYear: moment().format('YYYY')
     }
   },
-  computed: {}
+  computed: {},
+  mounted () {
+    this.$store.dispatch('fetchAllQuestions')
+    this.$store.dispatch('fetchSubjects')
+    this.$store.dispatch('fetchExamsData')
+    this.$store.dispatch('fetchAwardsData')
+    this.$store.dispatch('fetchRatings')
+  }
 }
 </script>

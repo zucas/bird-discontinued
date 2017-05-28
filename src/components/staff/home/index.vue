@@ -22,7 +22,6 @@ import PrePilotsCards from '../pilots/components/PreCadastro.vue'
 import FlighCards from '../flights/components/FlightCards.vue'
 import AwardCard from '../awards/components/AwardCardTotal.vue'
 import SubjectCard from '../awards/components/SubjectsCardTotal.vue'
-import firebase from 'firebase'
 export default {
   data () {
     return {
@@ -31,9 +30,6 @@ export default {
   },
   components: {
     QuestionStats, AwardStats, PilotsCards, FlighCards, AwardCard, SubjectCard, PrePilotsCards
-  },
-  mounted () {
-    this.user = firebase.auth().currentUser
   }
 }
 </script>

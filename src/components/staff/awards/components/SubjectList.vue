@@ -1,37 +1,30 @@
 <template>
     <div>
-      <div class="toolbar">
+      <div class="card bg-white">
+        <div class="card-content">
+          <div class="toolbar">
                     <q-toolbar-title :padding="1">
                         Subjects Table
                     </q-toolbar-title>
                 </div>
         <q-data-table
-                class=""
-                :data="subjects"
+                :data="subjects()"
                 :columns="columns"
                 :config="config"
                 :padding="15"
         >
         </q-data-table>
+        </div>
+      </div>
     </div>
 </template>
 
 <script>
-  import db from '../../../../modules/firebase'
-  const dbRoot = db.ref()
-  const questionsRef = dbRoot.child('school/questions')
+  import {mapGetters} from 'vuex'
   export default {
-    firebase () {
-      return {
-        subjects: questionsRef
-      }
-    },
     data () {
       return {
         config: {
-          bodyStyle: {
-            maxHeight: '220px'
-          },
           selection: 'one',
           rowHeight: '45px',
           pagination: {
@@ -57,26 +50,22 @@
         },
         columns: [{
           label: 'Name',
-          field: '.key',
+          field: 'name',
           widht: '180px',
           sort: true,
           filter: true
         }, {
           label: 'Total Questions',
-          field: '',
-          widht: '180px',
-          sort: true,
-          filter: false
-        }, {
-          label: 'Number of usages',
-          field: 'usagesNumber',
+          field: 'numberOfQuestions',
           widht: '180px',
           sort: true,
           filter: false
         }]
       }
     },
-    computed: {}
+    methods: {
+      ...mapGetters(['subjects'])
+    }
   }
 </script>
 

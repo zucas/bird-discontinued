@@ -5,11 +5,11 @@
     <!-- your content -->
     <div class="layout-padding">
       <div>
-        <pilot-resume class="wrap"></pilot-resume>
+        <pilot-resume></pilot-resume>
       </div>
-      <div class="row gutter">        
-        <PremiumFlight ref="premiumFlight" class="md-width-1of2 animate-scale"></PremiumFlight>
-        <EventsCalendar id="eventCalendar" ref="eventCalendar" class="md-width-1of2 animate-scale"></EventsCalendar>
+      <div class="row content-center self-stretch gutter ">        
+        <PremiumFlight ref="premiumFlight" class="md-width-1of2 self-stretch animate-scale"></PremiumFlight>
+        <EventsCalendar id="eventCalendar" ref="eventCalendar" class="md-width-1of2 self-start animate-scale"></EventsCalendar>
       </div>
       <div class="row">
         <ExamsAvaible class="width-1of1 animate-pop"></ExamsAvaible>
@@ -55,6 +55,8 @@ export default {
     PilotPireps
   },
   mounted () {
+    // onsole.log(this.$refs.premiumFlight.$el.clientHeight)
+    // console.log(this.$refs.premiumFlight.$el.clientHeight)
   }
 }
 </script>

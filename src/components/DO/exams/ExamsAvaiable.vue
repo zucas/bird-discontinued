@@ -10,7 +10,7 @@
       </div>
       <div class="card-content bg-primary-opac">
         <div class="row gutter">
-          <div v-for="(exam, i) in exams" class="width-1of5">
+          <div v-for="(exam, i) in exams()" class="width-1of5">
             <div class="card text-center shadow-4" @click='$refs.confirmationModal.open(); selectExam(exam)'>
             <div class="card-media">
               <img class="responsive" src="https://i.ytimg.com/vi/NhvQ35mE1OI/hqdefault.jpg" alt="">
@@ -66,47 +66,31 @@
 
 <script>
 import {Toast} from 'quasar'
-import {mapGetters, mapActions} from 'vuex'
-import db from '../../../modules/firebase'
-let examInitialRef = db.ref('school/exams').orderByChild('start').equalTo(true)
-let examsRef = db.ref('school/exams').orderByChild('start').equalTo(false)
 import { SweetModal, SweetButton } from 'sweet-modal-vue'
+import {mapGetters, mapActions} from 'vuex'
 export default {
-  firebase () {
-    return {
-      examsFire: examsRef,
-      examInitialFire: examInitialRef
-    }
-  },
   data () {
     return {
-      pilot: {},
-      exams: [],
       test: {},
       examSelected: {}
     }
   },
   created () {
-    this.pilot = this.getPilot()
-    if (this.pilot.va_info.rating === 0) {
+    if (this.pilot().va_info.rating === 0) {
       Toast.create.negative({
         html: 'You need do the Admission Exam to continue!'
       })
-      this.exam = this.examInitialFire
-    }
-    else {
-      this.exams = this.examsFire
     }
   },
   methods: {
+    ...mapGetters(['exams', 'pilot']),
     ...mapActions(['setGeneralSelected']),
-    ...mapGetters(['getPilot']),
-    selectExam (exam) {
-      this.examSelected = exam
-    },
     startExam () {
       this.setGeneralSelected(this.examSelected)
       this.$router.push({name: 'pilot-exam'})
+    },
+    selectExam (exam) {
+      this.examSelected = exam
     }
   },
   components: {

@@ -2,6 +2,12 @@ import Vue from 'vue'
 import Vuex from 'vuex'
 import generalSelected from './generalSelected'
 import pilot from './pilot'
+import flights from './operations/flights'
+import exams from './school/exams'
+import events from './operations/events'
+import questions from './school/questions'
+import subjects from './school/subjects'
+import awards from './school/awards'
 
 Vue.use(Vuex)
 
@@ -12,6 +18,12 @@ export const store = new Vuex.Store({
   actions: {},
   modules: {
     generalSelected,
-    pilot
+    pilot,
+    flights,
+    exams,
+    events,
+    questions,
+    subjects,
+    awards
   }
 })

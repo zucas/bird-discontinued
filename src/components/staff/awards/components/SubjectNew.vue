@@ -36,8 +36,6 @@
 </template>
 
 <script>
-  import db from '../../../../modules/firebase'
-  let subjectRef = db.ref('school/questions')
   import {Toast} from 'quasar'
   import { required, minLength } from 'vuelidate/lib/validators'
   export default {
@@ -64,7 +62,6 @@
           return
         }
         else {
-          subjectRef.push(this.subject)
           this.subject.name = ''
           Toast.create.positive({
             html: 'Subject has been created!'

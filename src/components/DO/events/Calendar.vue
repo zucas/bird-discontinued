@@ -12,7 +12,7 @@
       </div>
       <div class="card-content">
         <div class="list no-border">
-          <template v-for="event in events">
+          <template v-for="event in nextEvents()">
             <p class="thin-paragraph">{{ event.date }} - {{ event.name }}</p>
           </template>
         </div>
@@ -23,23 +23,15 @@
 
 <script>
 import moment from 'moment'
-import db from '../../../modules/firebase'
-let eventsRef = db.ref('events')
+import {mapGetters} from 'vuex'
 export default {
-  firebase () {
-    return {
-      events: eventsRef
-    }
-  },
   data () {
     return {
       nextEvent: moment().add(5, 'days').format()
     }
   },
-  computed: {
-    dateEvent () {
-      return moment(this.nextEvent).format('DD/MM/YYYY')
-    }
+  methods: {
+    ...mapGetters(['nextEvents'])
   }
 }
 </script>

@@ -1,12 +1,14 @@
 <template>
     <div>
-      <div class="toolbar">
+      <div class="card bg-white">
+          <div class="toolbar">
                     <q-toolbar-title :padding="1">
                         Questions Table
                     </q-toolbar-title>
                 </div>
+        <div class="card-content">
         <q-data-table
-                :data='questions'
+                :data='questions()'
                 :columns="columns"
                 :config="config"
                 :padding="15"
@@ -21,6 +23,8 @@
                 </button>
             </template>
         </q-data-table>
+        </div>
+      </div>
         <sweet-modal ref="modal" overlay-theme="dark"  icon="error">
         	      <h4>Are you sure? </h4>
                 <p>This Operation cannot be undone</p>
@@ -31,23 +35,12 @@
 
 <script>
   import {mapActions, mapGetters} from 'vuex'
-  import db from '../../../../modules/firebase'
   import {Toast} from 'quasar'
   import { SweetModal } from 'sweet-modal-vue'
   export default {
-    firebase () {
-      return {
-        questionsFire: {
-          source: db.ref('school/questions')
-        }
-      }
-    },
     data () {
       return {
         config: {
-          bodyStyle: {
-            maxHeight: '220px'
-          },
           selection: 'single',
           rowHeight: '45px',
           pagination: {
@@ -119,7 +112,7 @@
     },
     methods: {
       ...mapActions(['setGeneralSelected']),
-      ...mapGetters(['getGeneralSelected']),
+      ...mapGetters(['getGeneralSelected', 'questions']),
       showDetails: function (selection) {
         this.setGeneralSelected(selection.rows[0].data)
         this.$emit('showDetails')
@@ -139,19 +132,6 @@
         Toast.create.negative({
           html: `The Question has been <strong>DELETED<strong>`
         })
-      }
-    },
-    computed: {
-      questions () {
-        let array = []
-        this.questionsFire.forEach((element) => {
-          Object.keys(element).forEach(o => {
-            if (typeof (element[o]) === 'object') {
-              array.push(element[o])
-            }
-          })
-        })
-        return array
       }
     },
     components: {
