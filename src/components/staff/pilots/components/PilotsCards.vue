@@ -23,18 +23,7 @@
 </template>
 
 <script>
-import db from '../../../../modules/firebase'
-let pilotsRef = db.ref('pilots')
-let settingsRef = db.ref('general_settings')
 export default {
-  firebase () {
-    return {
-      pilots: pilotsRef,
-      settings: {
-        asObject: true,
-        source: settingsRef }
-    }
-  },
   data () {
     return {}
   }

@@ -3,12 +3,12 @@
     <div class="card shadow-3">
           <div class="toolbar bg-tertiary">
                     <q-toolbar-title :padding="1">
-                      <i>flight_takeoff</i> Avaible Flights From {{ pilot.va_info.local }}
+                      <i>flight_takeoff</i> Avaible Flights From {{ pilot().va_info.local }}
                     </q-toolbar-title>
                 </div>
 <div class="card-content bg-white text-primary">
           <q-data-table
-                :data="flights"
+                :data="flights()"
                 :columns="columns"
                 :config="config"
                 :padding="15"
@@ -20,18 +20,10 @@
 </template>
 
 <script>
-import db from '../../../modules/firebase'
 import {mapGetters} from 'vuex'
-let flightsRef = db.ref('flights').orderByChild('dep').equalTo('SBGR')
 export default {
-  firebase () {
-    return {
-      flights: flightsRef
-    }
-  },
   data () {
     return {
-      pilot: {},
       config: {
         bodyStyle: {
           maxHeight: '220px'
@@ -99,10 +91,9 @@ export default {
     }
   },
   methods: {
-    ...mapGetters(['getPilot'])
+    ...mapGetters(['flights', 'pilot'])
   },
   mounted () {
-    this.pilot = this.getPilot()
   }
 }
 </script>

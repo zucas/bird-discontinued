@@ -32,10 +32,10 @@ export default {
     }
   },
   methods: {
-    ...mapGetters(['getPilot'])
+    ...mapGetters(['pilot'])
   },
   created () {
-    this.awards = this.getPilot().awards
+    this.awards = this.pilot().awards
   },
   components: {
     SweetModal

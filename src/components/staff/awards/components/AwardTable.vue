@@ -1,36 +1,30 @@
 <template>
     <div>
-      <div class="toolbar">
+      <div class="card bg-white">
+        <div class="card-content">
+          <div class="toolbar">
                     <q-toolbar-title :padding="1">
                         Awards Table
                     </q-toolbar-title>
                 </div>
-                
         <q-data-table
-                :data="awards"
+                :data="awards()"
                 :columns="columns"
                 :config="config"
                 :padding="15"
         >
         </q-data-table>
+        </div>
+      </div>
     </div>
 </template>
 
 <script>
-import db from '../../../../modules/firebase'
-let awardsRef = db.ref('school/awards')
+import { mapGetters } from 'vuex'
 export default {
-  firebase () {
-    return {
-      awards: awardsRef
-    }
-  },
   data () {
     return {
       config: {
-        bodyStyle: {
-          maxHeight: '220px'
-        },
         selection: 'one',
         rowHeight: '45px',
         pagination: {
@@ -62,9 +56,16 @@ export default {
         filter: true
       },
       {
-        label: 'Do it expires?',
-        field: 'hasExpiration',
-        widht: '150px',
+        label: 'Exams Gruop',
+        field: 'examsGruop',
+        widht: '180px',
+        sort: true,
+        filter: true
+      },
+      {
+        label: 'Change Rating?',
+        field: 'itChangeRating',
+        widht: '100px',
         sort: true,
         filter: true,
         format (value, row) {
@@ -77,8 +78,8 @@ export default {
         }
       },
       {
-        label: 'Expire in (months)',
-        field: 'expirationTime',
+        label: 'Next Rating',
+        field: 'nextRating',
         widht: '180px',
         sort: true,
         filter: true
@@ -91,6 +92,9 @@ export default {
       }
       ]
     }
+  },
+  methods: {
+    ...mapGetters(['awards'])
   }
 }
 </script>

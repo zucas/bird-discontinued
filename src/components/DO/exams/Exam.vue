@@ -91,7 +91,7 @@ export default {
       this.language = language
       let count = 0
       Object.keys(this.examSelected.composition).forEach(subject => {
-        this.$http.get(`https://bird-ff640.firebaseio.com/school/questions/${subject}.json?orderBy="language"&equalTo="${language}"&limitToFirst=${this.examSelected.composition[subject]}`)
+        this.$http.get(`https://bird-ff640.firebaseio.com/LATAM-VA/school/questions/${subject}.json?orderBy="language"&equalTo="${language}"&limitToFirst=${this.examSelected.composition[subject]}`)
         .then(response => {
           count++
           this.resData.push(response.body)
@@ -159,7 +159,6 @@ export default {
       return String.fromCharCode(65 + i)
     },
     calculatePoints () {
-      console.log(this.ansewers[1] + ' = ' + this.examGenerated.questions[1].ta)
       for (var i = 0; i < this.ansewers.length; i++) {
         if (this.ansewers[i] === this.examGenerated.questions[i].ta) {
           this.points++

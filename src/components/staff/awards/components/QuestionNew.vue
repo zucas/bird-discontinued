@@ -106,19 +106,11 @@
 </template>
 
 <script>
-  import db from '../../../../modules/firebase'
-  const rootRef = db.ref()
-  const questionsRef = rootRef.child('school/questions')
   import {Utils, Toast} from 'quasar'
-  import firebase from 'firebase'
-  const uploadRef = firebase.storage().ref()
   import { required, minLength } from 'vuelidate/lib/validators'
+  import {mapGetters, mapActions} from 'vuex'
+  import firebase from 'firebase'
   export default {
-    firebase () {
-      return {
-        subjectArray: questionsRef
-      }
-    },
     data () {
       return {
         labels: {
@@ -165,6 +157,8 @@
       }
     },
     methods: {
+      ...mapGetters(['subjects']),
+      ...mapActions(['createNewQuestion']),
       addFile: function (files) {
         this.file = files[0]
         this.question.hasImage = true
@@ -173,8 +167,8 @@
         // Verify Have Image to Uploads
         if (this.question.hasImage) {
           let uid = Utils.uid()
-          uploadRef.child('school/questions/images/' + uid).put(this.file)
           this.question.imgLink = 'school/questions/images/' + uid
+          firebase.storage().ref().child('latam-va/school/questions/images/' + uid).put(this.file)
         }
         this.$v.question.$touch()
         if (this.$v.question.$error) {
@@ -183,7 +177,7 @@
         }
         // Whitout Erros, Send Question to DB.
         else {
-          questionsRef.child(this.subject).push(this.question)
+          this.createNewQuestion({subject: this.subject, question: this.question})
           Toast.create.positive({
             html: 'Question has been created!'
           })
@@ -193,16 +187,16 @@
       search (terms, done) {
         setTimeout(() => {
           done(Utils.filter(terms, {field: 'value', list: this.parsedSubject()}))
-        }, 0)
+        }, 100)
       },
       alternativeNumber (i) {
         return ++i
       },
       parsedSubject () {
-        return this.subjectArray.map(o => {
+        return this.subjects().map(o => {
           return {
-            label: o['.key'],
-            value: o['.key']
+            label: o.name,
+            value: o.name
           }
         })
       }

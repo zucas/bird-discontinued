@@ -18,7 +18,7 @@ exports.examGenetator = functions.https.onRequest((req, res) => {
   // Filtrar o exame pelos dados do reques
 })
 
-exports.questionLenguageSet = functions.database.ref('school/questions/{subjectId}/{questionId}')
+exports.questionLenguageSet = functions.database.ref('LATAM-VA/school/questions/{subjectId}/{questionId}')
 .onWrite(event => {
   const question = event.data.val()
   translate.detect(question.statement, (err, results) => {
@@ -26,32 +26,21 @@ exports.questionLenguageSet = functions.database.ref('school/questions/{subjectI
   })
 })
 
-exports.countTotalQuestionsPerSubject = functions.database.ref('school/questions/').onWrite(event => {
-  //Aqui estou contando o numero de temas
-  const count = event.data.numChildren()
-  return event.data.ref.parent.child('total_subjects').set(count)
+
+exports.setPilotId = functions.database.ref('LATAM-VA/pilots/{pushId}').onWrite(event => {
+  let pilot = event.data.val()
+  if (pilot.va_info.number === 0) {
+    let nextId = 0
+    let nxtCallRef = admin.database().ref('LATAM-VA/general_settings/nextCallsing')
+    nxtCallRef.once('value', snapData => {
+      nextId = snapData.val()
+    })
+    event.data.ref.child('va_info/number').set(nextId)
+    return nxtCallRef.set(nextId++)
+  }
+  return
 })
 
-exports.setPilotId = functions.database.ref('pilots/{pushId}').onWrite(event => {
-  const pilot = event.data.val()
-  const nextId = 0
-  let nxtCallRef = admin.database().ref('general_settings/nextCallsing')
-  nxtCallRef.once('value', snapData => {
-    nextId = snapData.val()
-  })
-  event.data.ref.child('va_info/number').set(nextId)
-  return nxtCallRef.set(nextId++)
-})
-
-exports.countTotalQuestions = functions.database.ref('school/questions/').onWrite(event => {
-  //Aqui estou contando o numero de temas
-  const count = event.data.numChildren()
-  let count2 = 0
-  event.data.forEach(snap => {
-    count2 += snap.numChildren()
-  })
-  return event.data.ref.parent.child('total_questions').set(count2)
-})
 
 exports.sendWelcomeEmail = functions.auth.user().onCreate(event => {
   // ...

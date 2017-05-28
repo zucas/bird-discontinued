@@ -72,9 +72,9 @@
     </q-drawer>
 
     <q-drawer right-side swipe-only ref="user_info">
-      <div class="row no-margin-top text-white" v-if='this.pilot.isMember' :class="colorNumber">
+      <div class="row no-margin-top text-white" v-if='user().va_info.active' :class="colorNumber">
         <div class="auto"></div>
-          <h5 class="thin-paragraph" >TAM{{ pilot.va_info.number }} </h5>
+          <h5 class="thin-paragraph" >TAM{{ user().va_info.number }} </h5>
         <div class="auto"></div>
       </div>
       <div class="row no-margin-top bg-negative text-white" v-else>
@@ -82,18 +82,22 @@
           <h5 class="thin-paragraph" > Incomplete Register </h5>
         <div class="auto"></div>
       </div>
-      <img class="responsive full-width" :src='user.photoURL' :alt="user.displayName">
+      <img class="responsive full-width" :src='user().profilePicUrl' :alt="user.displayName">
       <div class="row">
         <div class="auto"></div>
-          <h5 class="light-paragraph">{{ user.displayName }}</h5>
+          <h5 class="light-paragraph">{{ user().name }}</h5>
         <div class="auto"></div>
       </div>
       <div class="row">
         <div class="auto"></div>
-          <p class="light-paragraph">{{ user.email }}</p>
+          <p class="light-paragraph">{{ user().email }}</p>
         <div class="auto"></div>
       </div>
-        <p class="thin-paragraph text-faded text-center"> <i>power_settings_new</i> Logout</p>
+      <div class="row">
+        <div class="auto"></div>
+        <button class="thin-paragraph text-faded" @click="signOut"> <i>power_settings_new</i> Logout</button>
+        <div class="auto"></div>
+      </div>
       <div class="toolbar bg-secondary">
         <q-toolbar-title>
           Personal
@@ -122,53 +126,35 @@
 </template>
 
 <script>
-import firebase from 'firebase'
-import {mapMutations, mapActions} from 'vuex'
-import db from '../../../modules/firebase'
+import {mapGetters, mapActions} from 'vuex'
 // let haveVacancies = db.ref('general_settings').child('openVacancies')
-let numPilotos
-db.ref('pilots').once('value', dataSnap => {
-  numPilotos = dataSnap.numChildren()
-})
-let totalVacancies
-db.ref('general_settings/total_vacancies').once('value', snapData => {
-  totalVacancies = snapData.val()
-})
 export default {
   data () {
     return {
-      user: {},
       pilot: {}
     }
   },
-  mounted () {
-    this.user = firebase.auth().currentUser
-    this.$http.get('https://bird-ff640.firebaseio.com/pilots/' + this.user.uid + '.json').then(response => {
-      if (response.body === null) {
-        this.pilot.isMember = false
-        if (totalVacancies > numPilotos) {
-          this.redirectFormRegister()
-        }
-        else {
-          this.redirectNoVacancy()
-        }
-      }
-      else {
-        this.pilot = response.body
-        this.pilot.isMember = true
-        this.setPilot(this.pilot)
-        if (this.pilot.va_info.rating === 0) {
-          this.$router.push({name: 'pilots-exam-center'})
-        }
-        else {
-          this.$router.push({name: 'do-home'})
-        }
-      }
+  created () {
+    this.$store.dispatch('fetchFlightsFromDep', {
+      dep_icao: this.user().va_info.local
     })
+    this.$store.dispatch('fetchExamsData')
+    this.$store.dispatch('fetchPremiumFlight')
+    this.$store.dispatch('fetchNextEvents')
+  },
+  mounted () {
+    if (this.user().va_info.rating === 0) {
+      this.$router.push({name: 'pilots-exam-center'})
+      // Redireciona para exames!
+    }
+    else {
+      // Carrega as informações corretas
+      this.$router.push({name: 'do-home'})
+    }
   },
   computed: {
     colorNumber () {
-      if (this.pilot.rating === 0) {
+      if (this.user().va_info.rating === 0) {
         return 'bg-warning'
       }
       else {
@@ -177,17 +163,15 @@ export default {
     }
   },
   methods: {
-    ...mapMutations(['setPilotMutation']),
-    ...mapActions(['setPilot']),
+    ...mapGetters(['user']),
+    ...mapActions(['signOut']),
+
     redirectFormRegister () {
       this.$router.push({name: 'incomplete-form'})
     }
   },
   redirectNoVacancy () {
     // TODO - Redirect StandBy List
-  },
-  destroyed () {
-    this.$router.push({name: 'login'})
   }
 }
 </script>

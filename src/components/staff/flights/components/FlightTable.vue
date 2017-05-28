@@ -16,14 +16,7 @@
 </template>
 
 <script>
-import db from '../../../../modules/firebase'
-let flightsRef = db.ref('flights')
 export default {
-  firebase () {
-    return {
-      flights: flightsRef
-    }
-  },
   data () {
     return {
       config: {

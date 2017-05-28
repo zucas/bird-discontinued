@@ -14,14 +14,7 @@
 </template>
 
 <script>
-import db from '../../../../modules/firebase'
-let pilotsRef = db.ref('pre_list/pilots')
 export default {
-  firebase () {
-    return {
-      pilots: pilotsRef
-    }
-  }
 }
 </script>
 

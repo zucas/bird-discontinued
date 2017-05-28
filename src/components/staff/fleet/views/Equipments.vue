@@ -69,19 +69,13 @@
 
 <script>
   import NewEquipment from '../component/NewEquipment.vue'
-  import db from '../../../../modules/firebase'
-  let equipmentRef = db.ref('fleet/equipments')
   import { Toast } from 'quasar'
   export default {
-    firebase () {
-      return {}
-    },
     data () {
       return {}
     },
     methods: {
       addEquipment: function (equipment) {
-        equipmentRef.push(equipment)
         this.$refs.newEquipment.close()
         Toast.create.positive({
           html: 'Equipment ' + equipment.icao + ' has been added!'

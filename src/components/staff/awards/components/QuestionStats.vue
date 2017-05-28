@@ -96,19 +96,9 @@
 </template>
 
 <script>
-  import db from '../../../../modules/firebase'
-  const rootRef = db.ref()
-  const subjectRef = rootRef.child('school/subjects')
-  const questionsRef = rootRef.child('school/questions')
   import {BarChart, DonutChart} from 'vue-morris'
   import {Utils} from 'quasar'
   export default {
-    firebase () {
-      return {
-        subjectArray: subjectRef,
-        questionsArray: questionsRef
-      }
-    },
     data () {
       return {
         cardUsedSubjectsVisible: true

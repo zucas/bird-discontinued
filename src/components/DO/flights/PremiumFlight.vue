@@ -4,7 +4,7 @@
       
       
       <div class="card-media">
-        <img src="https://i.ytimg.com/vi/ifMX-Xj8yRo/maxresdefault.jpg" alt="">
+        <img class="responsive" src="http://1.bp.blogspot.com/-8mZNC-WT2Q0/T5XmNJz0ZfI/AAAAAAAAEW0/Ojr5HD0RD3I/s1600/DSC06311.JPG" alt="premium_flight">
         <button class="secondary circular animate-bounce"><i>flight</i></button>
       </div>
       <div class="card-title">             
@@ -15,16 +15,20 @@
         </i>        
       </div>
       <div class="card-content">
-      <p class="thin-paragraph">SBGR - SBBR</p>
+      <p class="thin-paragraph"> {{ premium_flight().dep}} - {{ premium_flight().arr}} </p>
       </div>
     </div>
   </div>
 </template>
 
 <script>
+import {mapGetters} from 'vuex'
 export default {
   data () {
     return {}
+  },
+  methods: {
+    ...mapGetters(['premium_flight'])
   }
 }
 </script>

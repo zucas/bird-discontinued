@@ -2,6 +2,7 @@
   "rules": {
     ".read": "true",
     ".write": "auth != null",
+    "LATAM-VA": {
       "flights": {
         ".indexOn": ["dep", "eet"]
       },
@@ -9,9 +10,12 @@
         ".indexOn": ["full_name", "email", "staff", "awards"]
       },
       "school": {
-      	"exams": {
-        	".indexOn": ["start", "awards"]
-      	},
+        "awards": {
+          ".indexOn": ["examsGruop"]
+        },
+        "exams": {
+          ".indexOn": ["start", "awards"]
+        },
         "questions": {
           "$tema": {
             ".indexOn": ["language"]
@@ -19,8 +23,9 @@
         }
       },
       "pre_list": {
-      ".read": "true",
-      ".write": "true"
-    }   
+        ".read": "true",
+        ".write": "true"
+      }
+    }
   }
 }

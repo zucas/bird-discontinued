@@ -60,11 +60,11 @@
             <div class="item-content">
               <div class="floating-label">
                 <span class="label inline bg-positive text-white">
-              Award
+              Gruop
             </span>
-                <q-autocomplete v-model="exam.award" @search="search">
-                  <input v-model="exam.award" @input="$v.exam.award.$touch()" class="full-width text-center" :class="{'has-error': $v.exam.award.$error}" placeholder="Type the name of Award.." />
-                  <span v-show='$v.exam.award.$error' class="text-red">Award is required</span>
+                <q-autocomplete v-model="exam.gruop" @search="searchGruop">
+                  <input v-model="exam.gruop" @input="$v.exam.gruop.$touch()" class="full-width text-center" :class="{'has-error': $v.exam.gruop.$error}" placeholder="Type the name of Gruop.." />
+                  <span v-show='$v.exam.gruop.$error' class="text-red">Gruop is required</span>
                 </q-autocomplete>
               </div>
             </div>
@@ -96,29 +96,26 @@
               </div>
             </div>
           </div>
-          <hr>
-          <div class="item multiple-lines">
-            <div class="item-content">
-              <div class="floating-label">
-                <span class="label inline bg-warning text-white">
-              Minimun Flight Hours
-            </span>
-                <q-numeric class="full-width" v-model="exam.minFlightHours" :min="0"></q-numeric>
-              </div>
-            </div>
-          </div>
-          <hr>
-          <div class="item multiple-lines">
-            <div class="item-content">
-              <div class="floating-label">
-                <span class="label inline bg-warning text-white">
-              Minimun Points
-            </span>
-                <q-numeric class="full-width" v-model="exam.minPilotPoints" :min="0"></q-numeric>
-              </div>
-            </div>
+        </div>
+      <label class="item">
+                      <div class="item-primary">
+                          <q-checkbox v-model="exam.expiration.hasExpiration"></q-checkbox>
+                      </div>
+                      <div class="item-content">
+                          Expires ?
+                      </div>
+                  </label>
+                  <div class="item multiple-lines" v-if="exam.hasExpiration">
+        <div class="item-content">
+          <div class="floating-label">
+            <span class="label inline bg-primary text-white">
+                How Many Months? 
+              </span>
+            <q-range class='secondary' v-model="exam.validateMonths" :min="3" :max="24" :step="3" label snap markers></q-range>
+            {{ exam.expiration.validateMonths }} Months selected.
           </div>
         </div>
+      </div>
             </div>
           </q-collapsible>
           <q-collapsible icon="input" label="Exame Composer">
@@ -148,10 +145,10 @@
                 <div class="item-content">
                     <div class="floating-label">
             <span class="label inline bg-primary text-white">
-                Subject {{ i }}
+                Subject {{ plusNumber(i) }}
             </span>
-            <q-autocomplete v-model="subjects[i]" @search="searchSubjects">
-                  <input v-model="subjects[i]" class="full-width text-center" placeholder="Type the name of Award.." />
+            <q-autocomplete v-model="subjectsSelected[i]" @search="searchSubjects">
+                  <input v-model="subjectsSelected[i]" class="full-width text-center" placeholder="Type the name of Subject" />
             </q-autocomplete>
                     </div>
                 </div>
@@ -197,57 +194,39 @@
 </template>
 
 <script>
+  import { mapActions, mapGetters } from 'vuex'
   import {
     Utils,
     Toast
   } from 'quasar'
-  import db from '../../../../modules/firebase'
-  let awardsRef = db.ref('school/awards')
-  let examsRef = db.ref('school/exams')
-  let subjectsRef = db.ref('school/questions')
   import {
     required,
     minLength
   } from 'vuelidate/lib/validators'
   export default {
-    firebase () {
-      return {
-        awardsArray: awardsRef,
-        subjectsArray: subjectsRef
-      }
-    },
     data () {
       return {
         composerSubjectsSize: 1,
         checked: false,
         terms: '',
-        subjects: [],
+        subjectsSelected: [],
         numOfQuestions: [],
+        gruop: '',
         exam: {
           name: '',
-          award: '',
+          gruop: '',
           awardsRequired: '',
           daysToNewChance: 7,
           time: 20,
           questions: 20,
           minScore: 14,
-          minFlightHours: 0,
-          minPilotPoints: 0,
           approvalRate: 0,
           subjects: [],
           composition: {},
-          start: false
-        },
-        selectOptions: [
-          {
-            label: 'Google',
-            value: 'goog'
-          },
-          {
-            label: 'Facebook',
-            value: 'fb'
-          }
-        ]
+          start: false,
+          hasExpiration: false,
+          validateMonths: 12
+        }
       }
     },
     validations: {
@@ -256,14 +235,19 @@
           required,
           minLength: minLength(5)
         },
-        award: {
+        gruop: {
           required
         }
       }
     },
     methods: {
+      ...mapGetters(['examsGruops', 'awards', 'subjects']),
+      ...mapActions(['addExam']),
       beforeNext (next) {
         next()
+      },
+      plusNumber (i) {
+        return (i + 1)
       },
       search (terms, done) {
         setTimeout(() => {
@@ -281,6 +265,14 @@
           }))
         }, 0)
       },
+      searchGruop (terms, done) {
+        setTimeout(() => {
+          done(Utils.filter(terms, {
+            field: 'value',
+            list: this.parseGruops()
+          }))
+        }, 0)
+      },
       createExam () {
         this.$v.exam.$touch()
         if (this.$v.exam.$error) {
@@ -289,9 +281,9 @@
         }
         else {
           this.numOfQuestions.forEach((element, i) => {
-            this.exam.composition[this.subjects[i]] = element
+            this.exam.composition[this.subjectsSelected[i]] = element
           })
-          examsRef.push(this.exam)
+          this.addExam({gruop: this.exam.gruop, name: this.exam.name, exam: this.exam})
           Toast.create.positive({
             html: 'Award has been created!'
           })
@@ -299,7 +291,7 @@
         }
       },
       parseAwards () {
-        return this.awardsArray.map(award => {
+        return this.awards().map(award => {
           return {
             label: award.name,
             value: award.name
@@ -307,10 +299,18 @@
         })
       },
       parseSubjects () {
-        return this.subjectsArray.map(subject => {
+        return this.subjects().map(subject => {
           return {
-            label: subject['.key'],
-            value: subject['.key']
+            label: subject.name,
+            value: subject.name
+          }
+        })
+      },
+      parseGruops () {
+        return this.examsGruops().map(gruop => {
+          return {
+            label: gruop,
+            value: gruop
           }
         })
       }

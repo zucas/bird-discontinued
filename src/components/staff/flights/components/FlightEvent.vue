@@ -8,6 +8,7 @@
         </div>  
         <div class="card-content">
     <q-inline-datetime
+    readonly
   v-model="model"
   type="date"
 ></q-inline-datetime>
@@ -18,7 +19,6 @@
               <button class="positive clear small"><i class="on-left">done</i>Create</button>
     </div>
     </div>
-    {{model}}
   </div>
 </template>
 

@@ -42,7 +42,7 @@
             <br>
             <div class="row">
               <div class="auto"></div>
-              <button @click='fbLogin' class="loginBtn shadow-2 loginBtn--facebook">
+              <button @click='signInFB' class="loginBtn shadow-2 loginBtn--facebook">
       Login with Facebook
     </button>
               <button class="loginBtn shadow-2 loginBtn--google">
@@ -54,7 +54,7 @@
           <div class="card-actions">
             <button class=" primary clear"> <i>flight_takeoff</i>  Register</button>
             <div class="auto"></div>
-            <button @click='login' class="positive clear">LOGIN <i class="on-right">send</i></button>
+            <button class="positive clear">LOGIN <i class="on-right">send</i></button>
           </div>
         </div>
         <div class="auto"></div>
@@ -78,9 +78,8 @@
 </template>
 
 <script>
-  import firebase from 'firebase'
-  import {Toast} from 'quasar'
   import { SweetModal } from 'sweet-modal-vue'
+  import {mapActions} from 'vuex'
   export default {
     data () {
       return {
@@ -94,51 +93,13 @@
       this.$refs.virtualModal.open()
     },
     methods: {
-      redirectDO () {
-        this.$router.push({name: 'do'})
-      },
-      login () {
-        firebase.auth().signInWithEmailAndPassword(this.login_form.email, this.login_form.password).then(() => {
-          this.redirectDO()
-        })
-          .catch((error) => {
-            Toast.create.negative({
-              html: error.message
-            })
-          })
-      },
-      fbLogin () {
-        firebase.auth().signInWithPopup(new firebase.auth.FacebookAuthProvider().addScope('user_birthday')).then(() => {
-          this.redirectDO()
-        })
-      },
-      fbLogin2 () {
-        firebase.auth().signInWithPopup(new firebase.auth.FacebookAuthProvider()).catch(error => {
-          if (error.code === 'auth/account-exists-with-different-credential') {
-            var pendingCred = error.credential
-            var email = error.email
-            firebase.auth().fetchProvidersForEmail(email).then(providers => {
-              if (providers[0] === 'password') {
-                var password = '123123'
-                firebase.auth.signInWithEmailAndPassword(email, password).then(user => {
-                  return user.link(pendingCred)
-                }).then(() => {
-                })
-                return
-              }
-            }
-            )
-          }
-        }).then(() => {
-          this.redirectDO()
-        })
-      }
+      ...mapActions(['signInFB'])
     },
     components: {
       SweetModal
     }
   }
-</script>
+</script>''
 
 <style scoped>
   /* Shared */

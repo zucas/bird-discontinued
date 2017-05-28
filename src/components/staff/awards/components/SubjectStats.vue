@@ -64,36 +64,10 @@
 </template>
 
 <script>
-  import db from '../../../../modules/firebase'
-  const rootRef = db.ref()
-  const subjectRef = rootRef.child('school/subjects')
   import { BarChart, DonutChart } from 'vue-morris'
   export default {
-    firebase () {
-      return {
-        subjectArray: subjectRef
-      }
-    },
     data () {
       return {}
-    },
-    computed: {
-      parsedTotalQuestions: function () {
-        return this.subjectArray.map(subject => {
-          return {
-            label: subject.name,
-            value: subject.totalQuestions
-          }
-        })
-      },
-      parsedTotalUsages: function () {
-        return this.subjectArray.map(subject => {
-          return {
-            label: subject.name,
-            value: subject.usagesNumber
-          }
-        })
-      }
     },
     components: {
       BarChart,

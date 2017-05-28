@@ -1,35 +1,31 @@
 <template>
     <div>
-      <div class="toolbar">
+      <div class="card shadow-3 bg-white">
+          <div class="toolbar">
                     <q-toolbar-title :padding="1">
                         Exams Table
                     </q-toolbar-title>
                 </div>
+        <div class="card-content">
+                
         <q-data-table
-                :data="exams"
+                :data="exams()"
                 :columns="columns"
                 :config="config"
                 :padding="15"
         >
         </q-data-table>
+        </div>
+      </div>
     </div>
 </template>
 
 <script>
-  import db from '../../../../modules/firebase'
-  let examsRef = db.ref('school/exams')
+  import { mapGetters } from 'vuex'
   export default {
-    firebase () {
-      return {
-        exams: examsRef
-      }
-    },
     data () {
       return {
         config: {
-          bodyStyle: {
-            maxHeight: '220px'
-          },
           selection: 'one',
           rowHeight: '45px',
           pagination: {
@@ -57,6 +53,13 @@
           label: 'Name',
           field: 'name',
           widht: '180px',
+          sort: true,
+          filter: true
+        },
+        {
+          label: 'Gruop',
+          field: 'gruop',
+          widht: '120px',
           sort: true,
           filter: true
         },
@@ -96,6 +99,9 @@
         }
         ]
       }
+    },
+    methods: {
+      ...mapGetters(['exams'])
     }
   }
 </script>

@@ -78,15 +78,7 @@
   import AircraftNewForm from '../component/AircraftNewForm.vue'
   import AircraftMaintenance from '../component/AircraftMaintenace.vue'
   import { Toast } from 'quasar'
-  import db from '../../../../modules/firebase'
-
-  const aircraftsRef = db.ref('fleet/aircrafts')
   export default {
-    firebase () {
-      return {
-        aircraftRef: db.ref('fleet/aircrafts')
-      }
-    },
     data () {
       return {
         resource: {}
@@ -103,14 +95,12 @@
         this.$router.push({name: 'aircrafts-table'})
       },
       addAircraft: function (plane) {
-        aircraftsRef.push(plane)
         this.$refs.newAircraft.close()
         Toast.create.positive({
           html: 'Aircraft has been added!'
         })
       },
       editAircraft: function (aircraft) {
-        aircraftsRef.child(aircraft['.key']).child('register').set(aircraft.register)
         this.$refs.editAircraft.close()
         Toast.create.positive({
           html: 'Aircraft has been updated!'

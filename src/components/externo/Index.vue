@@ -36,7 +36,7 @@
       <h5 class="light-paragraph text-white"> <i>check</i> Gestão realistica de escala e frota.</h5>
       <h5 class="light-paragraph text-white"> E muito mais..</h5>
       <br>
-      <h5 class="thin-paragraph">{{ (cadastros.length + 53) }} Inscritos</h5>
+      <h5 class="thin-paragraph">{{ (53) }} Inscritos</h5>
 
             </div>
 
@@ -117,18 +117,12 @@
 </template>
 
 <script>
-  import db from '../../modules/firebase'
-  let listRef = db.ref('pre_list/pilots')
   import { getIdFromURL } from 'vue-youtube-embed'
   import { LocalStorage } from 'quasar'
   import { required, email } from 'vuelidate/lib/validators'
+  import {mapGetters} from 'vuex'
   let videoId = getIdFromURL('https://www.youtube.com/watch?v=XU3B8Qq1niY')
   export default {
-    firebase () {
-      return {
-        cadastros: listRef
-      }
-    },
     data () {
       return {
         cadastrado: false,
@@ -159,6 +153,7 @@
       }
     },
     methods: {
+      ...mapGetters(['user']),
       cadastro () {
         if (this.$v.email_candidato.$error) {
           return
@@ -166,7 +161,6 @@
         else {
           this.cadastrado = true
           LocalStorage.set('cadastrado', true)
-          listRef.push(this.email_candidato)
         }
       }
     }

@@ -34,20 +34,8 @@
 </template>
 
 <script>
-import db from '../../../../modules/firebase'
-let pilotsRef = db.ref('pilots')
-let settingsRef = db.ref('general_settings')
 import {Toast} from 'quasar'
 export default {
-  firebase () {
-    return {
-      pilots: pilotsRef,
-      settings: {
-        asObject: true,
-        source: settingsRef
-      }
-    }
-  },
   data () {
     return {
       vacancies: 230
@@ -55,7 +43,6 @@ export default {
   },
   methods: {
     changeVacancies () {
-      settingsRef.child('total_vacancies').set(this.settings.total_vacancies)
       Toast.create.positive({
         html: 'The number of <strong>vacancies</strong> has been uploaded!'
       })

@@ -3,7 +3,7 @@
     <div class="card bg-five text-white">
       <div class="card-title">My Pireps</div>
       <div class="card-content">
-        {{ pireps }}
+        {{ pilot().pireps }}
       </div>
     </div>
   </div>
@@ -12,10 +12,11 @@
 <script>
 import firebase from 'firebase'
 import db from '../../../modules/firebase'
+import {mapGetters} from 'vuex'
 let pirepsRef
 firebase.auth().onAuthStateChanged(function (user) {
   if (user) {
-    pirepsRef = db.ref(`pilots/${firebase.auth().currentUser.uid}/pireps`)
+    pirepsRef = db
   }
 })
 export default {
@@ -23,6 +24,9 @@ export default {
     return {
       pireps: pirepsRef
     }
+  },
+  methods: {
+    ...mapGetters(['pilot'])
   },
   data () {
     return {}

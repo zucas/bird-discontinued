@@ -96,20 +96,8 @@
 
 <script>
 import firebase from 'firebase'
-import db from '../../../modules/firebase'
-let pilotsRef = db.ref('pilots')
 import moment from 'moment'
-import {Toast} from 'quasar'
 export default {
-  firebase () {
-    return {
-      settingsObj: {
-        source: db.ref('general_settings'),
-        asObject: true
-      },
-      hubsFire: db.ref('operations/hubs')
-    }
-  },
   data () {
     return {
       hubs: [],
@@ -132,16 +120,7 @@ export default {
     this.hubsParsed()
   },
   methods: {
-    newPilot () {
-      this.completePilot()
-      pilotsRef.child(this.user.uid).set(this.pilot).then(() => {
-        Toast.create.positive({
-          html: 'Your Register has been finalized!'
-        })
-        // Levar para exame de admissão
-        this.$router.push({name: 'pilots-exam-center'})
-      })
-    },
+    newPilot () {},
     completePilot () {
       this.pilot.va_info.total_flights = 0
       // this.pilot.va_info.number = this.settingsObj.nextCallsing

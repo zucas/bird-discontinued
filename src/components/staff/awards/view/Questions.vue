@@ -24,16 +24,8 @@
 <script>
   import NewQuestion from '../components/QuestionNew.vue'
   import QuestionDetails from '../components/QuestionDetails.vue'
-  import db from '../../../../modules/firebase'
-  const dbRoot = db.ref()
-  const questionsRef = dbRoot.child('school/questions')
   import {mapGetters} from 'vuex'
   export default {
-    firebase () {
-      return {
-        questions: questionsRef
-      }
-    },
     data () {
       return {
         key: '',
