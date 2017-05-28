@@ -153,14 +153,6 @@
         this.award.expirationTime = 12
         this.award.concessionsNumber = 0
       },
-      parsedAwardsGroup () {
-        return this.awardsArray.map(obj => {
-          return {
-            label: obj['.key'],
-            value: obj['.key']
-          }
-        })
-      },
       parsedRatings () {
         return this.ratings().map(rating => {
           return {
@@ -176,11 +168,6 @@
             label: gruop
           }
         })
-      },
-      searchAwards (terms, done) {
-        setTimeout(() => {
-          done(Utils.filter(terms, {field: 'value', list: this.parsedAwardsGroup()}))
-        }, 0)
       },
       searchGruops (terms, done) {
         setTimeout(() => {

@@ -6,6 +6,6 @@
 > A new and modern opcion to contruct VA's (Virtual Airlines)
 > Basead in JS/VUE.JS & Google Firebird
 
-# Advertise
+## Advertise
 > Didn't Work, working in progress...
-> More Info: davi_zucas@htmail.com
+> More Info: davi_zucas@hotmail.com
