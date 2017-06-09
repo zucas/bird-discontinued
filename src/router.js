@@ -1,59 +1,10 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Staff from './components/Staff.vue'
-// DO
-import DO from './components/DO/layout/DO.vue'
-import IndexDO from './components/DO/home/Index.vue'
-// register
-import IncompleteForm from './components/DO/register/IncompleteRegisterForm.vue'
-import ExamHomeDO from './components/DO/exams/ExamHome'
-import ExamPilotView from './components/DO/exams/ExamView'
-// HOME Staff
-import HomeStaff from '../src/components/staff/home/index.vue'
-// HOME Externo
-import Home from '../src/components/externo/Index.vue'
-import LayoutExterno from '../src/components/externo/Layout.vue'
-import Login from '../src/components/externo/Login.vue'
-// CATEGORY FLEET
-import FleetStaff from './components/staff/fleet/views/StaffFleet.vue'
-import FleetHome from './components/staff/fleet/component/FleetHome.vue'
-// Aircrafts
-import AircraftGeneral from './components/staff/fleet/component/AircraftGeneral.vue'
-import AircraftsView from './components/staff/fleet/views/Aircrafts.vue'
-// Equipments
-import EquipmenstsView from './components/staff/fleet/views/Equipments.vue'
-import EquipamentosTable from './components/staff/fleet/component/EquipamentosTable.vue'
-import AircraftsTable from './components/staff/fleet/component/AircrafsTable.vue'
-// Categories
-import FleetCategoriesTable from './components/staff/fleet/component/FleetCategoriesTable.vue'
-import CategoriesView from './components/staff/fleet/views/Categories.vue'
-// Maintenance
-import MaintenceView from './components/staff/fleet/views/Maintence.vue'
-// AWARDS & EXAMS
-import AwardsView from './components/staff/awards/view/School.vue'
-import SchoolHome from './components/staff/awards/view/SchoolHome.vue'
-// Awards
-import Awards from './components/staff/awards/view/Awads.vue'
-import AwardHome from './components/staff/awards/components/AwardHome.vue'
-// Exams
-import Exams from './components/staff/awards/view/Exams.vue'
-import ExamHome from './components/staff/awards/components/ExamHome.vue'
-// Questions
-import Questions from './components/staff/awards/view/Questions.vue'
-import QuestionHome from './components/staff/awards/components/QuestionHome.vue'
-// Themes
-import Themes from './components/staff/awards/view/Themes.vue'
-import ThemeHome from './components/staff/awards/components/SubjectHome.vue'
-// GENERAL OPTIONS
-import GeneralOptions from './components/staff/general/Options.vue'
-// PILOTS
-import Pilots from './components/staff/pilots/view/Pilots.vue'
-// FLIGHTS
-import Flights from './components/staff/flights/view/Flights.vue'
-// HELP
-import Help from './components/staff/help/Manual.vue'
 import firebase from 'firebase'
 Vue.use(VueRouter)
+function load (component) {
+  return () => System.import(`components/${component}.vue`)
+}
 
 export default new VueRouter({
   mode: 'history',
@@ -70,22 +21,22 @@ export default new VueRouter({
    */
   routes: [
     {path: '/',
-      component: Home
+      component: load('externo/Index')
     }, // Default
     {
       path: '/externo',
-      component: LayoutExterno,
+      component: load('externo/Layout'),
       children: [
         {
           path: 'login',
-          component: Login,
+          component: load('externo/Login'),
           name: 'login'
         }
       ]
     },
     {
       path: '/do-verify',
-      component: DO,
+      component: load('DO/layout/DO'),
       name: 'do',
       beforeEnter (to, from, next) {
         firebase.auth().onAuthStateChanged(function (user) {
@@ -99,26 +50,26 @@ export default new VueRouter({
       },
       children: [
         { path: '/DO',
-          component: IndexDO,
+          component: load('DO/home/Index'),
           name: 'do-home'
         },
         { path: '/DO/incomplete-register',
-          component: IncompleteForm,
+          component: load('DO/register/IncompleteRegisterForm'),
           name: 'incomplete-form'
         },
         { path: '/DO/exams-home',
-          component: ExamHomeDO,
+          component: load('DO/exams/ExamHome'),
           name: 'pilots-exam-center'
         },
         { path: '/DO/exam',
-          component: ExamPilotView,
+          component: load('DO/exams/ExamView'),
           name: 'pilot-exam'
         }
       ]
     },
     {
       path: '/staff',
-      component: Staff,
+      component: load('Staff'),
       beforeEnter (to, from, next) {
         firebase.auth().onAuthStateChanged(function (user) {
           if (user) {
@@ -132,79 +83,47 @@ export default new VueRouter({
       children: [
         {
           path: '/',
-          component: HomeStaff,
+          component: load('staff/home/index'),
           name: 'staff-home'
         },
-        {
-          path: 'fleet',
-          component: FleetStaff,
-          children: [
-            {path: '', component: FleetHome},
-            {path: 'equipments',
-              component: EquipmenstsView,
-              children: [
-                { path: 'table', component: EquipamentosTable }
-              ]
-            },
-            {path: 'aircrafts',
-              component: AircraftsView,
-              children: [
-                { path: '/', component: AircraftGeneral, name: 'aircrafts-general' },
-                { path: 'table', component: AircraftsTable, name: 'aircrafts-table' }
-              ]
-            },
-            {path: 'categories',
-              component: CategoriesView,
-              children: [
-                { path: 'table', component: FleetCategoriesTable }
-              ]
-            },
-            {path: 'maintence',
-              component: MaintenceView,
-              children: [
-                { path: '/', component: MaintenceView }
-              ]
-            }
-          ]
-        },
-        { path: 'options', component: GeneralOptions, name: 'general-options' },
-        { path: 'pilots', component: Pilots, name: 'pilots' },
-        { path: 'flights', component: Flights, name: 'flights' },
-        { path: 'help', component: Help, name: 'help' },
+        { path: 'options', component: load('staff/general/Options'), name: 'general-options' },
+        { path: 'pilots', component: load('staff/pilots/view/Pilots'), name: 'pilots' },
+        { path: 'flights', component: load('staff/flights/view/Flights'), name: 'flights' },
+        { path: 'help', component: load('staff/help/Manual'), name: 'help' },
         {path: 'exams-and-awards',
-          component: AwardsView,
+          component: load('staff/awards/view/School'),
           children: [
             { path: '/',
-              component: SchoolHome
+              component: load('staff/awards/view/SchoolHome')
             },
             { path: 'awards',
-              component: Awards,
+              component: load('staff/awards/view/Awads'),
               children: [
-                { path: '/', component: AwardHome, name: 'awards-home' }
+                { path: '/', component: load('staff/awards/components/AwardHome'), name: 'awards-home' }
               ]
             },
             { path: 'exams',
-              component: Exams,
+              component: load('staff/awards/view/Exams'),
               children: [
-                { path: '/', component: ExamHome, name: 'exams-home' }
+                { path: '/', component: load('staff/awards/components/ExamHome'), name: 'exams-home' }
               ]
             },
             { path: 'questions',
-              component: Questions,
+              component: load('staff/awards/view/Questions'),
               children: [
-                { path: '/', component: QuestionHome, name: 'questions-home' }
+                { path: '/', component: load('staff/awards/components/QuestionHome'), name: 'questions-home' }
               ]
             },
             { path: 'themes',
-              component: Themes,
+              component: load('staff/awards/view/Themes'),
               children: [
-                { path: '/', component: ThemeHome, name: 'subject-home' }
+                { path: '/', component: load('staff/awards/components/SubjectHome'), name: 'subject-home' }
               ]
             }
           ]
         }
       ]
     },
-    {path: '*', component: Home} // Not found
+    {path: '*', component: load('externo/Index')} // Not found
   ]
 })
