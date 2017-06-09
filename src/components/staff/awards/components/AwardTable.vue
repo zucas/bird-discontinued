@@ -36,16 +36,16 @@ export default {
           noDataAfterFiltering: ''
         },
         labels: {
-          columns: 'Colunas',
-          allCols: 'Todas colunas',
-          rows: 'Linhas',
+          columns: 'Coluns',
+          allCols: 'All coluns',
+          rows: 'Rows',
           selected: {
-            singular: 'aircraft selected.',
-            plural: 'aircrafts selected.'
+            singular: 'award selected.',
+            plural: 'awards selected.'
           },
-          clear: 'Limpar',
-          search: 'Buscar',
-          all: 'Tudo'
+          clear: 'Clear',
+          search: 'Search',
+          all: 'All'
         }
       },
       columns: [{

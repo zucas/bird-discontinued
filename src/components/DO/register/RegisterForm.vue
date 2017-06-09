@@ -1,25 +1,31 @@
 <template>
   <div>
+    <div class="row">
+    </div>
       <div class="row">
         <div class="auto"></div>
         <div class="card bg-white shadow-4" style="max-width: 60%">
         <div class="card-title bg-secondary text-white">
-            Complete your register
-            
+            Complete your register            
           </div>
         <div class="card-content">
           <div class="row">
+            <p class="thin-paragraph">Welcome aboard, {{ pilot.personal_info.full_name }}! Please, complete your register and start flight in few minutes. </p>
+          </div>
+          <br>
+          <div class="row">
             <div class="auto"></div>
 
-          <img class="img-circle shadow-2" :src='user.photoURL' :alt="user.displayName">
-          <br>
+          <img src='http://gallery.yopriceville.com/var/resizes/Free-Clipart-Pictures/Airplanes-PNG-Clipart/Airplane_Transparent_Vector_Clipart.png?m=1433777004' :alt="user.displayName">
+
             <div class="auto"></div>
           </div>
-          
+          <br>
+          <br>
           <div class="list text-left">
         <div class="item">                
                 <div class="item-content text-center">
-                  <p class="item-label">LATAM VID: {{ settingsObj.nextCallsing }}</p>
+                  <p class="item-label"></p>
                 </div>
         </div>
         <div class="item">                
@@ -40,7 +46,7 @@
                   <q-select
                     type="list"
                     v-model="pilot.va_info.hub"
-                    :options="hubs"
+                    :options="hubsParsed()"
                     style="min-width: 40%"
                   ></q-select>
                 </div>
@@ -97,10 +103,10 @@
 <script>
 import firebase from 'firebase'
 import moment from 'moment'
+import {mapGetters, mapActions} from 'vuex'
 export default {
   data () {
     return {
-      hubs: [],
       pilot: {
         personal_info: {
           birthday: moment().format()
@@ -113,28 +119,34 @@ export default {
       user: {}
     }
   },
+  created () {
+    this.$store.dispatch('fetchHubs')
+  },
   mounted () {
     this.user = firebase.auth().currentUser
     this.pilot.personal_info.full_name = this.user.displayName
     this.pilot.personal_info.email = this.user.email
-    this.hubsParsed()
   },
   methods: {
-    newPilot () {},
+    ...mapGetters(['hubs']),
+    ...mapActions(['setPilot']),
+    newPilot () {
+      this.completePilot()
+      this.setPilot({uid: this.user.uid, pilot: this.pilot})
+    },
     completePilot () {
       this.pilot.va_info.total_flights = 0
-      // this.pilot.va_info.number = this.settingsObj.nextCallsing
       this.pilot.va_info.flight_hours = 0
       this.pilot.va_info.xp = 0
       this.pilot.va_info.rating = 0
       this.pilot.va_info.local = this.pilot.va_info.hub
     },
     hubsParsed () {
-      this.hubsFire.map(hub => {
-        this.hubs.push({
-          label: hub['.key'],
-          value: hub['.key']
-        })
+      return this.hubs().map(hub => {
+        return {
+          value: hub,
+          label: hub
+        }
       })
     }
   }

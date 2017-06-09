@@ -14,7 +14,7 @@
           <div class="card-content">
             <div class="row">
               <div class="auto"></div>
-              <img class="img-circle shadow-2" style="max-height: 120px" src="https://pbs.twimg.com/profile_images/792080615470432256/htiHtTlg.jpg">
+              <img class="img-circle" style="max-height: 120px" src="http://bluebower.co.uk/wp-content/uploads/2017/01/4ead71e634717c046e2591971ee4587e.jpg">
               <div class="auto"></div>
             </div>
             <br>

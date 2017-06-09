@@ -7,7 +7,7 @@
         player-height='100%' 
         :player-vars="{ autoplay: 1, controls: 0, disablekb: 1, enablejsapi: 1, loop: 1, modestbranding: 1, showinfo: 0}" 
         :video-id="videoId"></youtube>
-        <h3 class="chamada text-negative light-paragraph">Estamos criando sua nova VA.</h3>
+        <h3 class="chamada text-negative light-paragraph">Em breve um novo sistema para sua VA</h3>
     </div>
     <!-- conteudo -->
      <div class="content">
@@ -20,64 +20,6 @@
         </div>
     <div class="layout-padding">
              
-      <div class="row gutter">
-            <div class="width-1of-2">
-              <div class="card bg-tertiary text-white shadow-2 animate-scale">
-          <div class=" text-center layout-padding">
-                      <h4 class="light-paragraph ">Seja o primeiro!</h4>
-      <h5 class="light-paragraph">Faça seu pré-cadastro e seja o primeiro a ficar sabendo 
-        do início das operações
-      </h5>
-      <br>
-      <h5 class="light-paragraph text-white"> <i>check</i> Sistema próprio.</h5>
-      <h5 class="light-paragraph text-white"> <i>check</i> Time de Staff capacitado.</h5>
-      <h5 class="light-paragraph text-white"> <i>check</i> Aplicativo mobile para D.O.</h5>
-      <h5 class="light-paragraph text-white"> <i>check</i> Sistema de Shared Cockpit.</h5>
-      <h5 class="light-paragraph text-white"> <i>check</i> Gestão realistica de escala e frota.</h5>
-      <h5 class="light-paragraph text-white"> E muito mais..</h5>
-      <br>
-      <h5 class="thin-paragraph">{{ (53) }} Inscritos</h5>
-
-            </div>
-
-            
-          </div>
-            </div>
-            <div  class="width-1of-2">              
-          <div class="card shadow-2 round-borders animate-scale" v-if="!cadastrado">
-        <div class="toolbar primary">
-                    <q-toolbar-title :padding="1">
-                        Pré-Cadastro
-                    </q-toolbar-title>
-          </div>
-          <div class="card-media">
-          <img src="http://www.gazetadopovo.com.br/blogs/avioes-em-foco/wp-content/uploads/sites/128/2015/05/airbus-a350-900-tam-montagem-toulouse.jpg">
-            <button class="secondary circular animate-bounce" @click='cadastro'><i>send</i></button>
-          </div>
-          <div class="card-content">
-            <span class="label">Email</span>
-            <input 
-            @input="$v.email_candidato.$touch()"
-            class="full-width" 
-            :class="{'has-error': $v.email_candidato.$error}"
-            type="email" v-model="email_candidato">
-            <span class="text-red" v-if='$v.email_candidato.$error'>O email precisa ser valido</span>
-          </div>
-        </div> 
-          <div class="card shadow-2 bg-info text-white round-borders vertical-bottom animate-scale" v-else>
-            <div class="vertical-middle">
-              <div class="layout-padding">
-                <h5 class="light-paragraph text-center"> 
-              Obrigado, você receberá no seu email um informativo no ínicio das operações
-            </h5>
-              </div>
-            
-            </div>
-        </div> 
-            </div>
-        
-      </div>
-      <br>
       <div class="card animate-scale shadow-2">  
         <div class="toolbar primary">
                     <q-toolbar-title :padding="1">

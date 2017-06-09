@@ -7,7 +7,7 @@
       </button>
       -->
       <q-toolbar-title :padding="1">
-        LATAM-VA
+        Bird System
       </q-toolbar-title>
     </div>
 

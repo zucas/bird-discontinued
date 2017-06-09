@@ -31,7 +31,9 @@ Vue.use(VueAnalytics, {
   router
 })
 sync(store, router)
+Vue.http.options.emulateJSON = true
 
+Vue.http.headers.common['Access-Control-Allow-Origin'] = '*'
 firebase.initFirebase()
 
 Quasar.start(() => {

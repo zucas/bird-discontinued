@@ -99,7 +99,7 @@
         </div>
       <label class="item">
                       <div class="item-primary">
-                          <q-checkbox v-model="exam.expiration.hasExpiration"></q-checkbox>
+                          <q-checkbox v-model="exam.hasExpiration"></q-checkbox>
                       </div>
                       <div class="item-content">
                           Expires ?
@@ -112,7 +112,7 @@
                 How Many Months? 
               </span>
             <q-range class='secondary' v-model="exam.validateMonths" :min="3" :max="24" :step="3" label snap markers></q-range>
-            {{ exam.expiration.validateMonths }} Months selected.
+            {{ exam.validateMonths }} Months selected.
           </div>
         </div>
       </div>
@@ -317,7 +317,3 @@
     }
   }
 </script>
-
-<style>
-
-</style>

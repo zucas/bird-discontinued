@@ -15,12 +15,14 @@ const state = {
     email: '',
     profilePicUrl: '',
     va_info: {
-      hub: 'SBGR',
+      hub: '',
       local: '',
       rating: ''
     }
   },
-  ratings: []
+  hubs: [],
+  ratings: [],
+  pilots: []
   // route: {} // vue-router has created state.route
 }
 
@@ -35,7 +37,14 @@ const mutations = {
   },
   
   setRatings   (state, ratings) {
-    state.ratings = ratings.ratings
+    state.ratings = ratings
+  },
+
+  setHubs (state, hubs) {
+    state.hubs = hubs
+  },
+  setAllPilots (state, pilots) {
+    state.pilots = pilots
   }
 }
 
@@ -43,6 +52,9 @@ const actions = {
 
   onAuthStateChanged ({ commit }, user) {
     commit('onAuthStateChanged', { user })
+  },
+  setHubs({commit}, hubs) {
+    commit('setHubs', hubs)
   },
 
   signInFB () {
@@ -69,8 +81,24 @@ const actions = {
     Firebase.fetchRatings()
   },
 
-  setRatings({commit}, {ratings}) {
-    commit('setRatings', {ratings})
+  fetchHubs({commit}){
+    Firebase.fetchHubs()
+  },
+  
+  fetchAllPilots({commit}){
+    Firebase.fetchAllPilots()
+  },
+
+  setRatings({commit}, ratings) {
+    commit('setRatings', ratings)
+  },
+
+  setAllPilots({commit}, pilots) {
+    commit('setAllPilots', pilots)
+  },
+
+  setPilot({commit}, {uid, pilot}){
+    Firebase.createPilot(uid, pilot)
   }
 
 }
@@ -80,8 +108,9 @@ const getters = {
   pilot: state => state.user,
   currentUserName: state => state.user.name,
   currentUserId: state => state.user.uid,
-  currentUserLocal: state => state.user.va_info.local,
-  ratings: state => state.ratings
+  ratings: state => state.ratings,
+  hubs: state => state.hubs,
+  allPilots: state => state.pilots
 }
 
 export default {

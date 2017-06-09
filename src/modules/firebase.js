@@ -55,7 +55,7 @@ export default {
   signInFB () {
     // Sign in Firebase using popup auth and Google as the identity provider.
     let provider = new Firebase.auth.FacebookAuthProvider()
-    auth.signInWithPopup(provider)
+    auth.signInWithPopup(provider).then(() => _App.$router.push({name: 'do'}))
   },
 
   signInGoogle () {
@@ -85,10 +85,11 @@ export default {
             name: val.name || user.displayName,
             profilePicUrl: user.photoURL,
             email: val.email || user.email,
+            isPilot: true,
             personalInfo: {},
             va_info: {
                 number: val.va_info.number,
-                local: val.va_info.local,
+                local: val.va_info.local || '',
                 hub: val.va_info.hub,
                 rating: val.va_info.rating,
                 active: val.va_info.active,
@@ -105,15 +106,23 @@ export default {
             name: user.displayName,
             profilePicUrl: user.photoURL,
             email: user.email,
+            isPilot: false
           }
           _App.$store.dispatch('onAuthStateChanged', Object.assign({}, _userInfo))
         })
     }
   },
 
+  createPilot (uid, pilot) {
+    console.log(uid)
+    console.log(pilot)
+    let _pilotRef = database.ref('bird/pilots')
+    _pilotRef.child(uid).set(pilot)
+  },
+
   fetchUserInfo (uid) {
     return new Promise((resolve, reject) => {
-      _userRef = database.ref('LATAM-VA/pilots')
+      _userRef = database.ref('bird/pilots')
       _userRef.child(uid).once('value')
         .then(snapshot => {
           const user = snapshot.val()
@@ -123,8 +132,19 @@ export default {
   },
 
   fetchFlightsFromDep (dep_icao) {
-      _flightRef = database.ref('LATAM-VA/flights')
+      _flightRef = database.ref('bird/flights')
       _flightRef.orderByChild('dep').equalTo(dep_icao).on('value', snapshot => {
+        const flights = snapshot.val()
+        Object.keys(flights).forEach((key, i) => {
+            _flights[i] = flights[key]
+          })
+        _App.$store.dispatch('setFlights', {flights: _flights})
+      })
+  },
+  
+  fetchAllFlights () {
+      _flightRef = database.ref('bird/flights')
+      _flightRef.on('value', snapshot => {
         const flights = snapshot.val()
         Object.keys(flights).forEach((key, i) => {
             _flights[i] = flights[key]
@@ -134,7 +154,7 @@ export default {
   },
 
   fetchPremiumFlight () {
-    _flightPremiumRef = database.ref('LATAM-VA/premium_flight')
+    _flightPremiumRef = database.ref('bird/premium_flight')
       _flightPremiumRef.on('value', snapshot => {
         const premium_flight = snapshot.val()
         _App.$store.dispatch('setPremiumFlight', {premium_flight})
@@ -142,7 +162,7 @@ export default {
   },
 
   fetchNextEvents () {
-    _nextEventsRef = database.ref('LATAM-VA/events')
+    _nextEventsRef = database.ref('bird/events')
       _nextEventsRef.on('value', snapshot => {
         const events = snapshot.val()
         Object.keys(events).forEach((key, i) => {
@@ -153,7 +173,7 @@ export default {
   },
 
   fetchSubjects () {
-    _questionsRef = database.ref('LATAM-VA/school/questions')
+    _questionsRef = database.ref('bird/school/questions')
       _questionsRef.on('value', snapshot => {
         const subjects = snapshot.val()
         Object.keys(subjects).forEach((key, i) => {
@@ -168,7 +188,7 @@ export default {
   },
   
   fetchAllAwards () {
-    _awardsRef = database.ref('LATAM-VA/school/awards')
+    _awardsRef = database.ref('bird/school/awards')
       _awardsRef.on('value', snapshot => {
         let _awardsData = snapshot.val()
         Object.keys(_awardsData).forEach(key => {
@@ -179,25 +199,39 @@ export default {
       })
   },
 
+  fetchAllPilots () {
+    let _pilotsRef = database.ref('bird/pilots')
+    _pilotsRef.on('value', snap => {
+      const _pilotsData = snap.val()
+      _App.$store.dispatch('setAllPilots', _pilotsData)
+    })
+  },
+
   addAward (award) {
     return new Promise((resolve, reject) => {
       console.log(award);
-      _questionsRef = database.ref('LATAM-VA/school/awards')
+      _questionsRef = database.ref('bird/school/awards')
       _questionsRef.push(award)
       resolve()
     }).catch( err => reject(err))
   },  
 
   fetchRatings () {
-    let _ratingsRef = database.ref('LATAM-VA/operations/ratings')
-    _ratingsRef.once('value').then(snap => {
+    let _ratingsRef = database.ref('bird/operations/ratings')
+    let _ratingsArray = []
+    _ratingsRef.on('value', snap => {
       _ratingsData = snap.val()
-      _App.$store.dispatch('setRatings', {ratings: _ratingsData})
-    }).catch()
+      Object.keys(_ratingsData).forEach(key => {
+        _ratingsArray.push(key)
+      })
+      _App.$store.dispatch('setRatings', _ratingsArray)
+      console.log(_ratingsArray)
+      _ratingsArray = []
+    })
   },
 
   fetchAllQuestions () {
-    _questionsRef = database.ref('LATAM-VA/school/questions')
+    _questionsRef = database.ref('bird/school/questions')
       _questionsRef.on('value', snapshot => {
         const subjects = snapshot.val()
         let subjectsArray = []
@@ -215,7 +249,7 @@ export default {
   },
 
   fetchExams () {
-    _examsRef = database.ref('LATAM-VA/school/exams')
+    _examsRef = database.ref('bird/school/exams')
     _examsRef.on('value', snap => {
       const allData = snap.val()
       Object.keys(allData).forEach((gruop) => {
@@ -233,7 +267,6 @@ export default {
           })
         })
       })
-      console.log(_exams)
       _App.$store.dispatch('setExams', _exams)
       _App.$store.dispatch('setExamsGruops', _examsGruops)
       _exams = []
@@ -241,9 +274,24 @@ export default {
     })
   },
 
+  fetchHubs () {
+    let _hubsRef = database.ref('bird/hubs')
+    let _hubsArray = []
+    let data = {}
+    _hubsRef.once('value', snap => {
+      data = snap.val()
+      Object.keys(data).forEach(k => {
+        _hubsArray.push(k)
+      })
+    }).then(() => {
+      _App.$store.dispatch('setHubs', _hubsArray)
+      _hubsArray = []
+    })
+  },
+
   addQuestion (subject, question) {
     return new Promise((resolve, reject) => {
-      _questionsRef = database.ref('LATAM-VA/school/questions').child(subject)
+      _questionsRef = database.ref('bird/school/questions').child(subject)
       _questionsRef.push(question).then()
       resolve()
     }).catch( err => reject())
@@ -252,9 +300,7 @@ export default {
   
   addExam (gruop, name, exam) {
     return new Promise((resolve, reject) => {
-      console.log(gruop)
-      console.log(exam)
-      _examsRef = database.ref('LATAM-VA/school/exams').child(gruop).child(name)
+      _examsRef = database.ref('bird/school/exams').child(gruop).child(name)
       _examsRef.set(exam).then()
       resolve()
     }).catch( err => reject(err))

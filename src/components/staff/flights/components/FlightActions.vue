@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="row">
-          <button class="teal shadow-3">Refresh Flights from CGNA</button>
+          <button class="teal shadow-3" @click='fromMach'>Refresh Flights from MACH</button>
           <div class="space"> </div>          
           <button class="teal shadow-3" @click="$emit('newEvent')">Create special flight</button>
           <div class="space"> </div>          
@@ -12,13 +12,25 @@
           <div class="space"> </div>          
       </template>
     </div>
+    <div class="row"> 
+      {{ machFlightsData }}
+    </div>
   </div>
 </template>
 
 <script>
 export default {
   data () {
-    return {}
+    return {
+      machFlightsData: {}
+    }
+  },
+  methods: {
+    fromMach () {
+      this.$http.get('https://parsec.pe.hu/mach/api/rpl.php?cia=TAM').then(response => {
+        this.machFlightsData = response.body
+      })
+    }
   }
 }
 </script>

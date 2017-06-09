@@ -13,6 +13,14 @@
                 :config="config"
                 :padding="15"
         >
+        <template slot="selection" scope="selection">
+                <button @click="showDetails(selection)" class="dark clear">
+                    <i>flight_takeoff</i>
+                </button>
+                <button class="negative clear" @click="deleteRow(selection)">
+                    <i>delete</i>
+                </button>
+            </template>
         </q-data-table>
 </div>
     </div>

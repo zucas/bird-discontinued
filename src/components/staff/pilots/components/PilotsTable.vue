@@ -1,10 +1,13 @@
 <template>
   <div>
-    <div class="toolbar">
+    <div class="card bg-white">
+        <div class="toolbar">
                     <q-toolbar-title :padding="1">
                         Pilots Table
                     </q-toolbar-title>
                 </div>
+      <div class="card-content">  
+        {{ allPilots() }}
         <q-data-table
                 :data="pilots"
                 :columns="columns"
@@ -12,10 +15,13 @@
                 :padding="15"
         >
         </q-data-table>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
 export default {
   data () {
     return {
@@ -98,6 +104,9 @@ export default {
         }
       ]
     }
+  },
+  methods: {
+    ...mapGetters(['allPilots'])
   }
 }
 </script>

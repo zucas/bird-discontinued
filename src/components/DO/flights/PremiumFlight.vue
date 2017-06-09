@@ -4,8 +4,8 @@
       
       
       <div class="card-media">
-        <img class="responsive" src="http://1.bp.blogspot.com/-8mZNC-WT2Q0/T5XmNJz0ZfI/AAAAAAAAEW0/Ojr5HD0RD3I/s1600/DSC06311.JPG" alt="premium_flight">
-        <button class="secondary circular animate-bounce"><i>flight</i></button>
+        <img class="responsive" src="http://cdn.playbuzz.com/cdn/45f31e7c-be1e-4a25-8ffa-1f7ba4b41fe2/a66b0ec5-a42c-44ef-86ed-e2d7464e9816.jpg" alt="premium_flight">
+        <button class="negative circular animate-bounce"><i>flight</i></button>
       </div>
       <div class="card-title">             
         <i>star</i> Premium Flight <i class="small">info

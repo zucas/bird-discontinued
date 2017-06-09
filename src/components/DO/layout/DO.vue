@@ -5,7 +5,7 @@
         <i>menu</i>
       </button>  
       <q-toolbar-title :padding="1">
-        LATAM-VA - Pilot Center
+        BIRD SYS - Pilot Center
       </q-toolbar-title>     
       
       <button class="on-right" @click="$refs.user_info.open()">
@@ -24,9 +24,9 @@
 
     <q-drawer swipe-only ref="left_menu">
      
-      <div class="row bg-secondary" style="padding-top: 15px; padding-bottom: 15px">
+      <div class="row" style="padding-top: 15px; padding-bottom: 15px">
               <div class="auto"></div>
-              <img class="img-circle shadow-2" style="max-height: 120px" src="https://pbs.twimg.com/profile_images/792080615470432256/htiHtTlg.jpg">
+              <img class="img-circle" style="max-height: 120px" src="http://bluebower.co.uk/wp-content/uploads/2017/01/4ead71e634717c046e2591971ee4587e.jpg">
               <div class="auto"></div>
             </div>
 
@@ -72,7 +72,7 @@
     </q-drawer>
 
     <q-drawer right-side swipe-only ref="user_info">
-      <div class="row no-margin-top text-white" v-if='user().va_info.active' :class="colorNumber">
+      <div class="row no-margin-top text-white" v-if='user().isPilot' :class="colorNumber">
         <div class="auto"></div>
           <h5 class="thin-paragraph" >TAM{{ user().va_info.number }} </h5>
         <div class="auto"></div>
@@ -135,21 +135,28 @@ export default {
     }
   },
   created () {
-    this.$store.dispatch('fetchFlightsFromDep', {
-      dep_icao: this.user().va_info.local
-    })
-    this.$store.dispatch('fetchExamsData')
-    this.$store.dispatch('fetchPremiumFlight')
-    this.$store.dispatch('fetchNextEvents')
-  },
-  mounted () {
-    if (this.user().va_info.rating === 0) {
-      this.$router.push({name: 'pilots-exam-center'})
-      // Redireciona para exames!
+    if (this.user().isPilot) {
+      // Entra aqui se terminou o cadastro
+      this.$store.dispatch('fetchFlightsFromDep', {
+        dep_icao: this.user().va_info.local
+      })
+      this.$store.dispatch('fetchExamsData')
+      this.$store.dispatch('fetchPremiumFlight')
+      this.$store.dispatch('fetchNextEvents')
+      if (this.user().va_info.rating === 0) {
+        // Se ele está com o cargo 0, é pq acabou de entrar e precisa verificar se existe exame de admissão,
+        // Se existe, direcionar ele para o exame para exames!
+        this.$router.push({name: 'pilots-exam-center'})
+      }
+      else {
+        // Carrega as informações corretas
+        this.$router.push({name: 'do-home'})
+      }
     }
     else {
-      // Carrega as informações corretas
-      this.$router.push({name: 'do-home'})
+      // Entra aqui se não completou o cadastro
+      this.$store.dispatch('fetchHubs')
+      this.$router.push({name: 'incomplete-form'})
     }
   },
   computed: {
@@ -164,11 +171,7 @@ export default {
   },
   methods: {
     ...mapGetters(['user']),
-    ...mapActions(['signOut']),
-
-    redirectFormRegister () {
-      this.$router.push({name: 'incomplete-form'})
-    }
+    ...mapActions(['signOut'])
   },
   redirectNoVacancy () {
     // TODO - Redirect StandBy List

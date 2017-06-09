@@ -9,7 +9,8 @@ const debug = process.env.NODE_ENV !== 'production'
 
 const state = {
   flights: [],
-  premium_flight: {}
+  premium_flight: {},
+  allFlights: []
   // route: {} // vue-router has created state.route
 }
 
@@ -32,6 +33,9 @@ const actions = {
   },
   fetchFlightsFromDep ({ commit }, {dep_icao}) {
     Firebase.fetchFlightsFromDep(dep_icao)
+  },
+  fetchAllFlights ({ commit }) {
+    Firebase.fetchAllFlights()
   },
 
   fetchPremiumFlight ({ commit }) {

@@ -6,7 +6,7 @@
         <i>menu</i>
       </button>
         <q-toolbar-title>
-            LATAM Virtual - Staff Center - v0.1a
+            Bird SYS - Staff Center - v0.12a
          </q-toolbar-title>
     </div>
 
@@ -67,6 +67,7 @@ export default {
     this.$store.dispatch('fetchExamsData')
     this.$store.dispatch('fetchAwardsData')
     this.$store.dispatch('fetchRatings')
+    this.$store.dispatch('fetchAllPilots')
   }
 }
 </script>
