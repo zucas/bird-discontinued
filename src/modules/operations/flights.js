@@ -9,8 +9,7 @@ const debug = process.env.NODE_ENV !== 'production'
 
 const state = {
   flights: [],
-  premium_flight: {},
-  allFlights: []
+  premium_flight: {}
   // route: {} // vue-router has created state.route
 }
 

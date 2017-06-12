@@ -8,6 +8,7 @@ import events from './operations/events'
 import questions from './school/questions'
 import subjects from './school/subjects'
 import awards from './school/awards'
+import fleet from './fleet/fleet'
 
 Vue.use(Vuex)
 
@@ -17,6 +18,7 @@ export const store = new Vuex.Store({
   mutations: {},
   actions: {},
   modules: {
+    fleet,
     generalSelected,
     pilot,
     flights,

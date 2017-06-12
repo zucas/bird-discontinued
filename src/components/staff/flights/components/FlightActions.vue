@@ -27,7 +27,7 @@ export default {
   },
   methods: {
     fromMach () {
-      this.$http.get('https://parsec.pe.hu/mach/api/rpl.php?cia=TAM').then(response => {
+      this.$http.get('https://jpedroh.com/mach/api/rpl.php?cia=TAM').then(response => {
         this.machFlightsData = response.body
       })
     }

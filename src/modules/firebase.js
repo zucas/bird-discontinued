@@ -304,6 +304,22 @@ export default {
       _examsRef.set(exam).then()
       resolve()
     }).catch( err => reject(err))
+  },
+
+  addGeneric (routePath, object) {
+    return new Promise((resolve, reject) => {
+      _genericRef = database.ref(`birs/${routePath}`)
+      _genericRef.set(object).then()
+      resolve()
+    }).catch( err => reject(err))
+  },
+
+  addFleetGeneric (type, object) {
+    return new Promise((resolve, reject) => {
+      let _genericRef = database.ref(`bird/fleet/${type}`)
+      _genericRef.push(object).then()
+      resolve()
+    }).catch(err => reject(err))
   } 
 
 }

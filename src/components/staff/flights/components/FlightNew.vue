@@ -25,7 +25,7 @@
         <div class="item-content">
           <div class="floating-label">
             <span class="label inline bg-primary text-white">
-          DEP
+          DEP ICAO
         </span>
             <input 
                    class="full-width text-center"
@@ -39,7 +39,7 @@
         <div class="item-content">
           <div class="floating-label">
             <span class="label inline bg-primary text-white">
-          ARR
+          ARR  ICAO
         </span>
             <input 
                    class="full-width text-center"
@@ -54,8 +54,7 @@
         <div class="item-content">
           <div class="floating-label">
             <span class="label inline bg-primary text-white">
-            Aircrafts 
-          <i>info</i>
+            Aircrafts <i class="on-right">info</i>
           <q-tooltip>
             You can select one or more models
           </q-tooltip>

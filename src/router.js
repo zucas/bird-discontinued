@@ -86,6 +86,22 @@ export default new VueRouter({
           component: load('staff/home/index'),
           name: 'staff-home'
         },
+        { path: 'fleet',
+          component: load('staff/fleet/FleetHome'),
+          name: 'fleet-home',
+          children: [
+            {
+              path: 'equipments',
+              component: load('staff/fleet/EquipmentsTable'),
+              name: 'equipments'
+            },
+            {
+              path: 'aircrafts',
+              component: load('staff/fleet/AircraftsTable'),
+              name: 'aircrafts'
+            }
+          ]
+        },
         { path: 'options', component: load('staff/general/Options'), name: 'general-options' },
         { path: 'pilots', component: load('staff/pilots/view/Pilots'), name: 'pilots' },
         { path: 'flights', component: load('staff/flights/view/Flights'), name: 'flights' },
