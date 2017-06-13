@@ -69,6 +69,8 @@ export default {
     this.$store.dispatch('fetchRatings')
     this.$store.dispatch('fetchAllPilots')
     this.$store.dispatch('fetchAllFlights')
+    this.$store.dispatch('fetchEquipments')
+    this.$store.dispatch('fetchAircrafts')
   }
 }
 </script>

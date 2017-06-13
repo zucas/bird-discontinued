@@ -10,7 +10,7 @@
           <div class="width-1of3" @click='showAircrafts'>
             <AircraftsCard></AircraftsCard>
           </div>
-          <div class="width-1of3">
+          <div class="width-1of3" @click='showMaintenance()'>
             <MaintenanceCard></MaintenanceCard>
           </div>
         </div>
@@ -33,8 +33,8 @@
     },
     components: {
       EquipmentsCard,
-      AircraftsCard,
-      MaintenanceCard
+      MaintenanceCard,
+      AircraftsCard
     },
     methods: {
       showEquipments () {
@@ -45,6 +45,11 @@
       showAircrafts () {
         this.$router.push({
           name: 'aircrafts'
+        })
+      },
+      showMaintenance () {
+        this.$router.push({
+          name: 'maintenance'
         })
       }
     }

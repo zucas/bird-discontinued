@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="card bg-white animate-pop" >
+    <div class="card bg-white animate-pop shadow-3" >
       <div class="toolbar bg-secondary">
         <q-toolbar-title>
          <i>local_airport</i> Equipments Table
@@ -8,11 +8,19 @@
       </div>
       <div class="card-content">
         <q-data-table
-                
+                :data='equipments()'
                 :columns="columns"
                 :config="config"
                 :padding="15"
         >
+        <template slot="selection" scope="selection">
+                <button @click="changeLocation(selection)" class="pink clear">
+                    <i>edit_location</i> Change Location
+                </button>
+                <button class="negative clear" @click="deleteRow(selection)">
+                    <i>delete</i> Delete
+                </button>
+            </template>
         </q-data-table>
       </div>
     </div>
@@ -20,12 +28,13 @@
         <i>local_airport</i>
         </button>
         <q-modal ref="newEquipment">
-          <EquipmentNew></EquipmentNew>
+          <EquipmentNew @added='$refs.newEquipment.close()'></EquipmentNew>
         </q-modal>
   </div>
 </template>
 
 <script>
+import {mapGetters} from 'vuex'
 import EquipmentNew from './EquipmentNew.vue'
 export default {
   data () {
@@ -64,9 +73,26 @@ export default {
           widht: '180px',
           sort: true,
           filter: true
+        },
+        {
+          label: 'Icao',
+          field: 'icao',
+          widht: '110px',
+          sort: true,
+          filter: true
+        },
+        {
+          label: 'Minimum Rating',
+          field: 'minRating',
+          widht: '180px',
+          sort: true,
+          filter: true
         }
       ]
     }
+  },
+  methods: {
+    ...mapGetters(['equipments'])
   },
   components: {
     EquipmentNew

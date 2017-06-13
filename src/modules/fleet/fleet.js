@@ -8,11 +8,8 @@ Vue.use(Vuex)
 const debug = process.env.NODE_ENV !== 'production'
 
 const state = {
-  // EX-Hubs
   equipments: [],
-  // EX-Ratings
   aircrafts: []
-  // route: {} // vue-router has created state.route
 }
 
 const mutations = {
@@ -34,15 +31,22 @@ const actions = {
   },
 
   fetchEquipments ({commit}) {
-    Firebase.fetchHubs()
+    Firebase.fetchEquipments()
   },
 
   fetchAircrafts ({commit}) {
-    Firebase.fetchHubs()
+    Firebase.fetchAircrafts()
   },
 
   addFleetGeneric ({commit}, {type, object}) {
     Firebase.addFleetGeneric(type, object)
+  },
+
+  editFleetGeneric ({commit}, {type, key, object}) {
+    Firebase.editFleetGeneric(type, key, object)
+  },
+  sellAircraft ({commit}, aircraft) {
+    Firebase.sellAircraft(aircraft)
   }
 
 }

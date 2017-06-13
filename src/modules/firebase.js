@@ -114,8 +114,6 @@ export default {
   },
 
   createPilot (uid, pilot) {
-    console.log(uid)
-    console.log(pilot)
     let _pilotRef = database.ref('bird/pilots')
     _pilotRef.child(uid).set(pilot)
   },
@@ -209,7 +207,6 @@ export default {
 
   addAward (award) {
     return new Promise((resolve, reject) => {
-      console.log(award);
       _questionsRef = database.ref('bird/school/awards')
       _questionsRef.push(award)
       resolve()
@@ -225,7 +222,6 @@ export default {
         _ratingsArray.push(key)
       })
       _App.$store.dispatch('setRatings', _ratingsArray)
-      console.log(_ratingsArray)
       _ratingsArray = []
     })
   },
@@ -288,6 +284,41 @@ export default {
       _hubsArray = []
     })
   },
+  
+  fetchEquipments () {
+    let _equipmentsRef = database.ref('bird/fleet/equipments')
+    let _equipmentsArray = []
+    let _data = {}
+    _equipmentsRef.on('value', snap => {
+      _data = snap.val()
+      Object.keys(_data).forEach(key => {
+        _equipmentsArray.push(_data[key])
+      })
+      _App.$store.dispatch('setEquipments', _equipmentsArray)
+      _equipmentsArray = []
+    })
+  },
+  
+  fetchAircrafts () {
+    let _aircraftsRef = database.ref('bird/fleet/aircrafts')
+    let _aircraftsArray = []
+    let _data = {}
+    _aircraftsRef.on('value', snap => {
+      _data = snap.val()
+      Object.keys(_data).forEach(key => {
+        let aircraft = {}
+        aircraft.register = _data[key].register
+        aircraft.location = _data[key].location
+        aircraft.model = _data[key].model
+        aircraft.status = _data[key].status
+        aircraft.integrity = _data[key].integrity
+        aircraft.key = key
+        _aircraftsArray.push(aircraft)
+      })
+      _App.$store.dispatch('setAircrafts', _aircraftsArray)
+      _aircraftsArray = []
+    })
+  },
 
   addQuestion (subject, question) {
     return new Promise((resolve, reject) => {
@@ -306,18 +337,26 @@ export default {
     }).catch( err => reject(err))
   },
 
-  addGeneric (routePath, object) {
-    return new Promise((resolve, reject) => {
-      _genericRef = database.ref(`birs/${routePath}`)
-      _genericRef.set(object).then()
-      resolve()
-    }).catch( err => reject(err))
-  },
-
   addFleetGeneric (type, object) {
     return new Promise((resolve, reject) => {
       let _genericRef = database.ref(`bird/fleet/${type}`)
       _genericRef.push(object).then()
+      resolve()
+    }).catch(err => reject(err))
+  },
+  
+  sellAircraft (aircraft) {
+    return new Promise((resolve, reject) => {
+      let _genericRef = database.ref(`bird/fleet/aircraft`)
+      _genericRef.child('sold_aircrafts').push(aircraft).then()
+      resolve()
+    }).catch(err => reject(err))
+  },
+
+  editFleetGeneric (type, key, object) {
+    return new Promise((resolve, reject) => {
+      let _genericRef = database.ref(`bird/fleet/${type}`).child(key)
+      _genericRef.set(object).then()
       resolve()
     }).catch(err => reject(err))
   } 

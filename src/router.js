@@ -99,6 +99,11 @@ export default new VueRouter({
               path: 'aircrafts',
               component: load('staff/fleet/AircraftsTable'),
               name: 'aircrafts'
+            },
+            {
+              path: 'maintenance',
+              component: load('staff/fleet/MaintenanceCenter'),
+              name: 'maintenance'
             }
           ]
         },

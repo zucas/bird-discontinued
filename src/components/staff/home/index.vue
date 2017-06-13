@@ -9,6 +9,11 @@
     <QuestionStats></QuestionStats>
       <AwardCard></AwardCard>
       <SubjectCard></SubjectCard>
+      <div class="row">
+        <div class="card width-1of3">
+        <iframe src="https://discordapp.com/widget?id=323538139467743242&theme=dark" height="500px" class="full-width" allowtransparency="true" frameborder="0"></iframe>
+      </div>
+      </div>
   </div>
   </div>
 </div>

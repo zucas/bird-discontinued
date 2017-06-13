@@ -192,8 +192,9 @@ export default {
       }
     },
     saveEquipment () {
-      this.addFleetGeneric({type: 'equipment', object: this.equipment})
+      this.addFleetGeneric({type: 'equipments', object: this.equipment})
       Toast.create.positive(`${this.equipment.icao} has been created!`)
+      this.$emit('added')
     },
     parsedRatings () {
       return this.ratings().map(rating => {
