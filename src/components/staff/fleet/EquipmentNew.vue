@@ -19,7 +19,7 @@
                    class="full-width text-center"
                    v-model="equipment.name" 
                    :class="{'has-error': $v.equipment.name.$error}">
-                   <span v-if='$v.equipment.name.$error'>Name is required and need be to 2 or more chars</span>
+                   <span class="text-red" v-if='$v.equipment.name.$error'>Name is required and need be to 2 or more chars</span>
           </div>
         </div>
       </div>
@@ -34,7 +34,7 @@
                    class="full-width text-center"
                    v-model="equipment.factory" 
                    :class="{'has-error': $v.equipment.factory.$error}">
-                   <span v-if='$v.equipment.factory.$error'>Factory is required and need to be 2 or more chars</span>
+                   <span class="text-red" v-if='$v.equipment.factory.$error'>Factory is required and need to be 2 or more chars</span>
           </div>
         </div>
       </div>
@@ -49,7 +49,7 @@
                    class="full-width text-center"
                    v-model="equipment.icao" 
                    :class="{'has-error': $v.equipment.icao.$error}">
-                   <span v-if='$v.equipment.icao.$error'>Icao is required and need to be 3 or more chars</span>
+                   <span class="text-red" v-if='$v.equipment.icao.$error'>Icao is required and need to be 3 or more chars</span>
           </div>
         </div>
       </div>
@@ -68,6 +68,14 @@
           </div>
         </div>
       </div>
+      <label class="item">
+                      <div class="item-primary">
+                          <q-checkbox v-model="equipment.isPassenger"></q-checkbox>
+                      </div>
+                      <div class="item-content">
+                          Passenger Version ?
+                      </div>
+      </label>
       <div class="item multiple-lines">
         <div class="item-content">
           <div class="floating-label">
@@ -151,7 +159,7 @@
 
 <script>
 import { mapActions, mapGetters } from 'vuex'
-import { required, minLength } from 'vuelidate/lib/validators'
+import { required, minLength, maxLength } from 'vuelidate/lib/validators'
 import {Toast} from 'quasar'
 export default {
   data () {
@@ -160,6 +168,7 @@ export default {
         name: '',
         factory: '',
         icao: '',
+        isPassenger: true,
         minRating: '',
         foqa: false,
         foqaParams: {
@@ -176,7 +185,7 @@ export default {
     equipment: {
       name: { required, minLength: minLength(2) },
       factory: { required, minLength: minLength(2) },
-      icao: { required, minLength: minLength(3) }
+      icao: { required, minLength: minLength(4), maxLength: maxLength(4) }
     }
   },
   methods: {

@@ -31,7 +31,7 @@ export default {
         selection: 'one',
         rowHeight: '45px',
         pagination: {
-          rowsPerPage: 5,
+          rowsPerPage: 50,
           options: [5, 10, 15, 30, 50, 500]
         },
         messages: {

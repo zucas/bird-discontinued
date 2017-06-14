@@ -19,7 +19,7 @@
         <i>add</i>
       </button>
       <q-modal ref='newFlight' :content-css="{padding: '1%', minWidth: '50%'}">
-        <FlightNew></FlightNew>
+        <FlightNew @close='$refs.newFlight.close()'></FlightNew>
       </q-modal>
       <q-modal ref='eventModal' :content-css="{padding: '1%', minWidth: '50%'}">
         <FlightEvent></FlightEvent>

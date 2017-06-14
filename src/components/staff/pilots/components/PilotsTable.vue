@@ -7,13 +7,29 @@
                     </q-toolbar-title>
                 </div>
       <div class="card-content">  
-        {{ allPilots() }}
         <q-data-table
-                :data="pilots"
+                :data="allPilots()"
                 :columns="columns"
                 :config="config"
                 :padding="15"
         >
+        <template slot="selection" scope="selection">
+                <button @click="changeLocation(selection)" class="primary clear">
+                    <i>mail</i> Send Email
+                </button>
+                <button @click="changeHub(selection)" class="red clear">
+                    <i>device_hub</i> Tranfer HUB
+                </button>
+                <button @click="changeLocation(selection)" class="indigo clear">
+                    <i>local_airport</i> Change Location
+                </button>
+                <button @click="showHistoric(selection)" class="teal clear">
+                    <i>history</i> Historic
+                </button>
+                <button class="dark clear" @click="sellAircraftBtn(selection)">
+                    <i>block</i> Black List
+                </button>
+            </template>
         </q-data-table>
       </div>
     </div>
@@ -54,51 +70,51 @@ export default {
       },
       columns: [
         {
-          label: 'First Name',
-          field: 'first_name',
+          label: 'Name',
+          field: 'full_name',
           widht: '180px',
           sort: true,
           filter: true
         },
         {
-          label: 'Last Name',
-          field: 'last_name',
-          widht: '180px',
+          label: 'HUB',
+          field: 'hub',
+          widht: '120px',
           sort: true,
           filter: true
         },
         {
-          label: 'Country',
-          field: 'country',
-          widht: '100px',
+          label: 'Local',
+          field: 'local',
+          widht: '120px',
           sort: true,
           filter: true
         },
         {
           label: 'Rating',
           field: 'rating',
-          widht: '150px',
+          widht: '120px',
+          sort: true,
+          filter: true
+        },
+        {
+          label: 'Hours',
+          field: 'flight_hours',
+          widht: '180px',
           sort: true,
           filter: true
         },
         {
           label: 'Flights',
           field: 'total_flights',
-          widht: '100px',
-          sort: true,
-          filter: true
-        },
-        {
-          label: 'Flight Hours',
-          field: 'total_flight_hours',
-          widht: '100px',
+          widht: '180px',
           sort: true,
           filter: true
         },
         {
           label: 'XP',
-          field: 'total_xp',
-          widht: '100px',
+          field: 'xp',
+          widht: '180px',
           sort: true,
           filter: true
         }

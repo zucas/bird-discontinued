@@ -13,14 +13,6 @@
                 :config="config"
                 :padding="15"
         >
-        <template slot="selection" scope="selection">
-                <button @click="changeLocation(selection)" class="pink clear">
-                    <i>edit_location</i> Change Location
-                </button>
-                <button class="negative clear" @click="deleteRow(selection)">
-                    <i>delete</i> Delete
-                </button>
-            </template>
         </q-data-table>
       </div>
     </div>
@@ -75,7 +67,7 @@ export default {
           filter: true
         },
         {
-          label: 'Icao',
+          label: 'ICAO',
           field: 'icao',
           widht: '110px',
           sort: true,

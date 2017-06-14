@@ -28,9 +28,9 @@ export default {
   },
   methods: {
     ...mapGetters(['getGeneralSelected']),
-    ...mapActions(['editFleetGeneric, sellAircraft']),
+    ...mapActions(['editFleetGeneric', 'sellAircraft']),
     sell () {
-      this.sellAircraft({aircraft: this.getGeneralSelected()})
+      this.sellAircraft(this.getGeneralSelected())
     }
   }
 }

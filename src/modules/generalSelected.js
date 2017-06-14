@@ -1,7 +1,7 @@
 /**
  * Created by davi_ on 29/04/2017.
  */
-
+import Firebase from './firebase'
 const state = {
   generalSelected: {}
 }
@@ -21,6 +21,10 @@ const mutations = {
 const actions = {
   setGeneralSelected: ({ commit }, generalSelected) => {
     commit('atribuirGeneralSelected', generalSelected)
+  },
+
+  saveGeneral ({commit}, {path, object}) {
+    Firebase.addGeneric(path, object)
   }
 }
 

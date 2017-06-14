@@ -201,7 +201,28 @@ export default {
     let _pilotsRef = database.ref('bird/pilots')
     _pilotsRef.on('value', snap => {
       const _pilotsData = snap.val()
-      _App.$store.dispatch('setAllPilots', _pilotsData)
+      let pilotsArray = []
+      let pilot = {}
+      Object.keys(_pilotsData).forEach(k => {
+        pilot.full_name = _pilotsData[k].personal_info.full_name
+        pilot.birthday = _pilotsData[k].personal_info.birthday
+        pilot.city = _pilotsData[k].personal_info.city
+        pilot.country = _pilotsData[k].personal_info.country
+        pilot.email = _pilotsData[k].personal_info.email
+        pilot.vid_ivao = _pilotsData[k].personal_info.vid_ivao
+        pilot.hub = _pilotsData[k].va_info.hub
+        pilot.local = _pilotsData[k].va_info.local
+        pilot.flight_hours = _pilotsData[k].va_info.flight_hours
+        pilot.number = _pilotsData[k].va_info.number
+        pilot.rating = _pilotsData[k].va_info.rating
+        pilot.total_flights = _pilotsData[k].va_info.total_flights
+        pilot.xp = _pilotsData[k].va_info.xp
+        pilot.key = k
+        pilotsArray.push(pilot)
+        pilot = {}
+      })
+      _App.$store.dispatch('setAllPilots', pilotsArray)
+      pilotsArray = []
     })
   },
 
@@ -344,11 +365,22 @@ export default {
       resolve()
     }).catch(err => reject(err))
   },
+
+  addGeneric (path, object) {
+    return new Promise((resolve, reject) => {
+      let _genericRef = database.ref(`bird/${path}`)
+      _genericRef.push(object).then()
+      resolve()
+    }).catch(err => reject(err))
+  },
   
   sellAircraft (aircraft) {
     return new Promise((resolve, reject) => {
-      let _genericRef = database.ref(`bird/fleet/aircraft`)
+      let _genericRef = database.ref(`bird/fleet`)
       _genericRef.child('sold_aircrafts').push(aircraft).then()
+      // TODO - Delete Aircraft from fleet/aircrafts
+      _genericRef.child('aircrafts').child(aircraft.key).remove()
+      fetchAircrafts()
       resolve()
     }).catch(err => reject(err))
   },
