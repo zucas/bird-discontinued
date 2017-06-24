@@ -8,7 +8,7 @@
                 </div>
         <div class="card-content">
         <q-data-table
-                :data='questions()'
+                :data="questions()"
                 :columns="columns"
                 :config="config"
                 :padding="15"
@@ -71,21 +71,6 @@
           sort: true,
           filter: true
         }, {
-          label: 'Language',
-          field: 'language',
-          widht: '280px',
-          sort: true,
-          filter: true,
-          format (value, row) {
-            let upper = value.toUpperCase()
-            if (upper === 'PT') {
-              return 'PT-BR'
-            }
-            else {
-              return upper
-            }
-          }
-        }, {
           label: 'True Awenser',
           field: 'ta',
           widht: '280px',
@@ -94,18 +79,6 @@
           format (value, row) {
             return row.alternatives[value]
           }
-        }, {
-          label: 'Total calls',
-          field: 'totalCalls',
-          widht: '120px',
-          sort: true,
-          filter: false
-        }, {
-          label: 'Hit Rate',
-          field: 'hitRate',
-          widht: '120px',
-          sort: true,
-          filter: false
         }
         ]
       }

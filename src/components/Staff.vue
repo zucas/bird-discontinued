@@ -71,6 +71,7 @@ export default {
     this.$store.dispatch('fetchAllFlights')
     this.$store.dispatch('fetchEquipments')
     this.$store.dispatch('fetchAircrafts')
+    this.$store.dispatch('fetchHubs')
   }
 }
 </script>

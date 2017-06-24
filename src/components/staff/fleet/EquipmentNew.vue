@@ -16,7 +16,7 @@
         </span>
             <input 
                   @input="$v.equipment.name.$touch()"
-                   class="full-width text-center"
+                   class="full-width uppercase text-center"
                    v-model="equipment.name" 
                    :class="{'has-error': $v.equipment.name.$error}">
                    <span class="text-red" v-if='$v.equipment.name.$error'>Name is required and need be to 2 or more chars</span>
@@ -31,7 +31,7 @@
         </span>
             <input 
                   @input="$v.equipment.factory.$touch()"
-                   class="full-width text-center"
+                   class="full-width uppercase text-center"
                    v-model="equipment.factory" 
                    :class="{'has-error': $v.equipment.factory.$error}">
                    <span class="text-red" v-if='$v.equipment.factory.$error'>Factory is required and need to be 2 or more chars</span>
@@ -46,7 +46,7 @@
         </span>
             <input 
                   @input="$v.equipment.icao.$touch()"
-                   class="full-width text-center"
+                   class="full-width uppercase text-center"
                    v-model="equipment.icao" 
                    :class="{'has-error': $v.equipment.icao.$error}">
                    <span class="text-red" v-if='$v.equipment.icao.$error'>Icao is required and need to be 3 or more chars</span>

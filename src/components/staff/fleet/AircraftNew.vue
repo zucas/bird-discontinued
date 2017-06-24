@@ -34,7 +34,7 @@
         </span>
             <input 
                   @input="$v.aircraft.register.$touch()"
-                   class="full-width text-center"
+                   class="full-width uppercase text-center"
                    v-model="aircraft.register" 
                   :class="{'has-error': $v.aircraft.register.$error}"
                    >
@@ -50,7 +50,7 @@
         </span>
             <input 
                   @input="$v.aircraft.location.$touch()"
-                   class="full-width text-center"
+                   class="full-width uppercase text-center"
                   :class="{'has-error': $v.aircraft.location.$error}"
                    v-model="aircraft.location" 
                    >

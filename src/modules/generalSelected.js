@@ -25,6 +25,9 @@ const actions = {
 
   saveGeneral ({commit}, {path, object}) {
     Firebase.addGeneric(path, object)
+  },
+  deleteGeneral ({commit}, {path, object}) {
+    Firebase.deleteGeneric(path, object)
   }
 }
 

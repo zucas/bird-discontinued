@@ -10,7 +10,7 @@
           </div>
         <div class="card-content">
           <div class="row">
-            <p class="thin-paragraph">Welcome aboard, {{ pilot.personal_info.full_name }}! Please, complete your register and start flight in few minutes. </p>
+            <p class="thin-paragraph">Welcome aboard, {{ pilot.full_name }}! Please, complete your register and start flight in few minutes. </p>
           </div>
           <br>
           <div class="row">
@@ -31,13 +31,13 @@
         <div class="item">                
                 <div class="item-content text-center">
                   <span class="item-label text-left">Full Name: </span>
-                  <input v-model="pilot.personal_info.full_name" type="text" style="min-width: 40%">
+                  <input v-model="pilot.full_name" type="text" style="min-width: 40%">
                 </div>
         </div>
         <div class="item">                
                 <div class="item-content text-center">
                   <span class="item-label">Email: </span>
-                  <input v-model="pilot.personal_info.email" type="text" style="min-width: 40%">
+                  <input v-model="pilot.email" type="text" style="min-width: 40%">
                 </div>
         </div>
         <div class="item">                
@@ -45,7 +45,7 @@
                   <span class="item-label">HUB: </span>
                   <q-select
                     type="list"
-                    v-model="pilot.va_info.hub"
+                    v-model="pilot.hub"
                     :options="hubsParsed()"
                     style="min-width: 40%"
                   ></q-select>
@@ -55,7 +55,7 @@
                 <div class="item-content text-center">
                   <span class="item-label">Brithday: </span>
                   <q-datetime
-                    v-model="pilot.personal_info.birthday"
+                    v-model="pilot.birthday"
                     type="date"
                     style="min-width: 40%"
                     class="text-left"
@@ -65,25 +65,25 @@
         <div class="item">                
                 <div class="item-content text-center">
                   <span class="item-label">City: </span>
-                  <input type="text" v-model="pilot.personal_info.city" style="min-width: 40%">
+                  <input type="text" v-model="pilot.city" style="min-width: 40%">
                 </div>
         </div>
         <div class="item">                
                 <div class="item-content text-center">
                   <span class="item-label">Country: </span>
-                  <input type="text" v-model="pilot.personal_info.country" style="min-width: 40%">
+                  <input type="text" v-model="pilot.country" style="min-width: 40%">
                 </div>
         </div>
         <div class="item">                
                 <div class="item-content text-center">
                   <span class="item-label">VID IVAO: </span>
-                  <input type="text" v-model="pilot.personal_info.vid_ivao" style="min-width: 40%">
+                  <input type="text" v-model="pilot.vid_ivao" style="min-width: 40%">
                 </div>
         </div>
         <div class="item">                
                 <div class="item-content text-center">
                   <span class="item-label">VID VATSIM: </span>
-                  <input type="text" v-model="pilot.personal_info.vatsim" style="min-width: 40%">
+                  <input type="text" v-model="pilot.vatsim" style="min-width: 40%">
                 </div>
         </div>
         <br>
@@ -108,13 +108,8 @@ export default {
   data () {
     return {
       pilot: {
-        personal_info: {
-          birthday: moment().format()
-        },
-        va_info: {
-          hub: {}
-        },
-        pireps: {}
+        birthday: moment().format(),
+        hub: {}
       },
       user: {}
     }
@@ -124,8 +119,8 @@ export default {
   },
   mounted () {
     this.user = firebase.auth().currentUser
-    this.pilot.personal_info.full_name = this.user.displayName
-    this.pilot.personal_info.email = this.user.email
+    this.pilot.full_name = this.user.displayName
+    this.pilot.email = this.user.email
   },
   methods: {
     ...mapGetters(['hubs']),
@@ -135,11 +130,12 @@ export default {
       this.setPilot({uid: this.user.uid, pilot: this.pilot})
     },
     completePilot () {
-      this.pilot.va_info.total_flights = 0
-      this.pilot.va_info.flight_hours = 0
-      this.pilot.va_info.xp = 0
-      this.pilot.va_info.rating = 0
-      this.pilot.va_info.local = this.pilot.va_info.hub
+      this.pilot.total_flights = 0
+      this.pilot.flight_hours = 0
+      this.pilot.xp = 0
+      this.pilot.rating = 0
+      this.pilot.local = this.pilot.hub
+      this.pilot.schedule = false
     },
     hubsParsed () {
       return this.hubs().map(hub => {

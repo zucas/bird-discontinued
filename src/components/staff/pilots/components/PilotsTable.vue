@@ -14,8 +14,8 @@
                 :padding="15"
         >
         <template slot="selection" scope="selection">
-                <button @click="changeLocation(selection)" class="primary clear">
-                    <i>mail</i> Send Email
+                <button @click="sendMail(selection)" class="primary clear">
+                    <i>mail</i> Send Message
                 </button>
                 <button @click="changeHub(selection)" class="red clear">
                     <i>device_hub</i> Tranfer HUB
@@ -26,7 +26,7 @@
                 <button @click="showHistoric(selection)" class="teal clear">
                     <i>history</i> Historic
                 </button>
-                <button class="dark clear" @click="sellAircraftBtn(selection)">
+                <button class="dark clear" @click="blackList(selection)">
                     <i>block</i> Black List
                 </button>
             </template>
@@ -37,7 +37,7 @@
 </template>
 
 <script>
-import { mapGetters } from 'vuex'
+import { mapGetters, mapActions } from 'vuex'
 export default {
   data () {
     return {
@@ -122,7 +122,24 @@ export default {
     }
   },
   methods: {
-    ...mapGetters(['allPilots'])
+    ...mapGetters(['allPilots']),
+    ...mapActions(['setGeneralSelected']),
+    changeHub (selection) {
+      this.setGeneralSelected(selection.rows[0].data)
+      this.$emit('transferHub')
+    },
+    changeLocation (selection) {
+      this.setGeneralSelected(selection.rows[0].data)
+      this.$emit('changeLocation')
+    },
+    blackList (selection) {
+      this.setGeneralSelected(selection.rows[0].data)
+      this.$emit('blackList')
+    },
+    sendMail (selection) {
+      this.setGeneralSelected(selection.rows[0].data)
+      this.$emit('sendMail')
+    }
   }
 }
 </script>

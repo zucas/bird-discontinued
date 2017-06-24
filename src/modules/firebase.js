@@ -144,8 +144,16 @@ export default {
       _flightRef = database.ref('bird/flights')
       _flightRef.on('value', snapshot => {
         const flights = snapshot.val()
+        let flight = {}
         Object.keys(flights).forEach((key, i) => {
-            _flights[i] = flights[key]
+            flight.dep = flights[key].dep
+            flight.arr = flights[key].arr
+            flight.eet = flights[key].eet
+            flight.etd = flights[key].etd
+            flight.number = flights[key].number
+            flight.aircraft = flights[key].aircraft
+            flight.key = key
+            _flights[i] = flight
           })
         _App.$store.dispatch('setFlights', {flights: _flights})
       })
@@ -204,19 +212,19 @@ export default {
       let pilotsArray = []
       let pilot = {}
       Object.keys(_pilotsData).forEach(k => {
-        pilot.full_name = _pilotsData[k].personal_info.full_name
-        pilot.birthday = _pilotsData[k].personal_info.birthday
-        pilot.city = _pilotsData[k].personal_info.city
-        pilot.country = _pilotsData[k].personal_info.country
-        pilot.email = _pilotsData[k].personal_info.email
-        pilot.vid_ivao = _pilotsData[k].personal_info.vid_ivao
-        pilot.hub = _pilotsData[k].va_info.hub
-        pilot.local = _pilotsData[k].va_info.local
-        pilot.flight_hours = _pilotsData[k].va_info.flight_hours
-        pilot.number = _pilotsData[k].va_info.number
-        pilot.rating = _pilotsData[k].va_info.rating
-        pilot.total_flights = _pilotsData[k].va_info.total_flights
-        pilot.xp = _pilotsData[k].va_info.xp
+        pilot.full_name = _pilotsData[k].full_name
+        pilot.birthday = _pilotsData[k].birthday
+        pilot.city = _pilotsData[k].city
+        pilot.country = _pilotsData[k].country
+        pilot.email = _pilotsData[k].email
+        pilot.vid_ivao = _pilotsData[k].vid_ivao
+        pilot.hub = _pilotsData[k].hub
+        pilot.local = _pilotsData[k].local
+        pilot.flight_hours = _pilotsData[k].flight_hours
+        pilot.number = _pilotsData[k].number
+        pilot.rating = _pilotsData[k].rating
+        pilot.total_flights = _pilotsData[k].total_flights
+        pilot.xp = _pilotsData[k].xp
         pilot.key = k
         pilotsArray.push(pilot)
         pilot = {}
@@ -378,17 +386,39 @@ export default {
     return new Promise((resolve, reject) => {
       let _genericRef = database.ref(`bird/fleet`)
       _genericRef.child('sold_aircrafts').push(aircraft).then()
-      // TODO - Delete Aircraft from fleet/aircrafts
       _genericRef.child('aircrafts').child(aircraft.key).remove()
       fetchAircrafts()
       resolve()
     }).catch(err => reject(err))
+  },
+  
+  addOnBlackList (pilot) {
+    return new Promise((resolve, reject) => {
+      let _genericRef = database.ref(`bird`)
+      _genericRef.child('blacklist').push(pilot).then()
+      _genericRef.child('pilots').child(pilot.key).remove()
+      fetchAllPilots()
+      resolve()
+    }).catch(err => reject(err))
+  },
+
+  deleteGeneric (path, object) {
+    let _genericRef = database.ref(`bird/${path}`)
+    _genericRef.child(object.key).remove()
   },
 
   editFleetGeneric (type, key, object) {
     return new Promise((resolve, reject) => {
       let _genericRef = database.ref(`bird/fleet/${type}`).child(key)
       _genericRef.set(object).then()
+      resolve()
+    }).catch(err => reject(err))
+  },
+
+  editPilot (pilot) {
+    return new Promise((resolve, reject) => {
+      let _genericRef = database.ref(`bird/pilots`).child(pilot.key)
+      _genericRef.set(pilot).then()
       resolve()
     }).catch(err => reject(err))
   } 

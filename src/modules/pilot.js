@@ -9,16 +9,7 @@ const debug = process.env.NODE_ENV !== 'production'
 
 const state = {
   user: {
-    loggedIn: false,
-    uid: '',
-    name: '',
-    email: '',
-    profilePicUrl: '',
-    va_info: {
-      hub: '',
-      local: '',
-      rating: ''
-    }
+    loggedIn: false
   },
   hubs: [],
   ratings: [],
@@ -99,6 +90,12 @@ const actions = {
 
   setPilot({commit}, {uid, pilot}){
     Firebase.createPilot(uid, pilot)
+  },
+  editPilot({commit}, pilot){
+    Firebase.editPilot(pilot)
+  },
+  toBlackList({commit}, pilot){
+    Firebase.addOnBlackList(pilot)
   }
 
 }
